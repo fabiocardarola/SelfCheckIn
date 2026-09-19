@@ -9,15 +9,24 @@ export interface Booking {
   address: string; city: string; cap: string; lat: number | null; lng: number | null;
 }
 
+export interface CheckInProgress {
+  language: string | null;
+  privacyAccepted: boolean;
+  completedSteps: number[];
+  completedAt: Record<string, string>;
+}
+
 @Injectable({ providedIn: 'root' })
 export class BookingService {
   private readonly document = inject(DOCUMENT);
   private token: string | null = null;
+  readonly progress = signal<CheckInProgress | null>(null);
   readonly booking = signal<Booking | null>(null);
   readonly status = signal<'loading' | 'ready' | 'bad-code' | 'error'>('loading');
 
   async login(): Promise<void> {
     this.status.set('loading');
+    this.progress.set(null);
     this.token = null;
     this.booking.set(null);
     const pnr = new URL(this.document.location.href).searchParams.get('key')?.trim();
@@ -34,10 +43,27 @@ export class BookingService {
           || !Number.isInteger(result.booking.fkbooking) || typeof result.booking.pnr !== 'string') {
         throw new Error('Invalid booking response');
       }
+      this.setProgress(result.progress);
       this.token = result.token;
       this.booking.set(result.booking);
       this.status.set('ready');
     } catch { this.status.set('error'); }
+  }
+
+  private setProgress(value: CheckInProgress): void {
+    if (!value || typeof value.privacyAccepted !== 'boolean'
+        || !(value.language === null || typeof value.language === 'string')
+        || !Array.isArray(value.completedSteps)
+        || value.completedSteps.some((step, index) => step !== index + 1)) {
+      throw new Error('Invalid progress response');
+    }
+    this.progress.set(value);
+  }
+
+  async saveProgress(body: { language: string } | { step: number }): Promise<CheckInProgress> {
+    const result = await this.request<{ progress: CheckInProgress }>('sci_progress', body);
+    this.setProgress(result.progress);
+    return result.progress;
   }
 
   /** All future guest API calls go through this method to include the guest token. */
@@ -48,7 +74,7 @@ export class BookingService {
       body: JSON.stringify(body), cache: 'no-store', signal: AbortSignal.timeout(15000)
     });
     if (response.status === 401) {
-      this.token = null; this.booking.set(null); this.status.set('error');
+      this.token = null; this.booking.set(null); this.progress.set(null); this.status.set('error');
       throw new Error('Session expired');
     }
     const result = await response.json();

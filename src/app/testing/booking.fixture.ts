@@ -5,3 +5,5 @@ export const TEST_BOOKING: Booking = {
   apartment: 'Test apartment', provenienza: 'Test', nationalityDescription: 'ITALIA', booked_on: null,
   address: 'Vicolo Del Curato 12', city: 'ROMA', cap: '00186', lat: 41.9004, lng: 12.4682
 };
+
+export const TEST_PROGRESS = { language: null, privacyAccepted: false, completedSteps: [], completedAt: {} };

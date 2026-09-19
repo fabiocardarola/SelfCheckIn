@@ -100,12 +100,14 @@ export class App {
 
   protected async loadBooking(): Promise<void> {
     await this.bookingService.login();
-    const code = this.booking()?.lang?.toLowerCase().split(/[-_]/)[0];
+    const restored = this.bookingService.progress();
+    const code = (restored?.language ?? this.booking()?.lang)?.toLowerCase().split(/[-_]/)[0];
     const language = LANGUAGES.find((item) => item.code === code)?.code ?? 'it';
     this.selectedLanguage.set(language);
     this.document.documentElement.lang = language;
-    this.completedSteps.set([]);
-    this.goTo('language');
+    this.completedSteps.set(restored?.completedSteps ?? []);
+    this.privacyAccepted.set(restored?.privacyAccepted ?? false);
+    this.goTo(restored?.privacyAccepted ? 'journey' : restored?.language ? 'privacy' : 'language');
   }
   protected readonly languages = LANGUAGES;
   protected readonly selectedLanguage = signal<LanguageCode | null>(null);
@@ -115,6 +117,37 @@ export class App {
   protected readonly copy = computed(() => COPY[this.selectedLanguage() ?? 'it']);
   protected readonly selectedLanguageInfo = computed(() => LANGUAGES.find((language) => language.code === this.selectedLanguage()));
   protected readonly progress = computed(() => this.completedSteps().length * 25);
+
+  protected readonly privacyAccepted = signal(false);
+  protected readonly progressSaving = signal(false);
+  protected readonly progressError = signal(false);
+  private retryAction: (() => Promise<void>) | null = null;
+  protected readonly progressFeedback = computed(() => {
+    const messages: Record<LanguageCode, [string, string, string]> = {
+      it: ['Salvataggio…', 'Impossibile salvare i progressi. Riprova.', 'Riprova'],
+      en: ['Saving…', 'Unable to save progress. Please try again.', 'Retry'],
+      pl: ['Zapisywanie…', 'Nie udało się zapisać postępu. Spróbuj ponownie.', 'Ponów'],
+      fr: ['Enregistrement…', 'Impossible d’enregistrer la progression. Réessayez.', 'Réessayer'],
+      de: ['Speichern…', 'Fortschritt konnte nicht gespeichert werden. Bitte erneut versuchen.', 'Erneut versuchen'],
+      es: ['Guardando…', 'No se pudo guardar el progreso. Inténtalo de nuevo.', 'Reintentar'],
+      pt: ['A guardar…', 'Não foi possível guardar o progresso. Tente novamente.', 'Tentar novamente'],
+      ko: ['저장 중…', '진행 상황을 저장하지 못했습니다. 다시 시도하세요.', '다시 시도'],
+      ja: ['保存中…', '進捗を保存できませんでした。もう一度お試しください。', '再試行'],
+      zh: ['正在保存…', '无法保存进度，请重试。', '重试']
+    };
+    return messages[this.selectedLanguage() ?? 'it'];
+  });
+
+  private async persistProgress(action: () => Promise<void>): Promise<void> {
+    if (this.progressSaving()) return;
+    this.progressSaving.set(true);
+    this.progressError.set(false);
+    this.retryAction = action;
+    try { await action(); this.retryAction = null; }
+    catch { this.progressError.set(true); }
+    finally { this.progressSaving.set(false); }
+  }
+  protected retryProgress(): void { if (this.retryAction) void this.persistProgress(this.retryAction); }
 
   protected readonly privacySaving = signal(false);
   protected readonly privacyError = signal(false);
@@ -134,13 +167,23 @@ export class App {
     return messages[this.selectedLanguage() ?? 'it'];
   });
 
-  protected chooseLanguage(code: LanguageCode): void { this.selectedLanguage.set(code); this.document.documentElement.lang = code; this.goTo('privacy'); }
+  protected async chooseLanguage(code: LanguageCode): Promise<void> {
+    await this.persistProgress(async () => {
+      const progress = await this.bookingService.saveProgress({ language: code });
+      this.selectedLanguage.set(code);
+      this.document.documentElement.lang = code;
+      this.privacyAccepted.set(progress.privacyAccepted);
+      this.completedSteps.set(progress.completedSteps);
+      this.goTo(progress.privacyAccepted ? 'journey' : 'privacy');
+    });
+  }
   protected async acceptPrivacy(accepted: boolean): Promise<void> {
     if (this.privacySaving() || this.view() !== 'privacy') return;
     this.privacySaving.set(true);
     this.privacyError.set(false);
     try {
       await this.bookingService.request('sci_privacy', { accepted });
+      this.privacyAccepted.set(accepted);
       this.privacySaving.set(false);
       this.goTo(accepted ? 'journey' : 'declined');
     } catch {
@@ -149,14 +192,20 @@ export class App {
       this.privacySaving.set(false);
     }
   }
-  protected openStep(step: number): void { if (!this.isUnlocked(step)) return; this.activeStep.set(step); this.goTo(step === 1 ? 'registration' : step === 2 ? 'arrival' : 'step'); }
-  protected completeStep(step: number): void { if (!this.completedSteps().includes(step)) this.completedSteps.update((steps) => [...steps, step].sort()); this.goTo('journey'); }
+  protected openStep(step: number): void { if (!this.privacyAccepted() || !this.isUnlocked(step)) return; this.activeStep.set(step); this.goTo(step === 1 ? 'registration' : step === 2 ? 'arrival' : 'step'); }
+  protected async completeStep(step: number): Promise<void> {
+    await this.persistProgress(async () => {
+      const progress = await this.bookingService.saveProgress({ step });
+      this.completedSteps.set(progress.completedSteps);
+      this.goTo('journey');
+    });
+  }
   protected isCompleted(step: number): boolean { return this.completedSteps().includes(step); }
   protected isUnlocked(step: number): boolean { return step === 1 || this.completedSteps().includes(step - 1); }
   protected stepState(step: number): string { return this.isCompleted(step) ? this.copy().completed : this.isUnlocked(step) ? this.copy().available : this.copy().locked; }
   protected stepAction(step: number): string { return this.isCompleted(step) ? this.copy().review : step === 1 ? this.copy().start : this.copy().continue; }
   protected goBack(): void { const current = this.view(); if (current === 'privacy') this.goTo('language'); if (current === 'declined') this.goTo('privacy'); if (current === 'journey') this.goTo('privacy'); if (current === 'step' || current === 'registration' || current === 'arrival') this.goTo('journey'); }
-  protected restart(): void { if (this.privacySaving()) return; this.completedSteps.set([]); this.selectedLanguage.set(null); this.document.documentElement.lang = 'it'; this.goTo('language'); }
+  protected restart(): void { if (this.privacySaving() || this.progressSaving()) return; this.goTo('language'); }
   protected goTo(nextView: View): void {
     if (this.privacySaving()) return;
     this.privacyError.set(false);

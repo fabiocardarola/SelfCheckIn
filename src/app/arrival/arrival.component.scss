@@ -37,4 +37,15 @@ h3 { font-size: 18px; line-height: 1.25; }
 .ncc-dialog p { overflow-wrap: anywhere; font-size: 16px; }
 .ncc-dialog h2 { margin-bottom: 16px; }
 .whatsapp-action { background: var(--green); color: white; }
-.host-phone { margin-top: 12px; text-align: center; }
+#ncc-dialog-description { margin-top: 20px; }
+.ncc-price-list {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.4;
+  caption { text-align: left; font-weight: 750; margin-bottom: 8px; }
+  th, td { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  th { text-align: left; font-weight: 600; }
+  td { padding-left: 12px; text-align: right; white-space: nowrap; font-weight: 750; }
+}

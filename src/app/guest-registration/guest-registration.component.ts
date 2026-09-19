@@ -101,7 +101,8 @@ export class GuestRegistrationComponent implements OnInit {
   private async initialize(): Promise<void> {
     const state = this.restoreState();
     this.guests.set(state.guests);
-    this.guestIndex.set(state.guestIndex);
+    // Reopening registration always starts with the booking holder.
+    this.guestIndex.set(0);
 
     try {
       const [states, towns, documents] = await Promise.all([

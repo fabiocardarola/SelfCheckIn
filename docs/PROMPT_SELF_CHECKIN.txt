@@ -370,3 +370,21 @@ Diciamo che è ok, allora mi verifichi anche per i codici comuni se si riesce ad
 
 Ok procedi con stati e comuni letti da database invece che da codice i file txt.
 
+=======================
+RICHIESTA 022
+
+Quando il turista accede di nuovo al self check-in verifica se ha già completato degli step in modo da non costringerlo a rifarli ma andrebbe direttamente alla mappa centrale con gli step già fatti già abilitati. Quindi salterebbe la scelta della lingua e la privacy se l'ha già accettata. In pratica ad ogni step riuscito dovrebbe salvare lo stato tramite restapi. Quindi prevedi anche una tabella sempre con il prefisso "sci_" per salvare lo stato di avanzamento anche con data/ora.
+
+Quando uno preme il bottone dei passaporti riprendi sempre dal primo passaporto inserito 
+
+=======================
+RICHIESTA 023
+
+sul secondo bottone della mappa metti prima la card del trasferimento con auto privata NCC e dopo la card del taxi.
+Sul trasferimento con NCC non mettere subito il costo del trasferimento per il numero di persone ma metti solo "Prezzi a partire da 80€"
+Il resto è ok ma la label del bottone cambiala in "Listino Prezzi".
+Quando viene premuto il bottone "Listino Prezzi" allora fai apparire la modale con il prezzo per il numero di ospiti che avevi tolto dalla card e comunque sotto metti la tabellina dei prezzi in base al numero di ospiti perché magari anche se gli ospiti sono i 4 potrebbero aver bisogno di un trasferimento solo per 2 persone.
+Togli il numero di telefono ma metti un testo:
+Chiedi al tuo host...
+e sotto il bottone che apre whatsapp con la label "Chiedi con whatsapp..."
+

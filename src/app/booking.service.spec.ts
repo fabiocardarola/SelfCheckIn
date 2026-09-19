@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { BookingService } from './booking.service';
 import { API_BASE_URL } from './api.config';
-import { TEST_BOOKING } from './testing/booking.fixture';
+import { TEST_BOOKING, TEST_PROGRESS } from './testing/booking.fixture';
 
 describe('BookingService', () => {
   beforeEach(() => {
@@ -12,7 +12,7 @@ describe('BookingService', () => {
 
   it('uses key as PNR, keeps the token out of URLs and authenticates subsequent calls', async () => {
     const fetch = vi.spyOn(globalThis, 'fetch')
-      .mockResolvedValueOnce(Response.json({ success: true, token: 'secret-token', booking: TEST_BOOKING }))
+      .mockResolvedValueOnce(Response.json({ success: true, progress: TEST_PROGRESS, token: 'secret-token', booking: TEST_BOOKING }))
       .mockResolvedValueOnce(Response.json({ success: true, booking: TEST_BOOKING }));
     const service = TestBed.inject(BookingService);
     await service.login();
@@ -45,7 +45,7 @@ describe('BookingService', () => {
 
   it('clears the booking when a subsequent call rejects the token', async () => {
     vi.spyOn(globalThis, 'fetch')
-      .mockResolvedValueOnce(Response.json({ success: true, token: 'token', booking: TEST_BOOKING }))
+      .mockResolvedValueOnce(Response.json({ success: true, progress: TEST_PROGRESS, token: 'token', booking: TEST_BOOKING }))
       .mockResolvedValueOnce(Response.json({ success: false }, { status: 401 }));
     const service = TestBed.inject(BookingService);
     await service.login();
@@ -53,4 +53,12 @@ describe('BookingService', () => {
     expect(service.booking()).toBeNull();
     await expect(service.request('sci_booking')).rejects.toThrow('Invalid authenticated request');
   });
+  it('blocks startup if persisted progress cannot be read', async () => {
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue(Response.json({ success: true, token: 'token', booking: TEST_BOOKING }));
+    const service = TestBed.inject(BookingService);
+    await service.login();
+    expect(service.status()).toBe('error');
+    expect(service.booking()).toBeNull();
+  });
+
 });

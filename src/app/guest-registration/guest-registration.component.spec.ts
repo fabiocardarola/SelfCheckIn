@@ -104,7 +104,8 @@ describe('GuestRegistrationComponent', () => {
     expect(element.querySelector('.guest-progress')?.textContent).toContain('0/2');
   });
 
-  it('reloads server data without session storage and updates the existing record', async () => {
+  it('reopens the first passport despite a later saved position and updates the existing record', async () => {
+    window.sessionStorage.setItem('helloHost.guestRegistration.v2.123.TESTPNR', JSON.stringify({ guestIndex: 2, guests: [] }));
     const api = vi.mocked(TestBed.inject(BookingService).request);
     const saved = { pk: 81, surname: 'ROSSI', name: 'MARIO', gender: 'M', birthDate: '1990-01-15', nationalityCode: '100000100', birthPlaceCode: '405058091', documentTypeCode: 'PASOR', documentNumber: 'AB123', issuingCountryCode: '100000215' };
     api.mockResolvedValueOnce({ guests: [saved] }).mockResolvedValueOnce({ pk: 81 });

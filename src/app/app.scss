@@ -131,3 +131,21 @@ p { color: var(--muted); line-height: 1.55; }
   .app-shell.map-view { height: calc(100dvh - 32px); min-height: 0; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+.progress-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(20 35 45 / 45%);
+}
+.progress-dialog {
+  width: min(100%, 360px);
+  padding: 24px;
+  border-radius: 24px;
+  background: white;
+  text-align: center;
+  p { margin: 0 0 20px; }
+}

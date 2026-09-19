@@ -1,4 +1,4 @@
-<main class="app-shell" [class.map-view]="view() === 'journey'" [class.registration-view]="view() === 'registration'">
+<main [attr.inert]="progressSaving() || progressError() ? '' : null" class="app-shell" [class.map-view]="view() === 'journey'" [class.registration-view]="view() === 'registration'">
   <header class="app-header">
     <button class="brand" type="button" (click)="restart()" [disabled]="privacySaving()" aria-label="HelloHost">
       <span class="brand-mark" aria-hidden="true">
@@ -168,7 +168,7 @@
         </div>
 
         @if (progress() === 100) {
-          <div class="success-card animate-in"><span>🎉</span><div><h2>{{ copy().allDone }}</h2><p>{{ copy().allDoneText }}</p></div><button type="button" (click)="restart()" [disabled]="privacySaving()">{{ copy().restart }}</button></div>
+          <div class="success-card animate-in"><span>🎉</span><div><h2>{{ copy().allDone }}</h2><p>{{ copy().allDoneText }}</p></div></div>
         }
       </section>
     }
@@ -206,3 +206,18 @@
   }
   }
 </main>
+
+@if (progressSaving() || progressError()) {
+  <div class="progress-overlay">
+    <div class="progress-dialog" role="dialog" aria-modal="true" [attr.aria-label]="progressFeedback()[0]">
+      @if (progressSaving()) { <p role="status">{{ progressFeedback()[0] }}</p> }
+      @if (progressError()) {
+        <p role="alert">{{ progressFeedback()[1] }}</p>
+        <button class="button button-primary" type="button" (click)="retryProgress()">{{ progressFeedback()[2] }}</button>
+        @if (bookingService.status() === 'error') {
+          <button class="button button-ghost" type="button" (click)="progressError.set(false); loadBooking()">{{ copy().continue }}</button>
+        }
+      }
+    </div>
+  </div>
+}

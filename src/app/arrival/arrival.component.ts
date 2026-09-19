@@ -25,10 +25,9 @@ export class ArrivalComponent {
   protected readonly options = computed(() => {
     const c = this.copy();
     const config = this.config();
-    const quote = this.quote();
     const rows: { id: TransportMode; icon: string; title: string; detail: string; price?: string; href?: string; action?: string }[] = [
+      { id: 'ncc', icon: '🚘', title: c.ncc, price: this.startingPrice(), detail: c.luggage },
       { id: 'taxi', icon: '🚕', title: c.taxi, price: this.money(config.taxi.flatRate), detail: c.taxiDetail, href: `tel:${config.taxi.phone.replace(/\s/g, '')}`, action: `${c.call} · ${config.taxi.phone}` },
-      { id: 'ncc', icon: '🚘', title: c.ncc, price: quote === null ? undefined : c.quote.replace('{price}', this.money(quote)).replace('{count}', String(this.guestCount())), detail: quote === null ? c.noQuote : c.luggage },
       { id: 'uber', icon: '🚗', title: 'Uber', detail: c.uberDetail, href: uberUrl(config), action: c.uberOpen },
       { id: 'freenow', icon: '🚖', title: 'FreeNow', detail: c.freeNowDetail, href: FREENOW_APP_URL, action: c.freeNowOpen },
       { id: 'transit', icon: '🚇', title: c.transit, detail: c.transitDetail, href: directionsUrl(config, 'transit'), action: c.navigate },
@@ -36,6 +35,19 @@ export class ArrivalComponent {
     ];
     return rows.map((row) => ({ ...row, enabled: config.enabled[row.id] }));
   });
+
+  protected readonly startingPrice = computed(() => {
+    const prices = this.config().ncc.map(row => row.price);
+    return prices.length ? this.copy().startingPrice.replace('{price}', this.money(Math.min(...prices))) : this.copy().noQuote;
+  });
+  protected readonly bookingQuote = computed(() => {
+    const price = this.quote();
+    return price === null ? this.copy().noQuote
+      : this.copy().quote.replace('{price}', this.money(price)).replace('{count}', String(this.guestCount()));
+  });
+  protected readonly priceList = computed(() => [...this.config().ncc]
+    .sort((a, b) => a.capacity - b.capacity)
+    .map(row => ({ capacity: row.capacity, guests: this.copy().upToGuests.replace('{count}', String(row.capacity)), price: this.money(row.price) })));
 
   protected readonly portQuote = computed(() => this.copy().port.replace('{price}', this.money(NCC_PORT_PRICE)));
   protected readonly whatsappUrl = computed(() => {

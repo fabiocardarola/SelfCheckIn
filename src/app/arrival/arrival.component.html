@@ -27,7 +27,6 @@
           @if (option.price) { <strong class="price">{{ option.price }}</strong> }
           <p>{{ option.detail }}</p>
           @if (option.id === 'ncc') {
-            <p class="port-price">{{ portQuote() }}</p>
             <button type="button" class="transport-action" aria-haspopup="dialog" (click)="nccDialog.showModal()">{{ copy().nccInfo }}</button>
           }
           @if (option.id === 'freenow') {
@@ -54,10 +53,20 @@
 
 <dialog #nccDialog class="ncc-dialog" aria-labelledby="ncc-dialog-title" aria-describedby="ncc-dialog-description">
   <h2 id="ncc-dialog-title">{{ copy().ncc }}</h2>
+  <strong class="price booking-quote">{{ bookingQuote() }}</strong>
+  <p>{{ copy().luggage }}</p>
+  <table class="ncc-price-list">
+    <caption>{{ copy().nccInfo }} · FCO</caption>
+    <tbody>
+      @for (row of priceList(); track row.capacity) {
+        <tr><th scope="row">{{ row.guests }}</th><td>{{ row.price }}</td></tr>
+      }
+    </tbody>
+  </table>
+  <p class="port-price">{{ portQuote() }}</p>
   <p id="ncc-dialog-description">{{ copy().nccContact }}</p>
   @if (whatsappUrl(); as url) {
     <a class="transport-action whatsapp-action" [href]="url" target="_blank" rel="noopener noreferrer">{{ copy().whatsapp }}</a>
   }
-  <p class="host-phone">+39 346 109 8903</p>
   <button type="button" class="transport-action" autofocus (click)="nccDialog.close()">{{ copy().close }}</button>
 </dialog>

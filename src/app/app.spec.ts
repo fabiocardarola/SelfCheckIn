@@ -1,4 +1,4 @@
-import { TEST_BOOKING } from './testing/booking.fixture';
+import { TEST_BOOKING, TEST_PROGRESS } from './testing/booking.fixture';
 import { TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { App } from './app';
@@ -9,13 +9,23 @@ describe('App', () => {
     window.scrollTo = () => undefined;
     window.sessionStorage.clear();
     window.history.replaceState({}, '', '/?id=0&key=TESTPNR');
-    globalThis.fetch = async (url) => String(url).includes('sci_login')
-      ? Response.json({ success: true, token: 'test-token', booking: TEST_BOOKING })
+    let savedProgress = { ...TEST_PROGRESS, language: null as string | null, completedSteps: [] as number[] };
+    globalThis.fetch = async (url, options) => {
+      if (String(url).includes('sci_progress')) {
+        const body = JSON.parse(options!.body as string);
+        savedProgress = { ...savedProgress, ...(body.language ? { language: body.language } : {}),
+          completedSteps: body.step ? Array.from({ length: body.step }, (_, i) => i + 1) : savedProgress.completedSteps };
+        return Response.json({ success: true, progress: savedProgress });
+      }
+      if (String(url).includes('sci_privacy')) savedProgress.privacyAccepted = JSON.parse(options!.body as string).accepted;
+      return String(url).includes('sci_login')
+      ? Response.json({ success: true, progress: TEST_PROGRESS, token: 'test-token', booking: TEST_BOOKING })
       : String(url).includes('sci_guests')
       ? Response.json({ success: true, guests: [] })
       : String(url).includes('sci_privacy')
       ? Response.json({ success: true })
       : new Response('Codice,Descrizione,Provincia,DataFineVal\n100000100,ITALIA,ES,\n');
+    };
     await TestBed.configureTestingModule({
       imports: [App],
     }).compileComponents();
@@ -24,7 +34,7 @@ describe('App', () => {
   afterEach(() => window.history.replaceState({}, '', '/'));
 
   it('uses the server language and lets the guest change it', async () => {
-    globalThis.fetch = async () => Response.json({ success: true, token: 'token', booking: { ...TEST_BOOKING, lang: 'en' } });
+    globalThis.fetch = async () => Response.json({ success: true, progress: TEST_PROGRESS, token: 'token', booking: { ...TEST_BOOKING, lang: 'en' } });
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const element = fixture.nativeElement as HTMLElement;
@@ -157,6 +167,63 @@ describe('App', () => {
     await fixture.whenStable();
     expect(element.querySelector('.journey-screen')).toBeTruthy();
     expect(fetch).toHaveBeenCalledTimes(2);
+  });
+
+  it('resumes directly on the map with the saved language and completed steps', async () => {
+    const progress = { ...TEST_PROGRESS, language: 'en', privacyAccepted: true, completedSteps: [1, 2] };
+    globalThis.fetch = async () => Response.json({ success: true, token: 'token', booking: TEST_BOOKING, progress });
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+    expect(element.querySelector('.language-screen')).toBeNull();
+    expect(element.querySelector('.privacy-screen')).toBeNull();
+    expect(element.querySelector('h1')?.textContent).toContain('Four stops');
+    expect(element.querySelector('.progress-card')?.textContent).toContain('50%');
+    expect(Array.from(element.querySelectorAll<HTMLButtonElement>('.step-card')).map(b => b.disabled)).toEqual([false, false, false, true]);
+    element.querySelector<HTMLButtonElement>('.language-chip')!.click();
+    await fixture.whenStable();
+    element.querySelector<HTMLButtonElement>('.language-option')!.click();
+    await fixture.whenStable();
+    expect(element.querySelector('.journey-screen')).toBeTruthy();
+    expect(element.querySelector('.progress-card')?.textContent).toContain('50%');
+  });
+
+  it('keeps the privacy gate after a refusal and remembers the chosen language', async () => {
+    globalThis.fetch = async () => Response.json({ success: true, token: 'token', booking: TEST_BOOKING,
+      progress: { ...TEST_PROGRESS, language: 'fr', completedSteps: [1] } });
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+    expect(element.querySelector('.privacy-screen')).toBeTruthy();
+    expect(element.querySelector('.journey-screen')).toBeNull();
+    expect(element.querySelector('h1')?.textContent).toContain('vie privée');
+  });
+
+  it('does not unlock a step before saving succeeds and retries the same completion', async () => {
+    const progress = { ...TEST_PROGRESS, language: 'it', privacyAccepted: true, completedSteps: [1, 2] };
+    globalThis.fetch = async () => Response.json({ success: true, token: 'token', booking: TEST_BOOKING, progress });
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+    element.querySelectorAll<HTMLButtonElement>('.step-card')[2].click();
+    await fixture.whenStable();
+    let finish!: (response: Response) => void;
+    const fetch = vi.spyOn(globalThis, 'fetch').mockImplementation(() => new Promise(resolve => finish = resolve));
+    const button = element.querySelector<HTMLButtonElement>('.detail-actions .button-primary')!;
+    button.click(); button.click();
+    fixture.detectChanges();
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(element.querySelector('main')?.hasAttribute('inert')).toBe(true);
+    finish(Response.json({ success: false }, { status: 503 }));
+    await fixture.whenStable();
+    expect(element.querySelector('.journey-screen')).toBeNull();
+    await vi.waitFor(() => { fixture.detectChanges(); expect(element.querySelector('[role="alert"]')).toBeTruthy(); });
+    fetch.mockResolvedValue(Response.json({ success: true, progress: { ...progress, completedSteps: [1, 2, 3] } }));
+    element.querySelector<HTMLButtonElement>('.progress-dialog button')!.click();
+    await fixture.whenStable();
+    expect(element.querySelector('.progress-card')?.textContent).toContain('75%');
+    expect(element.querySelectorAll<HTMLButtonElement>('.step-card')[3].disabled).toBe(false);
+    expect(fetch.mock.calls.map(([, options]) => JSON.parse(options!.body as string))).toEqual([{ step: 3 }, { step: 3 }]);
   });
 
 });

@@ -35,15 +35,19 @@ describe('Arrival', () => {
     }
   });
 
-  it('renders the address first, six options and the NCC quote including luggage', async () => {
+  it('renders NCC before taxi with a starting price and keeps the booking quote in the modal', async () => {
     const fixture = TestBed.createComponent(ArrivalComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelector('section')?.firstElementChild?.textContent).toContain(DEMO_ARRIVAL.destination.address);
     expect(el.querySelectorAll('.transport-card')).toHaveLength(6);
     expect(el.querySelector('[data-mode="taxi"] a')?.getAttribute('href')).toBe('tel:+39063570');
-    expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('90');
-    expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('4 persone');
+    expect(Array.from(el.querySelectorAll('.transport-card')).slice(0, 2).map(card => card.getAttribute('data-mode'))).toEqual(['ncc', 'taxi']);
+    expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('Prezzi a partire da 80');
+    expect(el.querySelector('[data-mode="ncc"]')?.textContent).not.toContain('4 persone');
+    expect(el.querySelector('[data-mode="ncc"] button')?.textContent).toBe('Listino Prezzi');
+    expect(el.querySelector('dialog .booking-quote')?.textContent).toContain('90');
+    expect(el.querySelector('dialog .booking-quote')?.textContent).toContain('4 persone');
     expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('Bagagli inclusi');
     expect(el.querySelector('[data-mode="freenow"]')?.textContent).toContain('inseriscilo come destinazione');
     const uberLinks = el.querySelectorAll<HTMLAnchorElement>('[data-mode="uber"] a');
@@ -94,11 +98,15 @@ describe('Arrival', () => {
     expect(dialog.open).toBe(false);
     el.querySelector<HTMLButtonElement>('[data-mode="ncc"] button')!.click();
     expect(dialog.open).toBe(true);
-    expect(dialog.textContent).toContain('Contatta l’host');
+    expect(dialog.textContent).toContain('Chiedi al tuo host...');
+    expect(dialog.querySelector('a')?.textContent).toBe('Chiedi con whatsapp...');
+    expect(dialog.textContent).not.toContain('+39');
+    expect(Array.from(dialog.querySelectorAll('tbody th')).map(cell => cell.textContent)).toEqual(['Fino a 2 persone', 'Fino a 4 persone', 'Fino a 6 persone']);
+    expect(Array.from(dialog.querySelectorAll('tbody td')).map(cell => cell.textContent?.replace(/\s/g, ''))).toEqual(['80€', '90€', '100€']);
     const url = new URL(dialog.querySelector<HTMLAnchorElement>('a')!.href);
     expect(url.origin + url.pathname).toBe('https://wa.me/393461098903');
     expect(url.searchParams.get('text')).toBe('Sono Zoë & Mario, prenotazione numero PNR+123 con arrivo il 16 settembre 2026. Vorrei maggiori informazioni sul trasferimento con auto privata NCC.');
-    expect(el.querySelector('[data-mode="ncc"]')!.textContent).toContain('270');
+    expect(dialog.textContent).toContain('270');
     dialog.querySelector('button')!.click();
     expect(dialog.open).toBe(false);
   });
@@ -108,8 +116,8 @@ describe('Arrival', () => {
     fixture.componentRef.setInput('guestCount', 7);
     await fixture.whenStable();
     const card = fixture.nativeElement.querySelector('[data-mode="ncc"]') as HTMLElement;
-    expect(card.querySelector('.price')).toBeNull();
-    expect(card.textContent).toContain('Preventivo su richiesta');
+    expect(card.querySelector('.price')?.textContent).toContain('Prezzi a partire da 80');
+    expect(fixture.nativeElement.querySelector('dialog .booking-quote').textContent).toContain('Preventivo su richiesta');
     expect(card.querySelector('button')?.disabled).toBe(false);
   });
 
@@ -125,7 +133,7 @@ describe('Arrival', () => {
       expect(message).toContain(TEST_BOOKING.pnr);
       expect(message).toContain(ARRIVAL_COPY[language].unknownDate);
       expect(message).not.toMatch(/\{name\}|\{pnr\}|\{date\}|undefined/);
-      expect(el.querySelector('dialog p')!.textContent).toBe(ARRIVAL_COPY[language].nccContact);
+      expect(el.querySelector('#ncc-dialog-description')!.textContent).toBe(ARRIVAL_COPY[language].nccContact);
     }
   });
 
