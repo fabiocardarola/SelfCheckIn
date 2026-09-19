@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { BookingService } from './booking.service';
+import { API_BASE_URL } from './api.config';
 import { TEST_BOOKING } from './testing/booking.fixture';
 
 describe('BookingService', () => {
@@ -16,10 +17,11 @@ describe('BookingService', () => {
     const service = TestBed.inject(BookingService);
     await service.login();
     expect(service.status()).toBe('ready');
+    expect(fetch.mock.calls[0][0]).toBe(`${API_BASE_URL}/sci_login`);
     expect(JSON.parse(fetch.mock.calls[0][1]!.body as string)).toEqual({ pnr: 'TESTPNR' });
     await service.request('sci_booking');
     expect(fetch.mock.calls[1][1]!.headers).toMatchObject({ Authorization: 'Bearer secret-token' });
-    expect(fetch.mock.calls[1][0]).toBe('/hhapi/sci_booking');
+    expect(fetch.mock.calls[1][0]).toBe(`${API_BASE_URL}/sci_booking`);
   });
 
   it('does not load simulated data or call the server when the key is missing', async () => {

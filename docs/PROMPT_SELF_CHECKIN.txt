@@ -366,3 +366,7 @@ La classe con i dati nel codice è in:
 Mi verifichi la fattibilità di far utilizzare a questa classe i codici nel database piuttosto che averli scritti nel codice stesso.
 Non fare la modifica, verifica solo la fattibilità.
 
+Diciamo che è ok, allora mi verifichi anche per i codici comuni se si riesce ad utilizzare il database piuttosto che i codici scritti nel codice java ?
+
+Ok procedi con stati e comuni letti da database invece che da codice i file txt.
+

@@ -1,5 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Injectable, inject, signal } from '@angular/core';
+import { API_BASE_URL } from './api.config';
 
 export interface Booking {
   fkbooking: number; pnr: string; customer: string; people: number; nights: number;
@@ -22,7 +23,7 @@ export class BookingService {
     const pnr = new URL(this.document.location.href).searchParams.get('key')?.trim();
     if (!pnr || pnr.length > 80) { this.status.set('bad-code'); return; }
     try {
-      const response = await fetch('/hhapi/sci_login', {
+      const response = await fetch(`${API_BASE_URL}/sci_login`, {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ pnr }), cache: 'no-store', signal: AbortSignal.timeout(15000)
       });
@@ -42,7 +43,7 @@ export class BookingService {
   /** All future guest API calls go through this method to include the guest token. */
   async request<T>(method: `sci_${string}`, body: Record<string, unknown> = {}): Promise<T> {
     if (!this.token || !/^sci_[a-z_]+$/.test(method) || method === 'sci_login') throw new Error('Invalid authenticated request');
-    const response = await fetch(`/hhapi/${method}`, {
+    const response = await fetch(`${API_BASE_URL}/${method}`, {
       method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${this.token}` },
       body: JSON.stringify(body), cache: 'no-store', signal: AbortSignal.timeout(15000)
     });
