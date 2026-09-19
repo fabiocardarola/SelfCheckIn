@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { ArrivalComponent } from './arrival.component';
 import { DEMO_ARRIVAL, directionsUrl, FREENOW_APP_URL, FREENOW_WEB_URL, nccQuote, uberUrl } from './arrival-config';
+import { TEST_BOOKING } from '../testing/booking.fixture';
 import { ARRIVAL_COPY } from './arrival-copy';
 
 describe('Arrival', () => {
@@ -25,24 +26,25 @@ describe('Arrival', () => {
     }
   });
 
-  it('selects a simulated vehicle price by booking size and handles unsupported groups', () => {
-    expect(nccQuote(DEMO_ARRIVAL, 4)).toBe(70);
-    expect(nccQuote(DEMO_ARRIVAL, 5)).toBe(95);
-    expect(nccQuote(DEMO_ARRIVAL, 8)).toBe(95);
-    expect(nccQuote(DEMO_ARRIVAL, 9)).toBeNull();
-    expect(nccQuote(DEMO_ARRIVAL, 0)).toBeNull();
+  it('selects the requested NCC tariff by booking size and handles unsupported groups', () => {
+    for (const [guests, price] of [[1, 80], [2, 80], [3, 90], [4, 90], [5, 100], [6, 100]]) {
+      expect(nccQuote(DEMO_ARRIVAL, guests)).toBe(price);
+    }
+    for (const guests of [7, 8, 0, -1, 1.5, NaN]) {
+      expect(nccQuote(DEMO_ARRIVAL, guests)).toBeNull();
+    }
   });
 
-  it('renders the address first, six options and an honest simulated quote', async () => {
+  it('renders the address first, six options and the NCC quote including luggage', async () => {
     const fixture = TestBed.createComponent(ArrivalComponent);
     await fixture.whenStable();
     const el = fixture.nativeElement as HTMLElement;
     expect(el.querySelector('section')?.firstElementChild?.textContent).toContain(DEMO_ARRIVAL.destination.address);
     expect(el.querySelectorAll('.transport-card')).toHaveLength(6);
     expect(el.querySelector('[data-mode="taxi"] a')?.getAttribute('href')).toBe('tel:+39063570');
-    expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('70');
+    expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('90');
     expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('4 persone');
-    expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('Preventivo simulato');
+    expect(el.querySelector('[data-mode="ncc"]')?.textContent).toContain('Bagagli inclusi');
     expect(el.querySelector('[data-mode="freenow"]')?.textContent).toContain('inseriscilo come destinazione');
     const uberLinks = el.querySelectorAll<HTMLAnchorElement>('[data-mode="uber"] a');
     expect(uberLinks).toHaveLength(2);
@@ -77,6 +79,53 @@ describe('Arrival', () => {
       expect(el.querySelector('h2')?.textContent).toBe(ARRIVAL_COPY[language].title);
       expect(el.textContent).not.toMatch(/\{count\}|\{price\}|undefined/);
       expect(el.querySelectorAll('.transport-card')).toHaveLength(6);
+    }
+  });
+
+  it('opens and closes the NCC modal and prefills WhatsApp with the actual booking', async () => {
+    const fixture = TestBed.createComponent(ArrivalComponent);
+    fixture.componentRef.setInput('booking', { ...TEST_BOOKING, customer: 'Zoë & Mario', pnr: 'PNR+123' });
+    await fixture.whenStable();
+    const el = fixture.nativeElement as HTMLElement;
+    const dialog = el.querySelector('dialog')!;
+    // jsdom does not implement the browser's native dialog methods.
+    dialog.showModal = () => dialog.setAttribute('open', '');
+    dialog.close = () => dialog.removeAttribute('open');
+    expect(dialog.open).toBe(false);
+    el.querySelector<HTMLButtonElement>('[data-mode="ncc"] button')!.click();
+    expect(dialog.open).toBe(true);
+    expect(dialog.textContent).toContain('Contatta l’host');
+    const url = new URL(dialog.querySelector<HTMLAnchorElement>('a')!.href);
+    expect(url.origin + url.pathname).toBe('https://wa.me/393461098903');
+    expect(url.searchParams.get('text')).toBe('Sono Zoë & Mario, prenotazione numero PNR+123 con arrivo il 16 settembre 2026. Vorrei maggiori informazioni sul trasferimento con auto privata NCC.');
+    expect(el.querySelector('[data-mode="ncc"]')!.textContent).toContain('270');
+    dialog.querySelector('button')!.click();
+    expect(dialog.open).toBe(false);
+  });
+
+  it('offers host contact without inventing an FCO price for more than six guests', async () => {
+    const fixture = TestBed.createComponent(ArrivalComponent);
+    fixture.componentRef.setInput('guestCount', 7);
+    await fixture.whenStable();
+    const card = fixture.nativeElement.querySelector('[data-mode="ncc"]') as HTMLElement;
+    expect(card.querySelector('.price')).toBeNull();
+    expect(card.textContent).toContain('Preventivo su richiesta');
+    expect(card.querySelector('button')?.disabled).toBe(false);
+  });
+
+  it('localizes the WhatsApp message and handles a missing arrival date', async () => {
+    const fixture = TestBed.createComponent(ArrivalComponent);
+    fixture.componentRef.setInput('booking', { ...TEST_BOOKING, host_arrival: null });
+    for (const language of Object.keys(ARRIVAL_COPY) as (keyof typeof ARRIVAL_COPY)[]) {
+      fixture.componentRef.setInput('language', language);
+      await fixture.whenStable();
+      const el = fixture.nativeElement as HTMLElement;
+      const message = new URL(el.querySelector<HTMLAnchorElement>('dialog a')!.href).searchParams.get('text')!;
+      expect(message).toContain(TEST_BOOKING.customer);
+      expect(message).toContain(TEST_BOOKING.pnr);
+      expect(message).toContain(ARRIVAL_COPY[language].unknownDate);
+      expect(message).not.toMatch(/\{name\}|\{pnr\}|\{date\}|undefined/);
+      expect(el.querySelector('dialog p')!.textContent).toBe(ARRIVAL_COPY[language].nccContact);
     }
   });
 

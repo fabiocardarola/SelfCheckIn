@@ -30,3 +30,11 @@ h3 { font-size: 18px; line-height: 1.25; }
 .complete-button { color: white; background: var(--green); }
 .map-button { background: transparent; color: var(--green-dark); }
 @media (max-width: 350px) { .address-card { padding: 18px 15px; } .transport-card { padding: 14px; } }
+
+.port-price { margin-top: 10px; font-weight: 650; }
+.ncc-dialog { box-sizing: border-box; width: min(420px, calc(100% - 32px)); max-height: calc(100dvh - 48px); overflow-y: auto; margin: auto; padding: 24px; border: 1px solid var(--line); border-radius: 22px; background: var(--cream); color: var(--green-dark); }
+.ncc-dialog::backdrop { background: rgb(16 35 28 / 55%); }
+.ncc-dialog p { overflow-wrap: anywhere; font-size: 16px; }
+.ncc-dialog h2 { margin-bottom: 16px; }
+.whatsapp-action { background: var(--green); color: white; }
+.host-phone { margin-top: 12px; text-align: center; }

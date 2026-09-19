@@ -16,8 +16,8 @@ export const DEMO_ARRIVAL: ArrivalConfig = {
   origin: { address: 'Fiumicino Airport (FCO), Roma, Italia', latitude: 41.7999, longitude: 12.2462 },
   enabled: { taxi: true, ncc: true, uber: true, freenow: true, transit: true, walking: true },
   taxi: { flatRate: 55, phone: '+39 06 3570' },
-  // Prezzi dimostrativi per veicolo, non tariffe di un operatore NCC.
-  ncc: [{ capacity: 4, price: 70 }, { capacity: 8, price: 95 }]
+  // Tariffe NCC da FCO, bagagli inclusi (RICHIESTA 018).
+  ncc: [{ capacity: 2, price: 80 }, { capacity: 4, price: 90 }, { capacity: 6, price: 100 }]
 };
 
 export function nccQuote(config: ArrivalConfig, guests: number): number | null {
@@ -52,3 +52,6 @@ export function uberUrl(config: ArrivalConfig, fromFco = true): string {
 // The provider handles app/store/web routing; no documented destination parameters.
 export const FREENOW_APP_URL = 'https://m.free-now.com/JGMc';
 export const FREENOW_WEB_URL = 'https://www.free-now.com/';
+
+export const NCC_PORT_PRICE = 270;
+export const NCC_WHATSAPP_PHONE = '393461098903';

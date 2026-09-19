@@ -192,7 +192,7 @@
       </section>
     }
     @case ('arrival') {
-      <app-arrival [config]="arrivalConfig()" [guestCount]="booking()!.people" [language]="selectedLanguage() ?? 'it'" (completed)="completeStep(2)" (cancelled)="goTo('journey')" />
+      <app-arrival [booking]="booking()!" [config]="arrivalConfig()" [guestCount]="booking()!.people" [language]="selectedLanguage() ?? 'it'" (completed)="completeStep(2)" (cancelled)="goTo('journey')" />
     }
 
     @case ('registration') {

@@ -26,6 +26,10 @@
         @if (option.enabled) {
           @if (option.price) { <strong class="price">{{ option.price }}</strong> }
           <p>{{ option.detail }}</p>
+          @if (option.id === 'ncc') {
+            <p class="port-price">{{ portQuote() }}</p>
+            <button type="button" class="transport-action" aria-haspopup="dialog" (click)="nccDialog.showModal()">{{ copy().nccInfo }}</button>
+          }
           @if (option.id === 'freenow') {
             <a class="transport-action" [href]="option.href" rel="noopener noreferrer">{{ option.action }} <span aria-hidden="true">↗</span></a>
             <a class="transport-action" [href]="freeNowWebsite" target="_blank" rel="noopener noreferrer">{{ copy().freeNowWeb }}</a>
@@ -47,3 +51,13 @@
     <button type="button" class="map-button" (click)="cancelled.emit()">{{ copy().back }}</button>
   </footer>
 </section>
+
+<dialog #nccDialog class="ncc-dialog" aria-labelledby="ncc-dialog-title" aria-describedby="ncc-dialog-description">
+  <h2 id="ncc-dialog-title">{{ copy().ncc }}</h2>
+  <p id="ncc-dialog-description">{{ copy().nccContact }}</p>
+  @if (whatsappUrl(); as url) {
+    <a class="transport-action whatsapp-action" [href]="url" target="_blank" rel="noopener noreferrer">{{ copy().whatsapp }}</a>
+  }
+  <p class="host-phone">+39 346 109 8903</p>
+  <button type="button" class="transport-action" autofocus (click)="nccDialog.close()">{{ copy().close }}</button>
+</dialog>
