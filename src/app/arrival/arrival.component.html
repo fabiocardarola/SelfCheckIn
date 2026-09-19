@@ -1,0 +1,49 @@
+<section class="arrival-screen" aria-labelledby="arrival-title">
+  <div class="address-card">
+    <span class="eyebrow">📍 {{ copy().address }}</span>
+    <h1 id="arrival-title">{{ config().destination.address }}</h1>
+    <p>{{ copy().showDriver }}</p>
+    <button type="button" class="address-copy" (click)="copyAddress()">{{ copy().copy }}</button>
+    <span class="copy-status" role="status">
+      @if (copyState() === 'copied') { {{ copy().copied }} }
+      @if (copyState() === 'failed') { {{ copy().copyFailed }} }
+    </span>
+  </div>
+
+  <div class="transport-heading">
+    <h2>{{ copy().title }}</h2>
+    <p>{{ copy().origin }}</p>
+    <span class="guest-label">{{ guestLabel() }}</span>
+  </div>
+
+  <div class="transport-list">
+    @for (option of options(); track option.id) {
+      <article class="transport-card" [class.unavailable]="!option.enabled" [attr.data-mode]="option.id" [attr.aria-labelledby]="'transport-' + option.id">
+        <div class="card-heading">
+          <span class="transport-icon" aria-hidden="true">{{ option.icon }}</span>
+          <h3 [id]="'transport-' + option.id">{{ option.title }}</h3>
+        </div>
+        @if (option.enabled) {
+          @if (option.price) { <strong class="price">{{ option.price }}</strong> }
+          <p>{{ option.detail }}</p>
+          @if (option.id === 'freenow') {
+            <a class="transport-action" [href]="option.href" rel="noopener noreferrer">{{ option.action }} <span aria-hidden="true">↗</span></a>
+            <a class="transport-action" [href]="freeNowWebsite" target="_blank" rel="noopener noreferrer">{{ copy().freeNowWeb }}</a>
+          } @else if (option.href) {
+            <a class="transport-action" [href]="option.href" [attr.target]="option.id === 'taxi' || option.id === 'uber' ? null : '_blank'" rel="noopener noreferrer">{{ option.action }} <span aria-hidden="true">↗</span></a>
+          }
+          @if (option.id === 'uber') {
+            <a class="transport-action" [href]="uberCurrentUrl()">{{ copy().uberCurrent }} <span aria-hidden="true">↗</span></a>
+          }
+        } @else {
+          <p>{{ copy().unavailable }}</p>
+          <button class="transport-action" type="button" disabled>{{ option.action || option.title }}</button>
+        }
+      </article>
+    }
+  </div>
+  <footer class="arrival-actions">
+    <button type="button" class="complete-button" (click)="completed.emit()">{{ copy().arrived }} <span aria-hidden="true">→</span></button>
+    <button type="button" class="map-button" (click)="cancelled.emit()">{{ copy().back }}</button>
+  </footer>
+</section>

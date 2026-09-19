@@ -1,0 +1,109 @@
+<section class="registration-screen" [class.form-mode]="mode() === 'form'">
+  @if (mode() === 'intro') {
+    <button class="intro-back" type="button" (click)="cancelled.emit()">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>{{ copy().back }}
+    </button>
+    <div class="registration-hero" aria-hidden="true">
+      <svg viewBox="0 0 170 120"><path class="hero-blob" d="M18 69C8 40 39 14 67 27c19-25 64-16 69 16 29 5 30 45 6 57-29 15-113 3-124-31Z"/><path class="hero-passport" d="M50 20h62c7 0 13 6 13 13v69H60c-6 0-10-4-10-10Z"/><path class="hero-page" d="M60 30h65v72H60c-6 0-10-4-10-10V40c0-6 4-10 10-10Z"/><circle cx="88" cy="59" r="14"/><path class="hero-line" d="M74 59h28M88 45c-7 7-7 21 0 28M88 45c7 7 7 21 0 28M72 87h34"/><path class="hero-person" d="M111 69h28v34h-28z"/><circle class="hero-face" cx="125" cy="80" r="6"/><path class="hero-line" d="M116 95c3-8 15-8 18 0"/></svg>
+    </div>
+    <div class="intro-heading">
+      <span class="reg-eyebrow">{{ copy().registrationEyebrow }}</span>
+      <h1>{{ copy().introTitle }}</h1>
+    </div>
+    <div class="reservation-card">
+      <div class="reservation-name"><span>{{ initials() }}</span><div><small>{{ copy().bookingName }}</small><strong>{{ booking().customer }}</strong></div></div>
+      <div class="reservation-facts">
+        <div><small>{{ copy().stay }}</small><strong>{{ stayLabel() }}</strong></div>
+        <div><small>{{ copy().guestCount }}</small><strong>{{ totalGuests }}</strong></div>
+      </div>
+    </div>
+    <div class="law-card">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5m0 4h.01"/><circle cx="12" cy="12" r="9"/></svg>
+      <div><p>{{ copy().lawText }}</p><p>{{ text(copy().bookingText, { total: totalGuests, profiles: totalGuests - 1 }) }}</p></div>
+    </div>
+    <p class="start-prompt">{{ copy().pressStart }}</p>
+    <button class="reg-primary start-button" type="button" (click)="start()">{{ copy().start }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
+  } @else {
+    <nav class="form-nav" aria-label="Guest form navigation">
+      <button class="nav-side" type="button" (click)="previous()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span>{{ copy().back }}</span></button>
+      <button class="nav-save" type="button" (click)="finish()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l2 2v14H5zM8 4v6h8V4M8 20v-6h8v6"/></svg><span>{{ copy().finish }}</span></button>
+      <button class="nav-side nav-next" [class.is-ready]="isCurrentComplete()" type="button" (click)="next()"><span>{{ copy().next }}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+    </nav>
+
+    <div class="guest-progress">
+      <div><span>{{ text(copy().guestTitle, { current: guestIndex() + 1, total: totalGuests }) }}</span><strong>{{ registeredCount() }}/{{ totalGuests }} {{ copy().registered }}</strong></div>
+      <div class="guest-progress-track"><span [style.width.%]="((guestIndex() + 1) / totalGuests) * 100"></span></div>
+    </div>
+
+    <header class="guest-heading">
+      <span class="guest-badge">{{ guestIndex() + 1 }}</span>
+      <div><span class="reg-eyebrow">{{ guestIndex() === 0 ? copy().holder : copy().companion }}</span><h1>{{ text(copy().guestTitle, { current: guestIndex() + 1, total: totalGuests }) }}</h1><p>{{ copy().formHint }}</p></div>
+    </header>
+
+    <form class="guest-form" (submit)="$event.preventDefault()" novalidate>
+      <label class="form-field"><span>{{ copy().surname }} *</span><input autocomplete="family-name" [value]="currentGuest().surname" (input)="updateAlpha('surname', $event)" /></label>
+      <label class="form-field"><span>{{ copy().name }} *</span><input autocomplete="given-name" [value]="currentGuest().name" (input)="updateAlpha('name', $event)" /></label>
+
+      <fieldset class="form-field gender-field"><legend>{{ copy().gender }} *</legend><div class="choice-row">
+        <button type="button" [class.selected]="currentGuest().gender === 'M'" (click)="updateGuest('gender', 'M')"><span aria-hidden="true">♂</span>{{ copy().male }}</button>
+        <button type="button" [class.selected]="currentGuest().gender === 'F'" (click)="updateGuest('gender', 'F')"><span aria-hidden="true">♀</span>{{ copy().female }}</button>
+      </div></fieldset>
+
+      <div class="form-field"><span>{{ copy().birthDate }} *</span><button class="picker-field" type="button" (click)="openDate()"><span class="picker-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 3v4m10-4v4M3 10h18"/></svg></span><strong [class.placeholder]="!currentGuest().birthDateLabel">{{ currentGuest().birthDateLabel || '???' }}</strong><svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button></div>
+
+      <div class="form-field"><span>{{ copy().nationality }} *</span><button class="picker-field" type="button" (click)="openPicker('nationality')"><span class="picker-icon">🌍</span><strong [class.placeholder]="!currentGuest().nationality">{{ currentGuest().nationality || copy().choose }}</strong><svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button><input type="hidden" name="nationalityCode" [value]="currentGuest().nationalityCode" /></div>
+
+      @if (isItaly()) {
+        <div class="form-field animate-in"><span>{{ copy().birthPlace }} *</span><button class="picker-field" type="button" (click)="openPicker('birthPlace')"><span class="picker-icon">📍</span><strong [class.placeholder]="!currentGuest().birthPlace">{{ currentGuest().birthPlace || copy().choose }}</strong><svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button><input type="hidden" name="birthPlaceCode" [value]="currentGuest().birthPlaceCode" /></div>
+      }
+
+      @if (guestIndex() === 0) {
+        <div class="form-separator"><span>{{ copy().documentType }}</span></div>
+        <div class="form-field"><span>{{ copy().documentType }} *</span><button class="picker-field" type="button" (click)="openDocumentTypes()"><span class="picker-icon">🪪</span><strong [class.placeholder]="!currentGuest().documentType">{{ currentGuest().documentType || copy().choose }}</strong><svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button><input type="hidden" name="documentTypeCode" [value]="currentGuest().documentTypeCode" /></div>
+        <label class="form-field"><span>{{ copy().documentNumber }} *</span><input autocomplete="off" inputmode="text" [value]="currentGuest().documentNumber" (input)="updateDocumentNumber($event)" /></label>
+      }
+    </form>
+  }
+</section>
+
+@if (modal()) {
+  <div class="modal-backdrop" role="presentation">
+    <section class="modal-sheet animate-sheet" role="dialog" aria-modal="true">
+      @if (modal() === 'date') {
+        <header class="modal-header"><div><span class="reg-eyebrow">{{ copy().dateTitle }}</span><h2>{{ dateStep() === 1 ? copy().dayPrompt : dateStep() === 2 ? copy().monthPrompt : copy().yearPrompt }}</h2></div><button type="button" (click)="modal.set(null)" [attr.aria-label]="copy().cancel">×</button></header>
+        <div class="wizard-dots"><span [class.active]="dateStep() >= 1"></span><span [class.active]="dateStep() >= 2"></span><span [class.active]="dateStep() >= 3"></span></div>
+        <div class="date-content">
+          @if (dateStep() === 1) { <input class="number-entry" inputmode="numeric" pattern="[0-9]*" [placeholder]="copy().dayPlaceholder" [value]="dateDay()" (input)="setDateNumber('day', $any($event.target).value)" /> }
+          @if (dateStep() === 2) { <div class="month-grid">@for (month of months(); track month.value) { <button type="button" [class.selected]="dateMonth() === month.value" (click)="selectMonth(month.value)">{{ month.label }}</button> }</div> }
+          @if (dateStep() === 3) { <input class="number-entry" inputmode="numeric" pattern="[0-9]*" [placeholder]="copy().yearPlaceholder" [value]="dateYear()" (input)="setDateNumber('year', $any($event.target).value)" /> }
+          @if (dateError()) { <p class="inline-error" role="alert">{{ dateError() }}</p> }
+        </div>
+        <button class="reg-primary modal-primary" type="button" (click)="dateNext()">{{ copy().next }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
+      }
+
+      @if (modal() === 'nationality' || modal() === 'birthPlace') {
+        <header class="modal-header"><div><span class="reg-eyebrow">{{ copy().registrationEyebrow }}</span><h2>{{ modal() === 'nationality' ? copy().countryTitle : copy().birthPlaceTitle }}</h2></div><button type="button" (click)="modal.set(null)" [attr.aria-label]="copy().cancel">×</button></header>
+        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input [placeholder]="modal() === 'nationality' ? copy().countrySearch : copy().birthPlaceSearch" [ngModel]="searchQuery()" (ngModelChange)="searchQuery.set($event)" /></label>
+        <div class="results-list">
+          @if (listsLoading()) { <p class="empty-result">{{ copy().loading }}</p> }
+          @for (item of filteredItems(); track item.code) { <button type="button" (click)="selectCodeItem(item)"><span>{{ item.description }}</span><small>{{ item.code }}</small></button> } @empty { @if (!listsLoading()) { <p class="empty-result">{{ copy().noResults }}</p> } }
+        </div>
+        <button class="modal-cancel" type="button" (click)="modal.set(null)">{{ copy().cancel }}</button>
+      }
+
+      @if (modal() === 'documentType') {
+        <header class="modal-header"><div><span class="reg-eyebrow">{{ copy().registrationEyebrow }}</span><h2>{{ copy().docTypeTitle }}</h2></div><button type="button" (click)="modal.set(null)" [attr.aria-label]="copy().cancel">×</button></header>
+        <div class="document-grid">
+          @for (document of documentTypes(); track document.code) { <button type="button" [class.selected]="selectedDocumentCode() === document.code" (click)="selectedDocumentCode.set(document.code)"><strong>{{ document.description }}</strong><small>{{ document.code }}</small></button> }
+        </div>
+        <div class="modal-actions"><button class="modal-cancel" type="button" (click)="modal.set(null)">{{ copy().cancel }}</button><button class="reg-primary" type="button" [disabled]="!selectedDocumentCode()" (click)="confirmDocumentType()">{{ copy().confirm }}</button></div>
+      }
+
+      @if (modal() === 'alert') {
+        <div class="alert-icon" aria-hidden="true">{{ alertCompletesRegistration() ? '✓' : '!' }}</div>
+        <div class="alert-copy"><h2>{{ alertTitle() }}</h2><p>{{ alertMessage() }}</p>@if (alertItems().length) { <ul>@for (item of alertItems(); track item) { <li>{{ item }}</li> }</ul> }</div>
+        <button class="reg-primary modal-primary" type="button" (click)="closeAlert()">{{ copy().ok }}</button>
+      }
+    </section>
+  </div>
+}

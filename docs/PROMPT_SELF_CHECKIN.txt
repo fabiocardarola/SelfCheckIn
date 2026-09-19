@@ -1,0 +1,312 @@
+PROMPT SELF CHECK-IN TURISTI
+
+Il self check-in è realizzato con un link web che visualizza una o più schermate interattive che guidano il turista nei 4 step necessari a guidarlo ad entrare in appartamento. Le schermate interattive saranno realizzate in Angular e comunicheranno con un backend in Java NetBeans.
+
+Per prima cosa il turista viene invitato a scegliere la lingua tra: italiano; inglese; polacco; francese; tedesco; spagnolo; portoghese; coreano; giapponese; cinese.
+
+Una volta scelta la lingua da questo momento in poi tutti i messaggi saranno nella lingua che ha scelto.
+
+Dopo la scelta della lingua gli viene visualizzata una schermata per la privacy e gli viene chiesto di accettare o meno la privacy, può accettare con si o no, un'altro bottone con la freccia verso sinistra gli permetterà di tornare indietro a scegliere una nuova lingua.
+
+Se non accetta viene visualizzata una nuova schermata dove il turista viene informato che non può proseguire, nella schermata ci sarà un bottone con la freccia verso sinistra gli permetterà di tornare indietro nel caso ci ripensasse.
+
+Se invece accetta viene visualizzata una mappa con 4 tappe, tipo mappa del tesoro, dove appunto ogni tappa è uno step del self check-in. La raffigurazione di questa mappa dovrà essere realizzata con vignette carine tipo fumetto per i 4 step dove ogni step sarà un bottone che attiverà le schermate specifiche per quel passaggio che guideranno appunto il turista passo dopo passo. Il percorso da uno step a l'altro sarà raffigurato con una linea tratteggiato che termina con una freccia allo step successivo. Ci sarà anche un bottone con la freccia verso sinistra gli permetterà di tornare indietro.
+
+Il primo step è quello della registrazione dei passaporti e quindi il bottone che lo raffigurerà dovrà essere rappresentativo di un passaporto. Finché questo step non viene concluso non si potrà procedere con gli step successivi. Se il turista premerà questo bottone si aprirà una schermata che definiremo in seguito ma comunque ci sarà un bottone con la freccia verso sinistra gli permetterà di tornare indietro.
+
+Il secondo step è quello delle istruzioni per raggiungere l'appartamento e il bottone che lo raffigurerà dovrà essere rappresentativo di un taxi su una mappa, sempre tipo vignetta/fumetto. Se il turista premerà questo bottone si aprirà una schermata che definiremo in seguito ma comunque ci sarà un bottone con la freccia verso sinistra gli permetterà di tornare indietro. 
+
+Il terzo step è quello dell'apertura del portone in strada e il bottone che lo raffigurerà dovrà essere rappresentativo di un portone di un edificio.  Se il turista premerà questo bottone si aprirà una schermata che definiremo in seguito ma comunque ci sarà un bottone con la freccia verso sinistra gli permetterà di tornare indietro.
+
+Il quarto e ultimo step sarà quello del recupero delle chiavi e il bottone che lo rappresenterà sarà rappresentativo di una piccola box nera con dentro le chiavi. Se il turista premerà questo bottone si aprirà una schermata che definiremo in seguito ma comunque ci sarà un bottone con la freccia verso sinistra gli permetterà di tornare indietro.
+
+=====================
+RICHIESTA 001
+
+Come prima fase mi devi generare da zero una applicazione Angular in questo folder:
+/Users/fabiocardarola/Documents/ProgettiAngular/SelfCheckIn/
+
+che simuli quanto descritto precedentemente, per ora non ci sarà nessuna interazione con il server di backend.
+Nelle prossime fasi verranno utilizzati degli oggetti come bottoni, combo, eccetera, per questi potrai utilizzare gli oggetti di un template Angular che si trova in:
+/Users/fabiocardarola/Documents/ProgettiAngular/HHAdmin/template/
+
+Mi realizza una prima versione ?
+
+Il layout deve essere progettato e ottimizzato per la visualizzazione su smartphone Android e iPhone, non per l'utilizzo su PC. Prestare quindi particolare attenzione alle dimensioni dello schermo, alle aree sicure del dispositivo e alla facilità di interazione tramite touch.
+
+
+=====================
+RICHIESTA 002
+
+Ho visto che hai messo come nome "HomeStay", cambialo in "HelloHost".
+Inoltre la schermata della mappa con i 4 step non deve essere scrollabile ma i 4 step devono entrare tutti nella stessa schermata, ho notato che spesso i turisti non scorrono le pagine
+
+=====================
+RICHIESTA 003
+
+Nella schermata della mappa con i 4 step ho visto che c'è molto spazio in ognuna delle 4 card sia sotto che sopra, cerca di compattare in modo che ci sia più spazio per rappresentare le frecce tratteggiate altrimenti non si capisce bene che è un percorso
+
+=====================
+RICHIESTA 004
+
+Adesso procediamo con il primo step ovvero la registrazione dei documenti degli ospiti. Per il momento procediamo sempre simulando una prenotazione fatta da “Fabio Cardarola” per 4 persone dal 16 Settembre 2026 al 22 Settembre 2026. I dati per la prenotazione  li andremo a recuperare successivamente dal server restapi ma per ora fai una simulazione.
+Quando il turista premerà il bottone del primo step dovrai far apparire una schermata con il seguente testo nella lingua che ha scelto il turista:
+
+Per la legge Italiana sul turismo è obbligatoria la registrazione del un documento di identità della persona che ha prenotato, per gli altri componenti è necessario registrare solo i dati anagrafici purché di età maggiore di 10 anni.
+Nella tua prenotazione risultano <numero di persone> ospiti quindi dovrai registrare un documento di identità e <numero di persone - 1> documenti anagrafici purché di età maggiore di 10 anni.
+Premi il bottone qui sotto per iniziare:
+
+Sotto questo  testo metti un bottone “Inizia” che se premuto farai apparire una nuova schermata per la registrazione del documento di identità della prima persona, in alto ci saranno in questa schermata e in quelle successive tre bottoni grandi per andare avanti o per tornare indietro e un bottone centrale con scritto “Ho finito, salva i dati”. Il bottone grande per tornare indietro di troverà a sinistra della schermata e il bottone grande per andare avanti si troverà a destra della schermata. I bottoni dovranno risultare sempre visibili anche se il turista fa lo scroll in verticale della schermata.
+Se il turista preme il bottone grande per andare avanti devi effettuare i seguenti controlli:
+- che tutti i campi del form di registrazione siano stati compilati, in caso contrario devi far apparire un popup indicando quali informazioni non sono state ancora compilate
+- che la data di nascita corrisponda ad una persona più grande di 10 anni.
+- se il numero di dati registrati corrisponde al numero di persone della prenotazione allora visualizza un popup con scritto nella lingua scelta dal turista “Ok hai registrato tutti i dati, adesso prosegui con gli altri step.” Il bottone “OK” su questo popup riporterà il turista sulla schermata della mappa andando quindi ad abilitare lo step successivo. In caso contrario visualizza la schermata dei dati anagrafici del componente successivo.
+
+Ecco quali sono le informazioni da registrare per il documento di identità del primo componente:
+
+- Cognome
+- Nome
+- sesso, maschio/femmina
+- data di nascita
+- Nazionalità
+- tipo di documento
+- numero del documento
+
+La registrazione del nome e del cognome prevede solo i caratteri alfabetici dalla A alla Z senza caratteri accentati o altri caratteri tipici dei turisti stranieri. Questi caratteri particolari quindi andranno convertiti nei rispettivi caratteri alfabetici dalla A alla Z.
+
+La compilazione della data di nascita può risultare complicata per alcuni turisti quindi direi di non far apparire il classico datepicker. Apparirà un bottone con icona carica rappresentativa per il calendario e accanto, inizialmente, 3 punti interrogativi. Quando il turista premerà il bottone apparirà un popup per  guidare il turista alla compilazione in 3 step come segue:
+- primo step, il turista deve specificare il giorno di nascita e quindi deve apparire sul cellulare un campo con il tastierino per scrivere i soli numeri, un bottone “Avanti” permetterà al turista di andare allo step successivo ma solo se ha messo un valore numerico compreso fra 1 e 31.
+- secondo step, il turista deve specificare il mese di nascita, in questo caso invece della classica combo devono essere visualizzati nella lingua scelta dal turista i 12 mesi come dei bottoni, un bottone “Avanti” permetterà al turista di andare allo step successivo ma solo se ha selezionato il mese
+- terzo e ultimo step, anche qui deve apparire  sul cellulare un campo con il tastierino per scrivere i soli numeri, un bottone “Avanti” permetterà al turista di andare allo step successivo ma solo se ha messo un valore numerico che stabilisca una età del turista maggiore di 10 anni e minore di 110 anni.
+Terminato quindi il wizard il popup sparirà e accanto al bottone apparirà la data inserita al posto dei 3 punti interrogativi di prima. La data dovrà essere nel formato relativo alla lingua scelta dal turista e con il mese scritto per esteso. Mi sembra che sia per tutte le lingue nel formato giorno/mese/anno tranne per la lingua inglese che è nel formato mese/giorno/anno, verifica.
+
+Per il campo nazionalità deve essere possibile con un popup scegliere da un elenco di nazioni da un file di codici/descrizione. Ti allego il file da cui estrapolare l’elenco. Il turista scriverà dei caratteri che serviranno a far apparire un elenco filtrato appunto dai caratteri digitati dal turista. Quando il turista selezionerà una nazione il popup si chiuderà e la nazione scelta apparirà sulla form. Devi registrare in modalità hidden il codice della nazione scelta.
+Se viene scelta “Italia” con codice “100000100” allora si deve compilare anche il campo del comune italiano o stato estero di nascita. Il codice quindi dovrà essere quello dell’elenco dei comuni oppure quello degli stati esteri anteponendo alla descrizione dello stato la scritta “ES - “, ad esempio per la Francia “ES- France”.
+Trovi l’elenco degli stati nel file “docs/tabelle_codici/stati.csv” e dei comuni italiani in “docs/tabelle_codici/comuni.csv”
+
+Per il tipo documento si aprirà un popup simile alla scelta del mese che abbiamo visto prima, verranno visualizzati dei bottoni corrispondenti al tipo di documento e il classico bottone OK per confermare la scelta. Ci dovrà essere anche un bottone “Annulla” per uscire.
+
+Per il numero del documento ci sarà un testo libero in grado di accettare lettere e numeri ma dovranno essere tutti maiuscoli e come per il nome e cognome non dovranno contenere caratteri particolari.
+
+Una volta che risultassero compilati tutti i campi sarebbe carino che il bottone per andare avanti iniziasse a lampeggiare in modo da far capire al turista che deve premerlo per andare avanti.
+
+Se invece il turista preme il bottone “Ho finito, salva i dati” prima di aver completato la registrazione di tutti gli ospiti previsti dalla prenotazione deve essere visualizzato il seguente messaggio nella lingua del turista:
+
+Hai registrato solo <numero di ospiti registrati> ospiti su un totale di <numero di ospiti> ospiti della prenotazione, se gli ospiti mancanti sono minori di 10 anni allora va bene, in caso contrario potrai comunque completare in seguito la registrazione.
+
+Alla pressione di “OK” sul popup tornerai alla mappa sbloccando comunque lo step successivo purché sia stato inserito almeno il documento di identità del primo ospite.
+
+La registrazione dei dati degli ospiti successivi al primo sarà identica ma solo per i seguenti campi:
+
+- Cognome
+- Nome
+- sesso, maschio/femmina
+- data di nascita
+- Nazionalità
+
+Nel caso del campo Nazionalità prevedi di pre-compilare la stessa nazionalità del primo ospite registrato.
+
+=======================
+RICHIESTA 005
+
+Se uno abbandona e poi rientra nella registrazione dei passaporti devi conservare i dati, per ora procedi con la simulazione ma poi potrai recuperare i dati dal backend.
+Altra cosa il bottone avanti che lampeggia quando hai compilato tutti i campi, fai lampeggiare anche lo sfondo del bottone
+
+=======================
+RICHIESTA 006
+
+Appena si preme il bottone dello step per la registrazione dei passaporti c'è la schermata con il testo informativo. Riesci ad aumentare il font perché è scritto molto piccolo
+
+=======================
+RICHIESTA 007
+
+dopo il primo bottone dei passaporti, il secondo bottone è quello che mostrerà al turista come riuscire a raggiungere l’appartamento.
+Sempre per la simulazione puoi utilizzare l’indirizzo “Vicolo Del Curato 12 - 00186 ROMA”.
+La prima cosa che deve essere mostrata è l’indirizzo nel caso lo dovessero comunicare a un taxi o altro.
+Poi mi piacerebbe mettere informazioni utili sui mezzi di trasporto quali:
+
+1. taxi 55€ flat rate da FCO -> +39 06 3570
+2. auto privata NCC da FCO -> visualizza già il preventivo per il numero di persone
+3. Uber -> bottone per aprire direttamente Uber app o sito web partenza FCO destinazione appartamento
+4. FreeNow -> bottone per aprire direttamente FreeNow app o sito web partenza FCO destinazione appartamento
+5. autobus/metropolitana -> bottone navigatore per mezzi pubblici partenza FCO destinazione appartamento
+6. a piedi -> bottone navigatore a piedi partenza FCO destinazione appartamento
+
+Bottoni per aprire direttamente il navigatore per le modalità “a piedi” e “con trasporti pubblici”.
+Bottoni per aprire direttamente Uber o FreeNow. In questi casi occorre geo localizzare gli indirizzi degli appartamenti con latitudine e longitudine.
+A seconda dell’appartamento alcune opzioni potrebbero essere disabilitate.
+
+=======================
+RICHIESTA 008
+
+dopo il primo bottone dei passaporti, il secondo bottone è quello che mostrerà al turista come riuscire a raggiungere l’appartamento.
+Devi verificare come mai se premo il bottone per aprire direttamente FreeNow mi dice che l'indirizzo internet è errato.
+Poi il bottone "a piedi" devi mettere il percorso dalla posizione attuale fino all'indirizzo dell'appartamento
+
+=======================
+RICHIESTA 009
+
+Ok adesso FreeNow funziona ma non si riesce a pre-impostare già il percorso da FCO all'appartamento ?
+A volte capita che durante l'inserimento dei dati la finestra del browser si ridimensioni e quando uno termina di inserire il dato la finestra ha uno zoom esagerato e non vedo più l'applicazione per intero. Si può fare in modo che non si ridimensioni mai e rimanga quindi sempre fissa come se fosse una normale app.
+Quando sui dati del passaporto si inserisce la data e si arriva alla scelta del mese, il font usato per il mese è molto piccolo mentre il bottone ha molto spazio vuoto, riesci a ottimizzare il font in modo da rendere più leggibile il mese senza andare fuori dai bordi del bottone ?
+
+=======================
+RICHIESTA 010
+
+Ok adesso ci interfacciamo con il backend per recuperare i dati della prenotazione del turista. 
+Al turista verrà spedito un link web come questa url di esempio:
+
+https://hellohostwebadmin.endimension.eu/?id=0&key=HMEP2N3KZ8
+
+in questo caso il valore del parametro "HMEP2N3KZ8" specifica il numero di prenotazione "PNR" del turista ed è univoco. Il frontend Angular dovrà recupera il valore dalla query string e interrogare il backend per ottenere in risposta una serie di informazioni sulla prenotazione. Fra queste informazioni c'è anche la lingua predefinità per l'utente che poi però lui può cambiare come vuole ed infatti è già previsto dal frontend Angular.
+
+Fin'ora hai fatto una simulazione, adesso invece procederai con una interazione vera e propria con i dati della prenotazione.
+
+Il sorgente Java NetBeans del backend si trova in:
+
+/Users/fabiocardarola/Documents/ProgettiJakarta/hhapi/
+
+se hai bisogno di fare la build di Java puoi usare ant in:
+
+/Applications/Apache NetBeans.app/Contents/Resources/netbeans/extide/ant/bin/ant
+
+Per ora il backend è esposto alla seguente url:
+
+http://localhost:9090/hhapi/
+
+Le credenziali del server MySQL V 8.0 sono:
+
+        "dbdriver": "com.mysql.cj.jdbc.Driver",
+        "dburl": "jdbc:mysql://localhost:3306/gcv?user=root&password=Ifj5!jf$79L&useUnicode=yes&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true",
+
+Come esempio della query per recuperare le informazioni sulla prenotazione del turista puoi usare:
+
+select b.pk as fkbooking,
+   bs.description as provenienza, r.description as apartment, b.pnr, b.host_arrival, b.host_departure, b.customer, b.nights, b.people
+   ,b.nationalityDescription, b.guest_lang as lang
+   , log.activated as booked_on
+from rooms r, bookingsites bs, bookings b
+   left join tti_automatic_log log on (log.fkbooking = b.pk and log.code = 3)
+where b.status = 1 
+and r.pk = b.roomPk
+and bs.code = b.site
+and b.pnr = 'HMEP2N3KZ8'
+order by b.host_arrival
+;
+
+Modifica l'applicazione Angular dei turisti in modo che quando apriranno il link sul frontend lui chiederà al backend, con il metodo restapi da creare sul backend java "sci_login", di recuperare le informazioni sulla prenotazione e le utilizzerà al posto dei dati simulati. La lingua di default può essere recuperata dal campo lang dove troverai: it per italiano; en per inglese; eccetera. Implementa con il meccanismo dello stub i metodi sul backend java.
+Se la prenotazione non viene trovata visualizza un messaggio "BAD BOOKING CODE !".
+Il metodo iniziale "sci_login" che verifica se la prenotazione è esistente oppure no deve anche generare un token che sarà utilizzato per le successive chiamate dei metodi restapi. Le chiamate successive quindi dovranno avere il token generato precedentemente dal metodo "sci_login". Crea una apposita tabella "sci_guest_access" per mantenere i login generati dagli accessi dei turisti in modo che poi utilizzerai questa tabella come autenticazione dei token.
+
+Nella tabella "sci_guest_access" memorizza:
+- pnr il parametro ricevuto dal frontend
+- fkbooking che identifica la prenotazione
+- data e ora della creazione del token
+- data e ora dell'ultima richiesta restapi
+
+Successivamente ti darò istruzioni per registrare i documenti dei turisti tramite il bottone passaporti.
+
+=======================
+RICHIESTA 011
+
+nella schermata iniziale sotto il messaggio di benvenuto c'è una frase, me la sostituisci con il nome del turista?
+
+=======================
+RICHIESTA 012
+
+Sulla pagina iniziale tra la scritta "Welcome home" e la card sottostante c'è il nome del turista, riesci ad aumentare la grandezza del font senza però toccare la distanza fra la scritta "Welcome home" e la card ?
+
+=======================
+RICHIESTA 013
+
+Ricorda sempre di identificare i metodi restapi per questo progetto con il prefisso "sci_" come hai già fatto per il metodo "sci_login".
+
+Dopo la pagina iniziale con la scelta della lingua si passa alla schermata di approvazione della privacy, è indispensabile registrate ai fini di legge il consenso o meno dato dal turista, rimane la logica che se il turista non accetta non può andare avanti ma nel caso accettasse o ci ripensasse comunque bisogna ogni volta fare il log della scelta. C'è infatti la seguente tabella:
+
+CREATE TABLE `tti_automatic_log` (
+  `pk` int NOT NULL AUTO_INCREMENT,
+  `fkbooking` int NOT NULL DEFAULT '0',
+  `code` int NOT NULL DEFAULT '0',
+  `activated` datetime DEFAULT NULL,
+  `error` varchar(4000) NOT NULL DEFAULT '',
+  PRIMARY KEY (`pk`)
+) ENGINE=InnoDB AUTO_INCREMENT=14772 DEFAULT CHARSET=utf8mb3;
+
+che devi usare per registrare l'accettazione o meno della privacy. Ecco come devi impostare i campi:
+- pk, è autoincrement quindi viene gestito direttamente da MySQL nella insert
+- fkbooking, identificativo della prenotazione lo hai già preso dal precedente metodo "sci_login".
+- code, fisso a 100 per identificare i consensi della privacy
+- activated, timestamp data/ora di quando il turista ha espresso o meno il consenso
+- error, metti Y se il turista ha accettato il consenso privacy, metti N se invece non ha accettato
+
+=======================
+RICHIESTA 014
+
+Ok adesso devi registrare i dati del passaporto cioé il flusso che inizia quando il turista preme il bottone dei passaporti sulla mappa.
+I dati vengono registrati nella seguente tabella:
+
+CREATE TABLE `complaints` (
+  `pk` int unsigned NOT NULL AUTO_INCREMENT,
+  `lastupdate` datetime DEFAULT NULL,
+  `fkuser` int unsigned NOT NULL DEFAULT '0',
+  `fkbooking` int unsigned NOT NULL DEFAULT '0',
+  `fsname` varchar(500) NOT NULL DEFAULT '',
+  `status` int unsigned NOT NULL DEFAULT '0',
+  `isValid` int unsigned NOT NULL DEFAULT '0',
+  `error` varchar(500) NOT NULL DEFAULT '',
+  `holderSurname` varchar(500) NOT NULL DEFAULT '',
+  `holderName` varchar(500) NOT NULL DEFAULT '',
+  `sex` varchar(5) NOT NULL DEFAULT '',
+  `dateOfBirth` datetime DEFAULT NULL,
+  `nationality` varchar(500) NOT NULL DEFAULT '',
+  `nationalityDescription` varchar(500) NOT NULL DEFAULT '',
+  `doctype` varchar(5) NOT NULL DEFAULT '',
+  `docnumber` varchar(500) NOT NULL DEFAULT '',
+  `issuingCountry` varchar(500) NOT NULL DEFAULT '',
+  `issuingCountryDescription` varchar(500) NOT NULL DEFAULT '',
+  `jsondata` varchar(4000) NOT NULL DEFAULT '',
+  `generated` varchar(500) DEFAULT NULL,
+  `placeofbirth` varchar(500) NOT NULL DEFAULT '',
+  PRIMARY KEY (`pk`),
+  KEY `idx_fkbooking` (`fkbooking`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=19019 DEFAULT CHARSET=latin1;
+
+di seguito i valori che dovrai registrare nei diversi campi, quelli che non ti descrivo non li gestire e prenderanno il valore di default:
+
+- pk, è autoincrement quindi viene gestito direttamente da MySQL nella insert
+- lastupdate, timestamp data/ora di quando inserisci/aggiorni il record
+- fkuser, sempre a 0
+- fkbooking, identificativo della prenotazione lo hai già preso dal precedente metodo "sci_login"
+- status, fisso a 2
+- isvalid, fisso a 1
+- holderSurname, il cognome del turista
+- holderName, il nome del turista
+- sex, M per maschio, F per femmina
+- dateOfBirth, data di nascita
+- nationality, vedi nota (1)
+- nationalityDescription, vedi nota (1)
+- doctype, il tipo documento
+- docnumber, il numero di documento
+- issuingCountry, vedi nota (1)
+- issuingCountryDescription, vedi nota (1)
+- placeofbirth, comune di nascita o stato estero nel caso di nazionalità Italia
+
+Il primo record dovrà contenere i dati del passaporto mentre i record successivi solo i dati anagrafici e questo è già gestito dal flusso Angular. La procedura di estrazione dei dati in un altro modulo del programma utilizza ORDER BY pk quindi è molto importante che il primo record che inserirai sia quello con i dati completi del passaporto e che avranno quindi il pk di valore più piccolo. Se il turista aggiorna i dati andrai in update e quindi il problema dell'ordinamento conserverà il fatto che il primo record inserito, quello con il pk più basso, sarà quello che contiene i dati del passaporto. 
+Ovviamente se il turista interrompe l'inserimento e poi lo riprende magari a giorni di distanza è essenziale che il flusso dei dati dei passaporti riproponga gli eventuali dati già registrati.
+
+Nota (1)
+La procedura legacy attuale prevede la registrazione per i campi "nationality" e "nationalityDescription" come anche "issuingCountry" e "issuingCountryDescription" del codice a 3 lettere della nazione e relativa descrizione proveniente dalla tabella "cod_nazioni" ma non de codice dello stato scelto dal turista.
+
+I codici degli stati che hai in:
+
+/Users/fabiocardarola/Documents/ProgettiAngular/SelfCheckIn/docs/tabelle_codici/stati.csv
+
+Non hanno questi campi ma puoi recuperarli per registrarli sul database con l'unica cosa in comune con la tabella "cod_nazioni" e cioé il codice della polizia di stato che trovi in cod_nazioni.pscod.
+
+Purtroppo la parte legacy non è stata sviluppata a regola d'arte e quindi non si comporta bene quando la polizia di stato aggiorna l'elenco dei codici delle nazioni e dei comuni e diventa difficile aggiornare questo elenco. Dobbiamo per ora mantenere la retrocompatibilità a livello di codici ma inizierei già da subito a gestire una nuova struttura che consenta di gestire meglio i dati acquisiti.
+
+Direi quindi che la parte Angular gestirà i codici/descrizione della polizia di stato e quindi chiamerà la restapi di registrazione che svilupperai con il codice polizia di stato. La registrazione sulla tabella "complaints" imposterà quindi i codici "cod" della tabella "cod_nazioni" in funzione del pscod. In previsione di una prossima rivisitazione della procedura aggiungimi sulla tabella "complaints" anche un campo "psnat" per registrare comunque anche il codice nazione proveniente dalla parte Angular, lo utilizzeremo in seguito quando rivedremo questa procedura.
+Per la lettura dei dati del passaporto sulla schermata Angular utilizzerai il codice della polizia di stato e nel caso il turista acceda nuovamente al progetto self check-in, tieni presente però che questo campo potrebbe essere vuoto per retrocompatibilità quindi se lo trovi vuoto cercalo in "cod_nazioni" e riempilo sul recordo in modo da averlo.
+
+Per il campo "placeofbirth" invece puoi registrare direttamente il codice della polizia di stato.
+
