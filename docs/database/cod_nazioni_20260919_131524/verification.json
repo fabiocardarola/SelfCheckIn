@@ -1,0 +1,43 @@
+{
+  "database": "gcv@localhost:3306",
+  "rows_before": 215,
+  "rows_after": 234,
+  "active_csv_codes": 232,
+  "active_missing": 0,
+  "des_mismatches": 0,
+  "historical_missing": [
+    {
+      "Codice": "100000740",
+      "Descrizione": "BOPHUTHATSWANA",
+      "Provincia": "ES",
+      "DataFineVal": "01/05/1994 00:00:00"
+    },
+    {
+      "Codice": "100000210",
+      "Descrizione": "CECOSLOVACCHIA",
+      "Provincia": "ES",
+      "DataFineVal": "01/01/1993 00:00:00"
+    },
+    {
+      "Codice": "100000253",
+      "Descrizione": "MACEDONIA",
+      "Provincia": "ES",
+      "DataFineVal": "13/02/2019 00:00:00"
+    },
+    {
+      "Codice": "100000533",
+      "Descrizione": "S. VINCENT E GRENADINE",
+      "Provincia": "ES",
+      "DataFineVal": "22/11/2001 00:00:00"
+    }
+  ],
+  "duplicate_pscod": {
+    "100000216": [
+      "DEU",
+      "D"
+    ]
+  },
+  "blank_cod2": [
+    "XXA"
+  ]
+}

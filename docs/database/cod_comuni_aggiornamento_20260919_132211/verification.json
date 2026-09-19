@@ -1,0 +1,17 @@
+{
+  "database": "gcv@localhost:3306",
+  "before": 7980,
+  "after": 11294,
+  "inserted": 3314,
+  "updated": 12,
+  "unchanged_existing": 7968,
+  "missing_codes": 0,
+  "extra_codes": 0,
+  "different_descriptions": 0,
+  "different_provinces": 0,
+  "duplicate_codes": 0,
+  "preserved_existing_primary_keys": true,
+  "csv_active": 7898,
+  "csv_historical": 3396,
+  "source_sha256": "a9d0f21fc5511b3e05bca881914251ee18c1310a2351abc636bae432f47b6454"
+}

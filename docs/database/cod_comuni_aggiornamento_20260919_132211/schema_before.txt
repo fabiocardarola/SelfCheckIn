@@ -1,0 +1,8 @@
+cod_comuni	CREATE TABLE `cod_comuni` (
+  `pk` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(80) NOT NULL DEFAULT '',
+  `des` varchar(80) NOT NULL DEFAULT '',
+  `pr` varchar(80) NOT NULL DEFAULT '',
+  `lastupdate` datetime NOT NULL,
+  PRIMARY KEY (`pk`)
+) ENGINE=InnoDB AUTO_INCREMENT=7981 DEFAULT CHARSET=utf8mb3

@@ -1,0 +1,17 @@
+{
+  "csv_rows": 11294,
+  "csv_unique_codes": 11294,
+  "csv_active": 7898,
+  "csv_historical": 3396,
+  "database_rows": 7980,
+  "database_unique_codes": 7980,
+  "missing_total": 3314,
+  "missing_active": 155,
+  "missing_historical": 3159,
+  "extra_database_rows": 0,
+  "different_rows": 12,
+  "case_or_whitespace_only": 0,
+  "duplicate_database_codes": {},
+  "duplicate_csv_codes": {},
+  "database_rows_historical_in_csv": 237
+}

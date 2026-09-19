@@ -1,0 +1,94 @@
+{
+  "database": "gcv@localhost:3306",
+  "before_rows": 7980,
+  "target_rows": 11294,
+  "inserts": 3314,
+  "updates": 12,
+  "source_sha256": "a9d0f21fc5511b3e05bca881914251ee18c1310a2351abc636bae432f47b6454",
+  "changed_before": [
+    {
+      "pk": 759,
+      "pr": "BG",
+      "cod": "403016031",
+      "des": "BONATE DI SOTTO",
+      "lastupdate": "2021-09-01 12:58:39"
+    },
+    {
+      "pk": 820,
+      "pr": "TO",
+      "cod": "401001032",
+      "des": "BORGONE DI SUSA",
+      "lastupdate": "2021-09-01 12:58:40"
+    },
+    {
+      "pk": 2587,
+      "pr": "TN",
+      "cod": "404022079",
+      "des": "DRO'",
+      "lastupdate": "2021-09-01 12:58:54"
+    },
+    {
+      "pk": 2993,
+      "pr": "NU",
+      "cod": "420091027",
+      "des": "GALTELLI",
+      "lastupdate": "2021-09-01 12:58:58"
+    },
+    {
+      "pk": 4175,
+      "pr": "MT",
+      "cod": "417077016",
+      "des": "MONTALBANO IONICO",
+      "lastupdate": "2021-09-01 12:59:07"
+    },
+    {
+      "pk": 4261,
+      "pr": "RM",
+      "cod": "412058060",
+      "des": "MONTECOMPATRI",
+      "lastupdate": "2021-09-01 12:59:08"
+    },
+    {
+      "pk": 4342,
+      "pr": "IS",
+      "cod": "414094029",
+      "des": "MONTENERO VALCOCCHIARA",
+      "lastupdate": "2021-09-01 12:59:09"
+    },
+    {
+      "pk": 5593,
+      "pr": "UD",
+      "cod": "406030090",
+      "des": "REANA DEL ROIALE",
+      "lastupdate": "2021-09-01 12:59:19"
+    },
+    {
+      "pk": 6399,
+      "pr": "RC",
+      "cod": "418080080",
+      "des": "SANT'ALESSIO D'ASPROMONTE",
+      "lastupdate": "2021-09-01 12:59:26"
+    },
+    {
+      "pk": 6624,
+      "pr": "MT",
+      "cod": "417077031",
+      "des": "SCANZANO IONICO",
+      "lastupdate": "2021-09-01 12:59:28"
+    },
+    {
+      "pk": 6816,
+      "pr": "CZ",
+      "cod": "418079133",
+      "des": "SIMERI E CRICHI",
+      "lastupdate": "2021-09-01 12:59:29"
+    },
+    {
+      "pk": 7188,
+      "pr": "AV",
+      "cod": "415064109",
+      "des": "TORELLA DE' LOMBARDI",
+      "lastupdate": "2021-09-01 12:59:32"
+    }
+  ]
+}

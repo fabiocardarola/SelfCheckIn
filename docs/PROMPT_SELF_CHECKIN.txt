@@ -339,6 +339,30 @@ Per il costo <tot> ecco la tabella in funzione del numero di ospiti:
 - fino a 6 ospiti il costo è 100€
 Per il porto di Civitavecchia il costo è 270€
 
+=======================
+RICHIESTA 019
 
+Mi devi aiutare a verificare se ci sono delle incongruità fra la tabella "cod_nazioni" e i codici in:
+/Users/fabiocardarola/Documents/ProgettiAngular/SelfCheckIn/docs/tabelle_codici/stati.csv
+il file csv è aggiornato ma ho paura che la tabella "cod_nazioni" non lo sia, mi interessa che tutti i codici presenti nel csv esistano nella tabella "cod_nazioni". Fai una verifica e mi dice cosa manca ?
 
+Ma riusciresti a mettere a posto la tabella "cod_nazioni" riempiendo anche gli altri campi e adeguando in alto/basso il campo des?
+
+=======================
+RICHIESTA 020
+
+adesso mi devi confrontare anche la tabella cod_comuni che deve essere in linea con il csv:
+/Users/fabiocardarola/Documents/ProgettiAngular/SelfCheckIn/docs/tabelle_codici/comuni.csv
+anche in questo caso il vincolo è il csv
+
+=======================
+RICHIESTA 021
+
+Oggi la trasposizione del codice a 3 cifre con il codice polizia di stato viene effettuata da una classe apposita dove però i codici sono nel codice e non vengono presi dal DB.
+La classe con i dati nel codice è in:
+
+/Users/fabiocardarola/Documents/ProgettiJava/cronoappdaemon/src/shared/PassportData.java
+
+Mi verifichi la fattibilità di far utilizzare a questa classe i codici nel database piuttosto che averli scritti nel codice stesso.
+Non fare la modifica, verifica solo la fattibilità.
 

@@ -1,0 +1,2334 @@
+{
+  "updates": [
+    [
+      {
+        "pk": 4,
+        "cod": "ASM",
+        "des": "American Samoa",
+        "cod2": "AS",
+        "pscod": "100000798",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 4,
+        "cod": "ASM",
+        "des": "Samoa americane",
+        "cod2": "AS",
+        "pscod": "100000798",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 7,
+        "cod": "AIA",
+        "des": "Anguilla",
+        "cod2": "AI",
+        "pscod": "100000733",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 7,
+        "cod": "AIA",
+        "des": "Anguilla (isola)",
+        "cod2": "AI",
+        "pscod": "100000733",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 8,
+        "cod": "ATG",
+        "des": "Antigua and Barbuda",
+        "cod2": "AG",
+        "pscod": "100000503",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 8,
+        "cod": "ATG",
+        "des": "Antigua e barbuda",
+        "cod2": "AG",
+        "pscod": "100000503",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 13,
+        "cod": "AZE",
+        "des": "Azerbaijan",
+        "cod2": "AZ",
+        "pscod": "100000359",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 13,
+        "cod": "AZE",
+        "des": "Azerbaigian",
+        "cod2": "AZ",
+        "pscod": "100000359",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 15,
+        "cod": "BHR",
+        "des": "Bahrain",
+        "cod2": "BH",
+        "pscod": "100000304",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 15,
+        "cod": "BHR",
+        "des": "Bahrein",
+        "cod2": "BH",
+        "pscod": "100000304",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 18,
+        "cod": "BEL",
+        "des": "Belgium",
+        "cod2": "BE",
+        "pscod": "100000206",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 18,
+        "cod": "BEL",
+        "des": "Belgio",
+        "cod2": "BE",
+        "pscod": "100000206",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 21,
+        "cod": "BMU",
+        "des": "Bermuda",
+        "cod2": "BM",
+        "pscod": "100000739",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 21,
+        "cod": "BMU",
+        "des": "Bermude",
+        "cod2": "BM",
+        "pscod": "100000739",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 23,
+        "cod": "BOL",
+        "des": "Bolivia (Plurinational State of)",
+        "cod2": "BO",
+        "pscod": "100000604",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 23,
+        "cod": "BOL",
+        "des": "Bolivia",
+        "cod2": "BO",
+        "pscod": "100000604",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 24,
+        "cod": "BIH",
+        "des": "Bosnia and Herzegovina",
+        "cod2": "BA",
+        "pscod": "100000252",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 24,
+        "cod": "BIH",
+        "des": "Bosnia ed erzegovina",
+        "cod2": "BA",
+        "pscod": "100000252",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 26,
+        "cod": "BRA",
+        "des": "Brazil",
+        "cod2": "BR",
+        "pscod": "100000605",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 26,
+        "cod": "BRA",
+        "des": "Brasile",
+        "cod2": "BR",
+        "pscod": "100000605",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 27,
+        "cod": "VGB",
+        "des": "British Virgin Islands",
+        "cod2": "VG",
+        "pscod": "100000764",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 27,
+        "cod": "VGB",
+        "des": "Vergini britanniche (isole)",
+        "cod2": "VG",
+        "pscod": "100000812",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 28,
+        "cod": "BRN",
+        "des": "Brunei Darussalam",
+        "cod2": "BN",
+        "pscod": "100000309",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 28,
+        "cod": "BRN",
+        "des": "Brunei darussalam",
+        "cod2": "BN",
+        "pscod": "100000309",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 30,
+        "cod": "BFA",
+        "des": "Burkina Faso",
+        "cod2": "BF",
+        "pscod": "100000409",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 30,
+        "cod": "BFA",
+        "des": "Burkina faso",
+        "cod2": "BF",
+        "pscod": "100000409",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 32,
+        "cod": "CPV",
+        "des": "Cabo Verde",
+        "cod2": "CV",
+        "pscod": "100000413",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 32,
+        "cod": "CPV",
+        "des": "Capo verde",
+        "cod2": "CV",
+        "pscod": "100000413",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 33,
+        "cod": "KHM",
+        "des": "Cambodia",
+        "cod2": "KH",
+        "pscod": "100000310",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 33,
+        "cod": "KHM",
+        "des": "Cambogia",
+        "cod2": "KH",
+        "pscod": "100000310",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 34,
+        "cod": "CMR",
+        "des": "Cameroon",
+        "cod2": "CM",
+        "pscod": "100000411",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 34,
+        "cod": "CMR",
+        "des": "Camerun",
+        "cod2": "CM",
+        "pscod": "100000411",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 36,
+        "cod": "CYM",
+        "des": "Cayman Islands",
+        "cod2": "KY",
+        "pscod": "100000742",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 36,
+        "cod": "CYM",
+        "des": "Cayman (isole)",
+        "cod2": "KY",
+        "pscod": "100000742",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 37,
+        "cod": "TCD",
+        "des": "Chad",
+        "cod2": "TD",
+        "pscod": "100000415",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 37,
+        "cod": "TCD",
+        "des": "Ciad",
+        "cod2": "TD",
+        "pscod": "100000415",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 38,
+        "cod": "CHL",
+        "des": "Chile",
+        "cod2": "CL",
+        "pscod": "100000606",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 38,
+        "cod": "CHL",
+        "des": "Cile",
+        "cod2": "CL",
+        "pscod": "100000606",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 39,
+        "cod": "CHN",
+        "des": "China",
+        "cod2": "CN",
+        "pscod": "100000314",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 39,
+        "cod": "CHN",
+        "des": "Cina",
+        "cod2": "CN",
+        "pscod": "100000314",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 40,
+        "cod": "CXR",
+        "des": "Christmas Island",
+        "cod2": "CX",
+        "pscod": "100000743",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 40,
+        "cod": "CXR",
+        "des": "Christmas",
+        "cod2": "CX",
+        "pscod": "100000743",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 41,
+        "cod": "CCK",
+        "des": "Cocos (Keeling) Islands",
+        "cod2": "CC",
+        "pscod": "100000746",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 41,
+        "cod": "CCK",
+        "des": "Cocos",
+        "cod2": "CC",
+        "pscod": "100000746",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 43,
+        "cod": "COM",
+        "des": "Comoros",
+        "cod2": "KM",
+        "pscod": "100000417",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 43,
+        "cod": "COM",
+        "des": "Comore",
+        "cod2": "KM",
+        "pscod": "100000417",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 45,
+        "cod": "CRI",
+        "des": "Costa Rica",
+        "cod2": "CR",
+        "pscod": "100000513",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 45,
+        "cod": "CRI",
+        "des": "Costa rica",
+        "cod2": "CR",
+        "pscod": "100000513",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 46,
+        "cod": "CIV",
+        "des": "Côte d’Ivoire",
+        "cod2": "CI",
+        "pscod": "100000404",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 46,
+        "cod": "CIV",
+        "des": "Costa d'avorio",
+        "cod2": "CI",
+        "pscod": "100000404",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 47,
+        "cod": "HRV",
+        "des": "Croatia",
+        "cod2": "HR",
+        "pscod": "100000250",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 47,
+        "cod": "HRV",
+        "des": "Croazia",
+        "cod2": "HR",
+        "pscod": "100000250",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 49,
+        "cod": "CYP",
+        "des": "Cyprus",
+        "cod2": "CY",
+        "pscod": "100000315",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 49,
+        "cod": "CYP",
+        "des": "Cipro",
+        "cod2": "CY",
+        "pscod": "100000315",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 50,
+        "cod": "CZE",
+        "des": "Czechia",
+        "cod2": "CZ",
+        "pscod": "100000257",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 50,
+        "cod": "CZE",
+        "des": "Repubblica ceca",
+        "cod2": "CZ",
+        "pscod": "100000257",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 51,
+        "cod": "COD",
+        "des": "Democratic Republic of the Congo",
+        "cod2": "CD",
+        "pscod": "100000998",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 51,
+        "cod": "COD",
+        "des": "Repubblica democratica del congo",
+        "cod2": "CD",
+        "pscod": "100000998",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 52,
+        "cod": "DNK",
+        "des": "Denmark",
+        "cod2": "DK",
+        "pscod": "100000212",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 52,
+        "cod": "DNK",
+        "des": "Danimarca",
+        "cod2": "DK",
+        "pscod": "100000212",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 54,
+        "cod": "DOM",
+        "des": "Dominican Republic",
+        "cod2": "DO",
+        "pscod": "100000516",
+        "lastupdate": "2021-09-01 13:00:10"
+      },
+      {
+        "pk": 54,
+        "cod": "DOM",
+        "des": "Repubblica dominicana",
+        "cod2": "DO",
+        "pscod": "100000516",
+        "lastupdate": "2021-09-01 13:00:10"
+      }
+    ],
+    [
+      {
+        "pk": 56,
+        "cod": "EGY",
+        "des": "Egypt",
+        "cod2": "EG",
+        "pscod": "100000419",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 56,
+        "cod": "EGY",
+        "des": "Egitto",
+        "cod2": "EG",
+        "pscod": "100000419",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 57,
+        "cod": "SLV",
+        "des": "El Salvador",
+        "cod2": "SV",
+        "pscod": "100000517",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 57,
+        "cod": "SLV",
+        "des": "El salvador",
+        "cod2": "SV",
+        "pscod": "100000517",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 58,
+        "cod": "GNQ",
+        "des": "Equatorial Guinea",
+        "cod2": "GQ",
+        "pscod": "100000427",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 58,
+        "cod": "GNQ",
+        "des": "Guinea equatoriale",
+        "cod2": "GQ",
+        "pscod": "100000427",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 61,
+        "cod": "ETH",
+        "des": "Ethiopia",
+        "cod2": "ET",
+        "pscod": "100000420",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 61,
+        "cod": "ETH",
+        "des": "Etiopia",
+        "cod2": "ET",
+        "pscod": "100000420",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 62,
+        "cod": "FJI",
+        "des": "Fiji",
+        "cod2": "FJ",
+        "pscod": "100000703",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 62,
+        "cod": "FJI",
+        "des": "Figi",
+        "cod2": "FJ",
+        "pscod": "100000703",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 63,
+        "cod": "FIN",
+        "des": "Finland",
+        "cod2": "FI",
+        "pscod": "100000214",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 63,
+        "cod": "FIN",
+        "des": "Finlandia",
+        "cod2": "FI",
+        "pscod": "100000214",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 64,
+        "cod": "FRA",
+        "des": "France",
+        "cod2": "FR",
+        "pscod": "100000215",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 64,
+        "cod": "FRA",
+        "des": "Francia",
+        "cod2": "FR",
+        "pscod": "100000215",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 65,
+        "cod": "GUF",
+        "des": "French Guiana",
+        "cod2": "GF",
+        "pscod": "100000612",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 65,
+        "cod": "GUF",
+        "des": "Guayana francese",
+        "cod2": "GF",
+        "pscod": "100000761",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 66,
+        "cod": "PYF",
+        "des": "French Polynesia",
+        "cod2": "PF",
+        "pscod": "100000787",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 66,
+        "cod": "PYF",
+        "des": "Polinesia",
+        "cod2": "PF",
+        "pscod": "100000787",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 70,
+        "cod": "DEU",
+        "des": "Germany",
+        "cod2": "DE",
+        "pscod": "100000216",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 70,
+        "cod": "DEU",
+        "des": "Germania",
+        "cod2": "DE",
+        "pscod": "100000216",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 71,
+        "cod": "D",
+        "des": "Germany",
+        "cod2": "",
+        "pscod": "100000216",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 71,
+        "cod": "D",
+        "des": "Germania",
+        "cod2": "DE",
+        "pscod": "100000216",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 73,
+        "cod": "GIB",
+        "des": "Gibraltar",
+        "cod2": "GI",
+        "pscod": "110000004",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 73,
+        "cod": "GIB",
+        "des": "Gibilterra",
+        "cod2": "GI",
+        "pscod": "110000004",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 74,
+        "cod": "GRC",
+        "des": "Greece",
+        "cod2": "GR",
+        "pscod": "100000220",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 74,
+        "cod": "GRC",
+        "des": "Grecia",
+        "cod2": "GR",
+        "pscod": "100000220",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 76,
+        "cod": "GLP",
+        "des": "Guadeloupe",
+        "cod2": "GP",
+        "pscod": "100000759",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 76,
+        "cod": "GLP",
+        "des": "Guadalupa",
+        "cod2": "GP",
+        "pscod": "100000759",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 80,
+        "cod": "GNB",
+        "des": "Guinea-Bissau",
+        "cod2": "GW",
+        "pscod": "100000426",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 80,
+        "cod": "GNB",
+        "des": "Guinea bissau",
+        "cod2": "GW",
+        "pscod": "100000426",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 84,
+        "cod": "HUN",
+        "des": "Hungary",
+        "cod2": "HU",
+        "pscod": "100000244",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 84,
+        "cod": "HUN",
+        "des": "Ungheria",
+        "cod2": "HU",
+        "pscod": "100000244",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 85,
+        "cod": "ISL",
+        "des": "Iceland",
+        "cod2": "IS",
+        "pscod": "100000223",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 85,
+        "cod": "ISL",
+        "des": "Islanda",
+        "cod2": "IS",
+        "pscod": "100000223",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 88,
+        "cod": "IRN",
+        "des": "Iran (Islamic Republic of)",
+        "cod2": "IR",
+        "pscod": "100000332",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 88,
+        "cod": "IRN",
+        "des": "Iran",
+        "cod2": "IR",
+        "pscod": "100000332",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 90,
+        "cod": "IRL",
+        "des": "Ireland",
+        "cod2": "IE",
+        "pscod": "100000221",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 90,
+        "cod": "IRL",
+        "des": "Irlanda",
+        "cod2": "IE",
+        "pscod": "100000221",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 91,
+        "cod": "ISR",
+        "des": "Israel",
+        "cod2": "IL",
+        "pscod": "100000334",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 91,
+        "cod": "ISR",
+        "des": "Israele",
+        "cod2": "IL",
+        "pscod": "100000334",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 92,
+        "cod": "ITA",
+        "des": "Italy",
+        "cod2": "IT",
+        "pscod": "100000100",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 92,
+        "cod": "ITA",
+        "des": "Italia",
+        "cod2": "IT",
+        "pscod": "100000100",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 93,
+        "cod": "JAM",
+        "des": "Jamaica",
+        "cod2": "JM",
+        "pscod": "100000518",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 93,
+        "cod": "JAM",
+        "des": "Giamaica",
+        "cod2": "JM",
+        "pscod": "100000518",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 94,
+        "cod": "JPN",
+        "des": "Japan",
+        "cod2": "JP",
+        "pscod": "100000326",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 94,
+        "cod": "JPN",
+        "des": "Giappone",
+        "cod2": "JP",
+        "pscod": "100000326",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 95,
+        "cod": "KAZ",
+        "des": "Kazakhstan",
+        "cod2": "KZ",
+        "pscod": "100000356",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 95,
+        "cod": "KAZ",
+        "des": "Kazakistan",
+        "cod2": "KZ",
+        "pscod": "100000356",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 99,
+        "cod": "KGZ",
+        "des": "Kyrgyzstan",
+        "cod2": "KG",
+        "pscod": "100000361",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 99,
+        "cod": "KGZ",
+        "des": "Kirghizistan",
+        "cod2": "KG",
+        "pscod": "100000361",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 100,
+        "cod": "LAO",
+        "des": "Lao People's Democratic Republic",
+        "cod2": "LA",
+        "pscod": "100000336",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 100,
+        "cod": "LAO",
+        "des": "Laos",
+        "cod2": "LA",
+        "pscod": "100000336",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 101,
+        "cod": "LVA",
+        "des": "Latvia",
+        "cod2": "LV",
+        "pscod": "100000248",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 101,
+        "cod": "LVA",
+        "des": "Lettonia",
+        "cod2": "LV",
+        "pscod": "100000248",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 102,
+        "cod": "LBN",
+        "des": "Lebanon",
+        "cod2": "LB",
+        "pscod": "100000337",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 102,
+        "cod": "LBN",
+        "des": "Libano",
+        "cod2": "LB",
+        "pscod": "100000337",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 105,
+        "cod": "LBY",
+        "des": "Libya",
+        "cod2": "LY",
+        "pscod": "100000431",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 105,
+        "cod": "LBY",
+        "des": "Libia",
+        "cod2": "LY",
+        "pscod": "100000431",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 107,
+        "cod": "LTU",
+        "des": "Lithuania",
+        "cod2": "LT",
+        "pscod": "100000249",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 107,
+        "cod": "LTU",
+        "des": "Lituania",
+        "cod2": "LT",
+        "pscod": "100000249",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 108,
+        "cod": "LUX",
+        "des": "Luxembourg",
+        "cod2": "LU",
+        "pscod": "100000226",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 108,
+        "cod": "LUX",
+        "des": "Lussemburgo",
+        "cod2": "LU",
+        "pscod": "100000226",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 112,
+        "cod": "MDV",
+        "des": "Maldives",
+        "cod2": "MV",
+        "pscod": "100000339",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 112,
+        "cod": "MDV",
+        "des": "Maldive",
+        "cod2": "MV",
+        "pscod": "100000339",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 115,
+        "cod": "MHL",
+        "des": "Marshall Islands",
+        "cod2": "MH",
+        "pscod": "100000772",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 115,
+        "cod": "MHL",
+        "des": "Marshall",
+        "cod2": "MH",
+        "pscod": "100000772",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 116,
+        "cod": "MTQ",
+        "des": "Martinique",
+        "cod2": "MQ",
+        "pscod": "100000773",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 116,
+        "cod": "MTQ",
+        "des": "Martinica",
+        "cod2": "MQ",
+        "pscod": "100000773",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 118,
+        "cod": "MUS",
+        "des": "Mauritius",
+        "cod2": "MU",
+        "pscod": "100000438",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 118,
+        "cod": "MUS",
+        "des": "Maurizio",
+        "cod2": "MU",
+        "pscod": "100000438",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 120,
+        "cod": "MEX",
+        "des": "Mexico",
+        "cod2": "MX",
+        "pscod": "100000527",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 120,
+        "cod": "MEX",
+        "des": "Messico",
+        "cod2": "MX",
+        "pscod": "100000527",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 121,
+        "cod": "FSM",
+        "des": "Micronesia (Federated States of)",
+        "cod2": "FM",
+        "pscod": "100000775",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 121,
+        "cod": "FSM",
+        "des": "Micronesia stati federali",
+        "cod2": "FM",
+        "pscod": "100000775",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 126,
+        "cod": "MAR",
+        "des": "Morocco",
+        "cod2": "MA",
+        "pscod": "100000436",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 126,
+        "cod": "MAR",
+        "des": "Marocco",
+        "cod2": "MA",
+        "pscod": "100000436",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 127,
+        "cod": "MOZ",
+        "des": "Mozambique",
+        "cod2": "MZ",
+        "pscod": "100000440",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 127,
+        "cod": "MOZ",
+        "des": "Mozambico",
+        "cod2": "MZ",
+        "pscod": "100000440",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 128,
+        "cod": "MMR",
+        "des": "Myanmar",
+        "cod2": "MM",
+        "pscod": "100000307",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 128,
+        "cod": "MMR",
+        "des": "Myanmar-birmania",
+        "cod2": "MM",
+        "pscod": "100000307",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 132,
+        "cod": "NLD",
+        "des": "Netherlands",
+        "cod2": "NL",
+        "pscod": "100000232",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 132,
+        "cod": "NLD",
+        "des": "Paesi bassi",
+        "cod2": "NL",
+        "pscod": "100000232",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 133,
+        "cod": "NCL",
+        "des": "New Caledonia",
+        "cod2": "NC",
+        "pscod": "100000780",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 133,
+        "cod": "NCL",
+        "des": "Nuova caledonia",
+        "cod2": "NC",
+        "pscod": "100000780",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 134,
+        "cod": "NZL",
+        "des": "New Zealand",
+        "cod2": "NZ",
+        "pscod": "100000719",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 134,
+        "cod": "NZL",
+        "des": "Nuova zelanda",
+        "cod2": "NZ",
+        "pscod": "100000719",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 138,
+        "cod": "NFK",
+        "des": "Norfolk Island",
+        "cod2": "NF",
+        "pscod": "100000778",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 138,
+        "cod": "NFK",
+        "des": "Norfolk",
+        "cod2": "NF",
+        "pscod": "100000778",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 139,
+        "cod": "NOR",
+        "des": "Norway",
+        "cod2": "NO",
+        "pscod": "100000231",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 139,
+        "cod": "NOR",
+        "des": "Norvegia",
+        "cod2": "NO",
+        "pscod": "100000231",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 142,
+        "cod": "PLW",
+        "des": "Palau",
+        "cod2": "PW",
+        "pscod": "100000783",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 142,
+        "cod": "PLW",
+        "des": "Palau repubblica",
+        "cod2": "PW",
+        "pscod": "100000783",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 144,
+        "cod": "PNG",
+        "des": "Papua New Guinea",
+        "cod2": "PG",
+        "pscod": "100000721",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 144,
+        "cod": "PNG",
+        "des": "Papuasia-n.guinea",
+        "cod2": "PG",
+        "pscod": "100000721",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 146,
+        "cod": "PER",
+        "des": "Peru",
+        "cod2": "PE",
+        "pscod": "100000615",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 146,
+        "cod": "PER",
+        "des": "Peru'",
+        "cod2": "PE",
+        "pscod": "100000615",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 147,
+        "cod": "PHL",
+        "des": "Philippines",
+        "cod2": "PH",
+        "pscod": "100000323",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 147,
+        "cod": "PHL",
+        "des": "Filippine",
+        "cod2": "PH",
+        "pscod": "100000323",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 149,
+        "cod": "POL",
+        "des": "Poland",
+        "cod2": "PL",
+        "pscod": "100000233",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 149,
+        "cod": "POL",
+        "des": "Polonia",
+        "cod2": "PL",
+        "pscod": "100000233",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 150,
+        "cod": "PRT",
+        "des": "Portugal",
+        "cod2": "PT",
+        "pscod": "100000234",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 150,
+        "cod": "PRT",
+        "des": "Portogallo",
+        "cod2": "PT",
+        "pscod": "100000234",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 151,
+        "cod": "PRI",
+        "des": "Puerto Rico",
+        "cod2": "PR",
+        "pscod": "100000790",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 151,
+        "cod": "PRI",
+        "des": "Puerto rico",
+        "cod2": "PR",
+        "pscod": "100000790",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 153,
+        "cod": "KOR",
+        "des": "Republic of Korea",
+        "cod2": "KR",
+        "pscod": "100000320",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 153,
+        "cod": "KOR",
+        "des": "Corea del sud",
+        "cod2": "KR",
+        "pscod": "100000320",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 154,
+        "cod": "MDA",
+        "des": "Republic of Moldova",
+        "cod2": "MD",
+        "pscod": "100000254",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 154,
+        "cod": "MDA",
+        "des": "Moldavia",
+        "cod2": "MD",
+        "pscod": "100000254",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 156,
+        "cod": "RUS",
+        "des": "Russian Federation",
+        "cod2": "RU",
+        "pscod": "100000245",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 156,
+        "cod": "RUS",
+        "des": "Federazione russa",
+        "cod2": "RU",
+        "pscod": "100000245",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 157,
+        "cod": "RWA",
+        "des": "Rwanda",
+        "cod2": "RW",
+        "pscod": "100000446",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 157,
+        "cod": "RWA",
+        "des": "Ruanda",
+        "cod2": "RW",
+        "pscod": "100000446",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 158,
+        "cod": "SHN",
+        "des": "Saint Helena",
+        "cod2": "SH",
+        "pscod": "100000799",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 158,
+        "cod": "SHN",
+        "des": "Sant elena",
+        "cod2": "SH",
+        "pscod": "100000799",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 159,
+        "cod": "KNA",
+        "des": "Saint Kitts and Nevis",
+        "cod2": "KN",
+        "pscod": "100000534",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 159,
+        "cod": "KNA",
+        "des": "S. christopher e nevis",
+        "cod2": "KN",
+        "pscod": "100000534",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 160,
+        "cod": "LCA",
+        "des": "Saint Lucia",
+        "cod2": "LC",
+        "pscod": "100000532",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 160,
+        "cod": "LCA",
+        "des": "Saint lucia",
+        "cod2": "LC",
+        "pscod": "100000532",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 161,
+        "cod": "SPM",
+        "des": "Saint Pierre and Miquelon",
+        "cod2": "PM",
+        "pscod": "100000796",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 161,
+        "cod": "SPM",
+        "des": "Saint pierre et miquelon",
+        "cod2": "PM",
+        "pscod": "100000796",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 162,
+        "cod": "VCT",
+        "des": "Saint Vincent and the Grenadines",
+        "cod2": "VC",
+        "pscod": "100000797",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 162,
+        "cod": "VCT",
+        "des": "Saint vincent e grenadine",
+        "cod2": "VC",
+        "pscod": "100000797",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 164,
+        "cod": "SMR",
+        "des": "San Marino",
+        "cod2": "SM",
+        "pscod": "100000236",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 164,
+        "cod": "SMR",
+        "des": "San marino",
+        "cod2": "SM",
+        "pscod": "100000236",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 165,
+        "cod": "STP",
+        "des": "Sao Tome and Principe",
+        "cod2": "ST",
+        "pscod": "100000448",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 165,
+        "cod": "STP",
+        "des": "Sao tome' e principe",
+        "cod2": "ST",
+        "pscod": "100000448",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 166,
+        "cod": "SAU",
+        "des": "Saudi Arabia",
+        "cod2": "SA",
+        "pscod": "100000302",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 166,
+        "cod": "SAU",
+        "des": "Arabia saudita",
+        "cod2": "SA",
+        "pscod": "100000302",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 170,
+        "cod": "SLE",
+        "des": "Sierra Leone",
+        "cod2": "SL",
+        "pscod": "100000451",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 170,
+        "cod": "SLE",
+        "des": "Sierra leone",
+        "cod2": "SL",
+        "pscod": "100000451",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 172,
+        "cod": "SVK",
+        "des": "Slovakia",
+        "cod2": "SK",
+        "pscod": "100000210",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 172,
+        "cod": "SVK",
+        "des": "Repubblica slovacca",
+        "cod2": "SK",
+        "pscod": "100000255",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 174,
+        "cod": "SLB",
+        "des": "Solomon Islands",
+        "cod2": "SB",
+        "pscod": "100000725",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 174,
+        "cod": "SLB",
+        "des": "Salomone",
+        "cod2": "SB",
+        "pscod": "100000725",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 176,
+        "cod": "ZAF",
+        "des": "South Africa",
+        "cod2": "ZA",
+        "pscod": "100000454",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 176,
+        "cod": "ZAF",
+        "des": "Sudafrica",
+        "cod2": "ZA",
+        "pscod": "100000454",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 177,
+        "cod": "SSD",
+        "des": "South Sudan",
+        "cod2": "SS",
+        "pscod": "100000467",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 177,
+        "cod": "SSD",
+        "des": "Sud sudan",
+        "cod2": "SS",
+        "pscod": "100000467",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 178,
+        "cod": "ESP",
+        "des": "Spain",
+        "cod2": "ES",
+        "pscod": "100000239",
+        "lastupdate": "2021-09-01 13:00:11"
+      },
+      {
+        "pk": 178,
+        "cod": "ESP",
+        "des": "Spagna",
+        "cod2": "ES",
+        "pscod": "100000239",
+        "lastupdate": "2021-09-01 13:00:11"
+      }
+    ],
+    [
+      {
+        "pk": 179,
+        "cod": "LKA",
+        "des": "Sri Lanka",
+        "cod2": "LK",
+        "pscod": "100000311",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 179,
+        "cod": "LKA",
+        "des": "Sri lanka (ceylon)",
+        "cod2": "LK",
+        "pscod": "100000311",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 180,
+        "cod": "PSE",
+        "des": "State of Palestine",
+        "cod2": "PS",
+        "pscod": "110000001",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 180,
+        "cod": "PSE",
+        "des": "Palestina",
+        "cod2": "PS",
+        "pscod": "110000001",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 183,
+        "cod": "SWE",
+        "des": "Sweden",
+        "cod2": "SE",
+        "pscod": "100000240",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 183,
+        "cod": "SWE",
+        "des": "Svezia",
+        "cod2": "SE",
+        "pscod": "100000240",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 184,
+        "cod": "CHE",
+        "des": "Switzerland",
+        "cod2": "CH",
+        "pscod": "100000241",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 184,
+        "cod": "CHE",
+        "des": "Svizzera",
+        "cod2": "CH",
+        "pscod": "100000241",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 185,
+        "cod": "SYR",
+        "des": "Syrian Arab Republic",
+        "cod2": "SY",
+        "pscod": "100000348",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 185,
+        "cod": "SYR",
+        "des": "Siria",
+        "cod2": "SY",
+        "pscod": "100000348",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 186,
+        "cod": "TJK",
+        "des": "Tajikistan",
+        "cod2": "TJ",
+        "pscod": "100000362",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 186,
+        "cod": "TJK",
+        "des": "Tagikistan",
+        "cod2": "TJ",
+        "pscod": "100000362",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 187,
+        "cod": "THA",
+        "des": "Thailand",
+        "cod2": "TH",
+        "pscod": "100000349",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 187,
+        "cod": "THA",
+        "des": "Thailandia",
+        "cod2": "TH",
+        "pscod": "100000349",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 188,
+        "cod": "MKD",
+        "des": "The former Yugoslav Republic of Macedonia",
+        "cod2": "MK",
+        "pscod": "100000253",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 188,
+        "cod": "MKD",
+        "des": "Macedonia del nord",
+        "cod2": "MK",
+        "pscod": "100000997",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 189,
+        "cod": "TLS",
+        "des": "Timor-Leste",
+        "cod2": "TL",
+        "pscod": "100000805",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 189,
+        "cod": "TLS",
+        "des": "Timor",
+        "cod2": "TL",
+        "pscod": "100000805",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 193,
+        "cod": "TTO",
+        "des": "Trinidad and Tobago",
+        "cod2": "TT",
+        "pscod": "100000617",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 193,
+        "cod": "TTO",
+        "des": "Trinidad e tobago",
+        "cod2": "TT",
+        "pscod": "100000617",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 195,
+        "cod": "TUR",
+        "des": "Turkey",
+        "cod2": "TR",
+        "pscod": "100000351",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 195,
+        "cod": "TUR",
+        "des": "Turchia",
+        "cod2": "TR",
+        "pscod": "100000351",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 197,
+        "cod": "TCA",
+        "des": "Turks and Caicos Islands",
+        "cod2": "TC",
+        "pscod": "100000810",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 197,
+        "cod": "TCA",
+        "des": "Turks",
+        "cod2": "TC",
+        "pscod": "100000810",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 200,
+        "cod": "UKR",
+        "des": "Ukraine",
+        "cod2": "UA",
+        "pscod": "100000243",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 200,
+        "cod": "UKR",
+        "des": "Ucraina",
+        "cod2": "UA",
+        "pscod": "100000243",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 201,
+        "cod": "ARE",
+        "des": "United Arab Emirates",
+        "cod2": "AE",
+        "pscod": "100000322",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 201,
+        "cod": "ARE",
+        "des": "Emirati arabi uniti",
+        "cod2": "AE",
+        "pscod": "100000322",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 202,
+        "cod": "GBR",
+        "des": "United Kingdom of Great Britain and Northern Ireland",
+        "cod2": "GB",
+        "pscod": "100000219",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 202,
+        "cod": "GBR",
+        "des": "Regno unito",
+        "cod2": "GB",
+        "pscod": "100000219",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 203,
+        "cod": "TZA",
+        "des": "United Republic of Tanzania",
+        "cod2": "TZ",
+        "pscod": "100000457",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 203,
+        "cod": "TZA",
+        "des": "Tanzania",
+        "cod2": "TZ",
+        "pscod": "100000457",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 204,
+        "cod": "USA",
+        "des": "United States of America",
+        "cod2": "US",
+        "pscod": "100000536",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 204,
+        "cod": "USA",
+        "des": "Stati uniti d'america",
+        "cod2": "US",
+        "pscod": "100000536",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 205,
+        "cod": "VIR",
+        "des": "United States Virgin Islands",
+        "cod2": "VI",
+        "pscod": "100000764",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 205,
+        "cod": "VIR",
+        "des": "Isole vergini",
+        "cod2": "VI",
+        "pscod": "100000764",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 209,
+        "cod": "VEN",
+        "des": "Venezuela (Bolivarian Republic of)",
+        "cod2": "VE",
+        "pscod": "100000619",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 209,
+        "cod": "VEN",
+        "des": "Venezuela",
+        "cod2": "VE",
+        "pscod": "100000619",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 210,
+        "cod": "VNM",
+        "des": "Viet Nam",
+        "cod2": "VN",
+        "pscod": "100000353",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 210,
+        "cod": "VNM",
+        "des": "Vietnam",
+        "cod2": "VN",
+        "pscod": "100000353",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 211,
+        "cod": "WLF",
+        "des": "Wallis and Futuna Islands",
+        "cod2": "WF",
+        "pscod": "100000815",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 211,
+        "cod": "WLF",
+        "des": "Wallis",
+        "cod2": "WF",
+        "pscod": "100000815",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ],
+    [
+      {
+        "pk": 212,
+        "cod": "ESH",
+        "des": "Western Sahara",
+        "cod2": "EH",
+        "pscod": "100000795",
+        "lastupdate": "2021-09-01 13:00:12"
+      },
+      {
+        "pk": 212,
+        "cod": "ESH",
+        "des": "Sahara spagnolo",
+        "cod2": "EH",
+        "pscod": "100000795",
+        "lastupdate": "2021-09-01 13:00:12"
+      }
+    ]
+  ],
+  "inserts": [
+    {
+      "cod": "XXA",
+      "cod2": "",
+      "des": "Apolide",
+      "pscod": "100000999"
+    },
+    {
+      "cod": "BLR",
+      "cod2": "BY",
+      "des": "Bielorussia",
+      "pscod": "100000256"
+    },
+    {
+      "cod": "PRK",
+      "cod2": "KP",
+      "des": "Corea del nord",
+      "pscod": "100000319"
+    },
+    {
+      "cod": "FRO",
+      "cod2": "FO",
+      "des": "Faer oer",
+      "pscod": "100000755"
+    },
+    {
+      "cod": "SGS",
+      "cod2": "GS",
+      "des": "Georgia sud e isole sandwich australi",
+      "pscod": "110000022"
+    },
+    {
+      "cod": "DJI",
+      "cod2": "DJ",
+      "des": "Gibuti",
+      "pscod": "100000424"
+    },
+    {
+      "cod": "JOR",
+      "cod2": "JO",
+      "des": "Giordania",
+      "pscod": "100000327"
+    },
+    {
+      "cod": "GRL",
+      "cod2": "GL",
+      "des": "Groenlandia",
+      "pscod": "100000758"
+    },
+    {
+      "cod": "GGY",
+      "cod2": "GG",
+      "des": "Guernsey",
+      "pscod": "110000014"
+    },
+    {
+      "cod": "HKG",
+      "cod2": "HK",
+      "des": "Hong kong",
+      "pscod": "110000005"
+    },
+    {
+      "cod": "XKX",
+      "cod2": "XK",
+      "des": "Kosovo",
+      "pscod": "100001002"
+    },
+    {
+      "cod": "REU",
+      "cod2": "RE",
+      "des": "La reunion",
+      "pscod": "100000765"
+    },
+    {
+      "cod": "MAC",
+      "cod2": "MO",
+      "des": "Macao",
+      "pscod": "110000003"
+    },
+    {
+      "cod": "FLK",
+      "cod2": "FK",
+      "des": "Malvine",
+      "pscod": "100000768"
+    },
+    {
+      "cod": "IMN",
+      "cod2": "IM",
+      "des": "Man",
+      "pscod": "100000769"
+    },
+    {
+      "cod": "CAF",
+      "cod2": "CF",
+      "des": "Repubblica centrafricana",
+      "pscod": "100000414"
+    },
+    {
+      "cod": "VAT",
+      "cod2": "VA",
+      "des": "Stato della citta' del vaticano",
+      "pscod": "100000246"
+    },
+    {
+      "cod": "SWZ",
+      "cod2": "SZ",
+      "des": "Swaziland",
+      "pscod": "100000456"
+    },
+    {
+      "cod": "TWN",
+      "cod2": "TW",
+      "des": "Taiwan",
+      "pscod": "100000363"
+    }
+  ]
+}
