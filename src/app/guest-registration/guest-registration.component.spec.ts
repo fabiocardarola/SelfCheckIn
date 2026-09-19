@@ -1,3 +1,4 @@
+import { BookingService } from '../booking.service';
 import { TEST_BOOKING } from '../testing/booking.fixture';
 import { TestBed } from '@angular/core/testing';
 import { GuestRegistrationComponent } from './guest-registration.component';
@@ -12,7 +13,7 @@ describe('GuestRegistrationComponent', () => {
       if (url.includes('comuni.csv')) return new Response('Codice,Descrizione,Provincia,DataFineVal\n405058091,ROMA,RM,\n');
       return new Response("Codice,Descrizione\nPASOR,PASSAPORTO ORDINARIO\n");
     };
-    await TestBed.configureTestingModule({ imports: [GuestRegistrationComponent] }).compileComponents();
+    await TestBed.configureTestingModule({ imports: [GuestRegistrationComponent], providers: [{ provide: BookingService, useValue: { request: vi.fn(async (method: string) => method === 'sci_guests' ? { guests: [] } : { pk: 123 }) } }] }).compileComponents();
   });
 
   it('registers the booking holder and prefills nationality for the next guest', async () => {
@@ -101,6 +102,62 @@ describe('GuestRegistrationComponent', () => {
     await fixture.whenStable();
     expect(element.querySelector<HTMLInputElement>('.guest-form > label > input')!.value).toBe('');
     expect(element.querySelector('.guest-progress')?.textContent).toContain('0/2');
+  });
+
+  it('reloads server data without session storage and updates the existing record', async () => {
+    const api = vi.mocked(TestBed.inject(BookingService).request);
+    const saved = { pk: 81, surname: 'ROSSI', name: 'MARIO', gender: 'M', birthDate: '1990-01-15', nationalityCode: '100000100', birthPlaceCode: '405058091', documentTypeCode: 'PASOR', documentNumber: 'AB123', issuingCountryCode: '100000215' };
+    api.mockResolvedValueOnce({ guests: [saved] }).mockResolvedValueOnce({ pk: 81 });
+    const fixture = TestBed.createComponent(GuestRegistrationComponent);
+    fixture.componentRef.setInput('booking', TEST_BOOKING);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+    element.querySelector<HTMLButtonElement>('.start-button')!.click();
+    await fixture.whenStable();
+    const name = element.querySelectorAll<HTMLInputElement>('.guest-form > label > input')[1];
+    expect(name.value).toBe('MARIO');
+    expect(element.textContent).toContain('ROMA');
+    name.value = 'LUIGI'; name.dispatchEvent(new Event('input', { bubbles: true }));
+    await fixture.whenStable();
+    element.querySelector<HTMLButtonElement>('.nav-next')!.click();
+    await fixture.whenStable();
+    expect(api).toHaveBeenLastCalledWith('sci_guest_save', { index: 0, guest: expect.objectContaining({ pk: 81, name: 'LUIGI', issuingCountryCode: '100000215' }) });
+  });
+
+  it('blocks registration on load failure and retries without treating it as an empty booking', async () => {
+    const api = vi.mocked(TestBed.inject(BookingService).request);
+    api.mockRejectedValueOnce(new Error('Network')).mockResolvedValueOnce({ guests: [] });
+    const fixture = TestBed.createComponent(GuestRegistrationComponent);
+    fixture.componentRef.setInput('booking', TEST_BOOKING);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+    expect(element.querySelector<HTMLButtonElement>('.start-button')!.disabled).toBe(true);
+    expect(element.querySelector('[role="alert"]')).toBeTruthy();
+    element.querySelector<HTMLButtonElement>('.registration-screen > .reg-primary')!.click();
+    await fixture.whenStable();
+    expect(element.querySelector<HTMLButtonElement>('.start-button')!.disabled).toBe(false);
+  });
+
+  it('keeps the guest on screen after save failure and prevents duplicate in-flight saves', async () => {
+    const api = vi.mocked(TestBed.inject(BookingService).request);
+    api.mockResolvedValueOnce({ guests: [{ pk: 81, surname: 'ROSSI', name: 'MARIO', gender: 'M', birthDate: '1990-01-15', nationalityCode: '100000215', documentTypeCode: 'PASOR', documentNumber: 'AB123' }] });
+    const fixture = TestBed.createComponent(GuestRegistrationComponent);
+    fixture.componentRef.setInput('booking', TEST_BOOKING);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+    element.querySelector<HTMLButtonElement>('.start-button')!.click();
+    await fixture.whenStable();
+    let reject!: (error: Error) => void;
+    api.mockImplementationOnce(() => new Promise((_, fail) => { reject = fail; }));
+    const next = element.querySelector<HTMLButtonElement>('.nav-next')!;
+    next.click(); next.click(); fixture.detectChanges();
+    expect(next.disabled).toBe(true);
+    expect(api.mock.calls.filter(([method]) => method === 'sci_guest_save')).toHaveLength(1);
+    reject(new Error('Database failure'));
+    await vi.waitFor(() => { fixture.detectChanges(); expect(element.querySelector('[role="alert"]')).toBeTruthy(); });
+    expect(next.disabled).toBe(false);
+    expect(element.querySelector<HTMLInputElement>('.guest-form > label > input')!.value).toBe('ROSSI');
+    expect(element.querySelector('.guest-badge')!.textContent).toBe('1');
   });
 
 });

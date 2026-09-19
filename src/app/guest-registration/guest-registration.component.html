@@ -1,4 +1,12 @@
 <section class="registration-screen" [class.form-mode]="mode() === 'form'">
+  @if (apiLoading()) {
+    @if (apiError()) {
+      <p role="alert">{{ apiCopy().error }}</p>
+      <button class="reg-primary" type="button" (click)="loadGuests()">{{ apiCopy().retry }}</button>
+    } @else { <p role="status">{{ apiCopy().loading }}</p> }
+  }
+  @if (apiSaving()) { <p role="status">{{ apiCopy().saving }}</p> }
+  @if (apiError() && !apiLoading()) { <p role="alert">{{ apiCopy().error }}</p> }
   @if (mode() === 'intro') {
     <button class="intro-back" type="button" (click)="cancelled.emit()">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>{{ copy().back }}
@@ -22,12 +30,12 @@
       <div><p>{{ copy().lawText }}</p><p>{{ text(copy().bookingText, { total: totalGuests, profiles: totalGuests - 1 }) }}</p></div>
     </div>
     <p class="start-prompt">{{ copy().pressStart }}</p>
-    <button class="reg-primary start-button" type="button" (click)="start()">{{ copy().start }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
+    <button class="reg-primary start-button" type="button" (click)="start()" [disabled]="apiLoading() || listsLoading()">{{ copy().start }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
   } @else {
     <nav class="form-nav" aria-label="Guest form navigation">
-      <button class="nav-side" type="button" (click)="previous()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span>{{ copy().back }}</span></button>
-      <button class="nav-save" type="button" (click)="finish()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l2 2v14H5zM8 4v6h8V4M8 20v-6h8v6"/></svg><span>{{ copy().finish }}</span></button>
-      <button class="nav-side nav-next" [class.is-ready]="isCurrentComplete()" type="button" (click)="next()"><span>{{ copy().next }}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
+      <button class="nav-side" type="button" (click)="previous()" [disabled]="apiSaving() || apiLoading()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg><span>{{ copy().back }}</span></button>
+      <button class="nav-save" type="button" (click)="finish()" [disabled]="apiSaving() || apiLoading()"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h12l2 2v14H5zM8 4v6h8V4M8 20v-6h8v6"/></svg><span>{{ copy().finish }}</span></button>
+      <button class="nav-side nav-next" [class.is-ready]="isCurrentComplete()" type="button" (click)="next()" [disabled]="apiSaving() || apiLoading()"><span>{{ copy().next }}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
     </nav>
 
     <div class="guest-progress">
@@ -40,7 +48,7 @@
       <div><span class="reg-eyebrow">{{ guestIndex() === 0 ? copy().holder : copy().companion }}</span><h1>{{ text(copy().guestTitle, { current: guestIndex() + 1, total: totalGuests }) }}</h1><p>{{ copy().formHint }}</p></div>
     </header>
 
-    <form class="guest-form" (submit)="$event.preventDefault()" novalidate>
+    <form [attr.inert]="apiSaving() ? '' : null" class="guest-form" (submit)="$event.preventDefault()" novalidate>
       <label class="form-field"><span>{{ copy().surname }} *</span><input autocomplete="family-name" [value]="currentGuest().surname" (input)="updateAlpha('surname', $event)" /></label>
       <label class="form-field"><span>{{ copy().name }} *</span><input autocomplete="given-name" [value]="currentGuest().name" (input)="updateAlpha('name', $event)" /></label>
 
@@ -59,9 +67,13 @@
 
       @if (guestIndex() === 0) {
         <div class="form-separator"><span>{{ copy().documentType }}</span></div>
-        <div class="form-field"><span>{{ copy().documentType }} *</span><button class="picker-field" type="button" (click)="openDocumentTypes()"><span class="picker-icon">🪪</span><strong [class.placeholder]="!currentGuest().documentType">{{ currentGuest().documentType || copy().choose }}</strong><svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button><input type="hidden" name="documentTypeCode" [value]="currentGuest().documentTypeCode" /></div>
+        <div class="form-field"><span>{{ copy().documentType }} *</span><button class="picker-field" type="button" (click)="openDocumentTypes()"><span class="picker-icon">🪪</span><strong [class.placeholder]="!currentGuest().documentType">{{ documentLabel(currentGuest().documentTypeCode, currentGuest().documentType) || copy().choose }}</strong><svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button><input type="hidden" name="documentTypeCode" [value]="currentGuest().documentTypeCode" /></div>
         <label class="form-field"><span>{{ copy().documentNumber }} *</span><input autocomplete="off" inputmode="text" [value]="currentGuest().documentNumber" (input)="updateDocumentNumber($event)" /></label>
       }
+      <button class="nav-side nav-next form-next" [class.is-ready]="isCurrentComplete()" type="button" (click)="next()" [disabled]="apiSaving() || apiLoading()">
+        <span>{{ copy().next }}</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg>
+      </button>
     </form>
   }
 </section>
@@ -94,7 +106,7 @@
       @if (modal() === 'documentType') {
         <header class="modal-header"><div><span class="reg-eyebrow">{{ copy().registrationEyebrow }}</span><h2>{{ copy().docTypeTitle }}</h2></div><button type="button" (click)="modal.set(null)" [attr.aria-label]="copy().cancel">×</button></header>
         <div class="document-grid">
-          @for (document of documentTypes(); track document.code) { <button type="button" [class.selected]="selectedDocumentCode() === document.code" (click)="selectedDocumentCode.set(document.code)"><strong>{{ document.description }}</strong><small>{{ document.code }}</small></button> }
+          @for (document of documentTypes(); track document.code) { <button type="button" [class.selected]="selectedDocumentCode() === document.code" (click)="selectedDocumentCode.set(document.code)"><strong>{{ documentLabel(document.code, document.description) }}</strong><small>{{ document.code }}</small></button> }
         </div>
         <div class="modal-actions"><button class="modal-cancel" type="button" (click)="modal.set(null)">{{ copy().cancel }}</button><button class="reg-primary" type="button" [disabled]="!selectedDocumentCode()" (click)="confirmDocumentType()">{{ copy().confirm }}</button></div>
       }

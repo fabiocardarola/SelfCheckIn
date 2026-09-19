@@ -1,13 +1,17 @@
-import { Booking } from '../booking.service';
-import { Component, OnInit, computed, effect, input, output, signal } from '@angular/core';
+import { Booking, BookingService } from '../booking.service';
+import { Component, OnInit, PendingTasks, computed, effect, inject, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { REGISTRATION_COPY, REGISTRATION_LOCALES, RegistrationLanguage } from './registration-copy';
+
+import { documentTypeLabel } from './document-type-copy';
+import { REGISTRATION_API_COPY } from './registration-api-copy';
 
 type GuestField = 'surname' | 'name' | 'gender' | 'documentNumber';
 type ModalType = 'date' | 'nationality' | 'birthPlace' | 'documentType' | 'alert' | null;
 
 interface CodeItem { code: string; description: string; }
 interface GuestRecord {
+  pk: number; issuingCountryCode: string;
   surname: string; name: string; gender: string;
   birthDate: string; birthDateLabel: string;
   nationalityCode: string; nationality: string;
@@ -17,7 +21,7 @@ interface GuestRecord {
 }
 
 const EMPTY_GUEST = (): GuestRecord => ({
-  surname: '', name: '', gender: '', birthDate: '', birthDateLabel: '', nationalityCode: '', nationality: '',
+  pk: 0, issuingCountryCode: '', surname: '', name: '', gender: '', birthDate: '', birthDateLabel: '', nationalityCode: '', nationality: '',
   birthPlaceCode: '', birthPlace: '', documentTypeCode: '', documentType: '', documentNumber: '', saved: false
 });
 
@@ -35,6 +39,11 @@ export class GuestRegistrationComponent implements OnInit {
   readonly booking = input.required<Booking>();
   protected get totalGuests(): number { return this.booking().people; }
   private get storageKey(): string { return `helloHost.guestRegistration.v2.${this.booking().fkbooking}.${this.booking().pnr}`; }
+  private readonly api = inject(BookingService);
+  protected readonly apiLoading = signal(true);
+  protected readonly apiSaving = signal(false);
+  protected readonly apiError = signal(false);
+  protected readonly apiCopy = computed(() => REGISTRATION_API_COPY[this.language()]);
   private readonly stateReady = signal(false);
   protected readonly initials = computed(() => this.booking().customer.split(/\s+/).filter(Boolean).map((part) => part[0]).slice(0, 2).join('').toUpperCase());
   protected readonly guestIndex = signal(0);
@@ -85,11 +94,15 @@ export class GuestRegistrationComponent implements OnInit {
     try { window.sessionStorage.setItem(this.storageKey, JSON.stringify(state)); } catch { /* Storage may be unavailable in private mode. */ }
   });
 
-  async ngOnInit(): Promise<void> {
+  private readonly pendingTasks = inject(PendingTasks);
+
+  ngOnInit(): void { void this.pendingTasks.run(() => this.initialize()); }
+
+  private async initialize(): Promise<void> {
     const state = this.restoreState();
     this.guests.set(state.guests);
     this.guestIndex.set(state.guestIndex);
-    this.stateReady.set(true);
+
     try {
       const [states, towns, documents] = await Promise.all([
         this.loadCsv('/assets/data/stati.csv'),
@@ -109,13 +122,56 @@ export class GuestRegistrationComponent implements OnInit {
     } finally {
       this.listsLoading.set(false);
     }
+    await this.loadGuests();
+  }
+
+  protected async loadGuests(): Promise<void> {
+    this.apiLoading.set(true);
+    this.apiError.set(false);
+    try {
+      const result = await this.api.request<{ guests: Partial<GuestRecord>[] }>('sci_guests');
+      const drafts = this.guests();
+      this.guests.set(Array.from({ length: Math.max(this.totalGuests, result.guests.length) }, (_, index) => {
+        const saved = result.guests[index];
+        const guest = { ...EMPTY_GUEST(), ...(saved ?? drafts[index]), saved: !!saved };
+        if (!saved) guest.pk = 0;
+        guest.surname = this.asciiLetters(guest.surname);
+        guest.name = this.asciiLetters(guest.name);
+        guest.documentNumber = this.asciiLettersAndNumbers(guest.documentNumber);
+        guest.nationality = this.countries().find(item => item.code === guest.nationalityCode)?.description ?? guest.nationalityCode;
+        guest.birthPlace = this.birthPlaces().find(item => item.code === guest.birthPlaceCode)?.description ?? guest.birthPlaceCode;
+        guest.documentType = this.documentTypes().find(item => item.code === guest.documentTypeCode)?.description ?? guest.documentTypeCode;
+        guest.birthDateLabel = guest.birthDate ? new Intl.DateTimeFormat(this.locale(), { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(guest.birthDate + 'T12:00:00')) : '';
+        return guest;
+      }));
+      this.stateReady.set(true);
+      this.apiLoading.set(false);
+    } catch {
+      this.apiError.set(true);
+    }
+  }
+
+  private async saveCurrent(): Promise<boolean> {
+    if (this.apiSaving() || this.apiLoading()) return false;
+    this.apiSaving.set(true);
+    this.apiError.set(false);
+    const index = this.guestIndex();
+    const guest = { ...this.currentGuest() };
+    try {
+      const result = await this.api.request<{ pk: number }>('sci_guest_save', { index, guest });
+      this.guests.update(guests => guests.map((item, i) => i === index ? { ...guest, pk: result.pk, saved: true } : item));
+      return true;
+    } catch {
+      this.apiError.set(true);
+      return false;
+    } finally { this.apiSaving.set(false); }
   }
 
   protected text(template: string, values: Record<string, string | number>): string {
     return Object.entries(values).reduce((result, [key, value]) => result.replaceAll(`{${key}}`, String(value)), template);
   }
 
-  protected start(): void { this.mode.set('form'); this.scrollTop(); }
+  protected start(): void { if (this.apiLoading()) return; this.mode.set('form'); this.scrollTop(); }
 
   protected updateAlpha(field: 'surname' | 'name', event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -184,13 +240,17 @@ export class GuestRegistrationComponent implements OnInit {
     if (this.modal() === 'nationality') {
       const changed = guest.nationalityCode !== item.code;
       guest.nationalityCode = item.code; guest.nationality = item.description;
-      if (changed) { guest.birthPlaceCode = ''; guest.birthPlace = ''; }
+      if (changed) { guest.issuingCountryCode = item.code; guest.birthPlaceCode = ''; guest.birthPlace = ''; }
     } else {
       guest.birthPlaceCode = item.code; guest.birthPlace = item.description;
     }
     guest.saved = false;
     this.guests.update((guests) => [...guests]);
     this.modal.set(null);
+  }
+
+  protected documentLabel(code: string, fallback = ''): string {
+    return documentTypeLabel(code, this.language(), fallback);
   }
 
   protected openDocumentTypes(): void { this.selectedDocumentCode.set(this.currentGuest().documentTypeCode); this.modal.set('documentType'); }
@@ -207,11 +267,11 @@ export class GuestRegistrationComponent implements OnInit {
     this.scrollTop();
   }
 
-  protected next(): void {
+  protected async next(): Promise<void> {
+    if (this.apiSaving() || this.apiLoading()) return;
     const missing = this.missingFields(this.currentGuest(), this.guestIndex());
     if (missing.length) { this.showAlert(this.copy().missingTitle, this.copy().missingText, missing); return; }
-    this.currentGuest().saved = true;
-    this.guests.update((guests) => [...guests]);
+    if (!await this.saveCurrent()) return;
     if (this.guestIndex() === this.totalGuests - 1) { this.showCompletion(); return; }
     const nextIndex = this.guestIndex() + 1;
     const first = this.guests()[0]; const nextGuest = this.guests()[nextIndex];
@@ -221,8 +281,9 @@ export class GuestRegistrationComponent implements OnInit {
     this.guestIndex.set(nextIndex); this.scrollTop();
   }
 
-  protected finish(): void {
-    if (this.isCurrentComplete()) { this.currentGuest().saved = true; this.guests.update((guests) => [...guests]); }
+  protected async finish(): Promise<void> {
+    if (this.apiSaving() || this.apiLoading()) return;
+    if (this.isCurrentComplete() && !await this.saveCurrent()) return;
     if (!this.guests()[0].saved) { this.showAlert(this.copy().firstRequiredTitle, this.copy().firstRequiredText); return; }
     if (this.registeredCount() === this.totalGuests) { this.showCompletion(); return; }
     this.alertCompletesRegistration.set(true);

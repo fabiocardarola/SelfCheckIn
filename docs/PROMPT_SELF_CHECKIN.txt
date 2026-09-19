@@ -310,3 +310,35 @@ Per la lettura dei dati del passaporto sulla schermata Angular utilizzerai il co
 
 Per il campo "placeofbirth" invece puoi registrare direttamente il codice della polizia di stato.
 
+=======================
+RICHIESTA 015
+
+Nel rileggere i dati del passaporto può capitare di leggere il tipo passaporto "P", fa parte sempre delle problematiche legacy, questo tipo "P" deve essere convertito in "PASOR".
+
+=======================
+RICHIESTA 016
+
+Nella scelta del tipo documento il font con la descrizione del documento è troppo piccolo, puoi aumentarlo senza modificare le dimensioni del bottone che invece sono ok?
+
+=======================
+RICHIESTA 017
+
+Il bottone per andare avanti durante la compilazione lampeggia quando i dati sono completi, riesci a mettermi un'altro bottone con la stessa funzione e con lo stesso lampeggiamento anche dopo l'ultimo campo in basso ? Questo agevolerebbe il turista nel caso stia compilando la parte bassa dello schermo 
+
+=======================
+RICHIESTA 018
+
+Nel bottone successivo a quello dei passaporti e cioé il secondo bottone sulla mappa c'è il bottone per i costi di un trasferimento con auto privata NCC. Il costo è in funzione del numero di ospiti. Puoi visualizzare un testo che spiega per il costo è di <tot> per il numero di persone specificato nella prenotazione e che nel prezzo sono inclusi anche i bagagli ?
+Se il turista preme questo bottone fai apparire un modale che invita il turista a contattare l'host per ulteriori informazioni.
+Se possibile riesci a mettere un bottone per far aprire il whatsapp del turista con un testo simile a:
+Sono  <nominativo del turista> prenotazione numero <pnr della prenotazione> con arrivo il <data check-in> vorrei maggiori informazioni sul trasferimento con auto privata NCC.
+Il numero whatsapp business è: +393461098903
+Per il costo <tot> ecco la tabella in funzione del numero di ospiti:
+- fino a 2 ospiti il costo è 80€
+- fino a 4 ospiti il costo è 90€
+- fino a 6 ospiti il costo è 100€
+Per il porto di Civitavecchia il costo è 270€
+
+
+
+

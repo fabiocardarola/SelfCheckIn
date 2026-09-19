@@ -11,6 +11,8 @@ describe('App', () => {
     window.history.replaceState({}, '', '/?id=0&key=TESTPNR');
     globalThis.fetch = async (url) => String(url).includes('sci_login')
       ? Response.json({ success: true, token: 'test-token', booking: TEST_BOOKING })
+      : String(url).includes('sci_guests')
+      ? Response.json({ success: true, guests: [] })
       : String(url).includes('sci_privacy')
       ? Response.json({ success: true })
       : new Response('Codice,Descrizione,Provincia,DataFineVal\n100000100,ITALIA,ES,\n');
