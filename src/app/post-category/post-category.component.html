@@ -1,0 +1,35 @@
+<div class="toolbar"><button id="posts-refresh" type="button" (click)="refresh()" [disabled]="loading() || pending() !== null">↻ {{ copy().refresh }}</button></div>
+@if (loading()) { <p role="status">{{ copy().loading }}</p> }
+@if (error()) { <p role="alert" class="warning">{{ denied() ? copy().denied : copy().error }}</p> }
+@if (data(); as content) {
+  @if (!content.posts.length) { <p>{{ copy().empty }}</p> }
+  <div class="cards">
+    @for (post of content.posts; track post.id) {
+      <article class="instruction-card">
+        @if (post.body) { <p class="body">{{ post.body }}</p> }
+        @switch (post.type) {
+          @case ('photo') {
+            @if (postImageUrl(post.image_url) && !failedImages().includes(post.id)) { <img class="photo" [src]="postImageUrl(post.image_url)" [alt]="post.body || ''" (error)="imageFailed(post.id)" /> }
+            @else { <p role="status">{{ copy().imageError }}</p> }
+          }
+          @case ('youtube') { @if (youtubeLink(post.youtube_url); as link) { <a [href]="link" target="_blank" rel="noopener noreferrer">▶ {{ copy().video }}</a> } }
+          @case ('wifi') {
+            @if (content.wifi?.ssid) {
+              <dl><dt>{{ copy().ssid }}</dt><dd>{{ content.wifi!.ssid }}</dd><dt>{{ copy().password }}</dt><dd>{{ content.wifi!.password || '—' }}</dd></dl>
+              @if (qr()) { <img class="qr" [src]="qr()" alt="Wi-Fi QR" /> }
+              @else if (!loading()) { <p>{{ copy().qrError }}</p> }
+            } @else { <p>{{ copy().wifiMissing }}</p> }
+          }
+          @case ('door_code') {
+            <p class="door-code">{{ content.door?.code || copy().codeMissing }}</p>
+            @for (warning of content.door?.warnings ?? []; track warning.key) { <p class="warning">{{ warning.body }}</p> }
+          }
+          @case ('action') {
+            <button [id]="'post-action-' + post.id" type="button" (click)="activate(post, $event)" [disabled]="!post.action_enabled || post.action_code !== 'F001' || pending() !== null">{{ pending() === post.id ? copy().sending : post.button_label }}</button>
+          }
+        }
+      </article>
+    }
+  </div>
+}
+<dialog #dialog aria-labelledby="gate-result" (close)="restoreFocus()"><p id="gate-result">{{ result() }}</p><button type="button" autofocus (click)="closeDialog()">{{ copy().close }}</button></dialog>

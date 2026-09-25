@@ -1,6 +1,6 @@
 <main [attr.inert]="progressSaving() || progressError() ? '' : null" class="app-shell" [class.map-view]="view() === 'journey'" [class.registration-view]="view() === 'registration'">
   <header class="app-header">
-    <button class="brand" type="button" (click)="restart()" [disabled]="privacySaving()" aria-label="HelloHost">
+    <button class="brand" type="button" (click)="restart()" [disabled]="privacySaving() || postActionPending()" aria-label="HelloHost">
       <span class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 32 32"><path d="M5 15.5 16 6l11 9.5v10a2 2 0 0 1-2 2h-6v-8h-6v8H7a2 2 0 0 1-2-2z"/><path class="brand-heart" d="M12.7 13.2c1.2-1.2 2.7-.5 3.3.5.6-1 2.1-1.7 3.3-.5 1.5 1.5.2 3.6-3.3 5.7-3.5-2.1-4.8-4.2-3.3-5.7Z"/></svg>
       </span>
@@ -11,12 +11,12 @@
 
   @if (bookingService.status() === 'ready' && view() !== 'language' && view() !== 'registration') {
     <div class="utility-row">
-      <button class="back-button" type="button" (click)="goBack()" [disabled]="privacySaving()" [attr.aria-label]="copy().back">
+      <button class="back-button" type="button" (click)="goBack()" [disabled]="privacySaving() || postActionPending()" [attr.aria-label]="copy().back">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
         <span>{{ copy().back }}</span>
       </button>
       @if (selectedLanguageInfo(); as language) {
-        <button class="language-chip" type="button" (click)="goTo('language')" [disabled]="privacySaving()">
+        <button class="language-chip" type="button" (click)="goTo('language')" [disabled]="privacySaving() || postActionPending()">
           <span>{{ language.flag }}</span><span>{{ language.name }}</span>
         </button>
       }
@@ -97,10 +97,10 @@
           <p role="alert">{{ privacyFeedback()[1] }}</p>
         }
         <div class="action-stack" [attr.aria-busy]="privacySaving()">
-          <button class="button button-primary" type="button" (click)="acceptPrivacy(true)" [disabled]="privacySaving()">
+          <button class="button button-primary" type="button" (click)="acceptPrivacy(true)" [disabled]="privacySaving() || postActionPending()">
             <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-9"/></svg>{{ copy().accept }}
           </button>
-          <button class="button button-ghost danger" type="button" (click)="acceptPrivacy(false)" [disabled]="privacySaving()">{{ copy().decline }}</button>
+          <button class="button button-ghost danger" type="button" (click)="acceptPrivacy(false)" [disabled]="privacySaving() || postActionPending()">{{ copy().decline }}</button>
         </div>
       </section>
     }
@@ -167,27 +167,26 @@
           }
         </div>
 
-        @if (progress() === 100) {
-          <div class="success-card animate-in"><span>🎉</span><div><h2>{{ copy().allDone }}</h2><p>{{ copy().allDoneText }}</p></div></div>
+        @if (completionNoticeVisible()) {
+          <div class="success-card animate-in" role="status"><span>🎉</span><div><h2>{{ copy().allDone }}</h2><p>{{ copy().allDoneText }}</p></div></div>
         }
       </section>
     }
 
     @case ('step') {
-      <section class="screen detail-screen animate-in">
+      <section class="screen detail-screen posts-screen animate-in">
         <span class="eyebrow">STEP {{ activeStep() }} / 4</span>
         <div class="detail-art" [attr.data-step]="activeStep()">
           <span class="detail-emoji" aria-hidden="true">{{ activeStep() === 1 ? '🛂' : activeStep() === 2 ? '🚕' : activeStep() === 3 ? '🚪' : '🔑' }}</span>
           <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
         </div>
         <h1>{{ copy().stepTitles[activeStep() - 1] }}</h1>
-        <p class="detail-lead">{{ copy().stepDetails[activeStep() - 1] }}</p>
-        <div class="placeholder-card"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8v5m0 4h.01"/><circle cx="12" cy="12" r="9"/></svg><p>{{ copy().placeholder }}</p></div>
+        <app-post-category (busyChange)="postActionPending.set($event)" [category]="activeStep() === 3 ? 'AB001' : 'AB002'" [language]="selectedLanguage() ?? 'it'" />
         <div class="action-stack detail-actions">
           @if (!isCompleted(activeStep())) {
-            <button class="button button-primary" type="button" (click)="completeStep(activeStep())"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-9"/></svg>{{ copy().markComplete }}</button>
+            <button class="button button-primary" type="button" (click)="completeStep(activeStep())" [disabled]="postActionPending()"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-9"/></svg>{{ copy().markComplete }}</button>
           }
-          <button class="button button-ghost" type="button" (click)="goTo('journey')">{{ copy().backToMap }}</button>
+          <button class="button button-ghost" type="button" [disabled]="postActionPending()" (click)="goTo('journey')">{{ copy().backToMap }}</button>
         </div>
       </section>
     }

@@ -16,6 +16,10 @@ export interface CheckInProgress {
   completedAt: Record<string, string>;
 }
 
+export class GuestApiError extends Error {
+  constructor(readonly code: string, readonly status: number) { super(code); }
+}
+
 @Injectable({ providedIn: 'root' })
 export class BookingService {
   private readonly document = inject(DOCUMENT);
@@ -67,18 +71,18 @@ export class BookingService {
   }
 
   /** All future guest API calls go through this method to include the guest token. */
-  async request<T>(method: `sci_${string}`, body: Record<string, unknown> = {}): Promise<T> {
+  async request<T>(method: `sci_${string}`, body: Record<string, unknown> = {}, timeoutMs = 15000): Promise<T> {
     if (!this.token || !/^sci_[a-z_]+$/.test(method) || method === 'sci_login') throw new Error('Invalid authenticated request');
     const response = await fetch(`${API_BASE_URL}/${method}`, {
       method: 'POST', headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${this.token}` },
-      body: JSON.stringify(body), cache: 'no-store', signal: AbortSignal.timeout(15000)
+      body: JSON.stringify(body), cache: 'no-store', signal: AbortSignal.timeout(timeoutMs)
     });
     if (response.status === 401) {
       this.token = null; this.booking.set(null); this.progress.set(null); this.status.set('error');
       throw new Error('Session expired');
     }
     const result = await response.json();
-    if (!response.ok || !result.success) throw new Error('Guest API request failed');
+    if (!response.ok || !result.success) throw new GuestApiError(result.errorcode ?? 'SERVICE_UNAVAILABLE', response.status);
     return result as T;
   }
 }

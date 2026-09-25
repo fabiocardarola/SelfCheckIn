@@ -1,8 +1,9 @@
+import { PostCategoryComponent } from './post-category/post-category.component';
 import { BookingService } from './booking.service';
 import { DEMO_ARRIVAL, ArrivalConfig } from './arrival/arrival-config';
 import { ArrivalComponent } from './arrival/arrival.component';
 import { DOCUMENT } from '@angular/common';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, HostListener, inject, signal } from '@angular/core';
 import { GuestRegistrationComponent } from './guest-registration/guest-registration.component';
 
 type LanguageCode = 'it' | 'en' | 'pl' | 'fr' | 'de' | 'es' | 'pt' | 'ko' | 'ja' | 'zh';
@@ -77,7 +78,7 @@ const COPY: Record<LanguageCode, Copy> = {
   }
 };
 
-@Component({ selector: 'app-root', imports: [GuestRegistrationComponent, ArrivalComponent], templateUrl: './app.html', styleUrl: './app.scss' })
+@Component({ selector: 'app-root', imports: [PostCategoryComponent, GuestRegistrationComponent, ArrivalComponent], templateUrl: './app.html', styleUrl: './app.scss' })
 export class App {
   private readonly document = inject(DOCUMENT);
   protected readonly bookingService = inject(BookingService);
@@ -96,9 +97,33 @@ export class App {
     };
   });
 
-  constructor() { void this.loadBooking(); }
+  protected readonly completionNoticeVisible = signal(false);
+  private completionNoticeShown = false;
+  private completionNoticeTimer: ReturnType<typeof setTimeout> | undefined;
+
+  constructor() {
+    effect((onCleanup) => {
+      if (this.view() === 'journey' && this.progress() === 100 && !this.completionNoticeShown) {
+        this.completionNoticeShown = true;
+        this.completionNoticeVisible.set(true);
+        this.completionNoticeTimer = setTimeout(() => this.dismissCompletionNotice(), 10000);
+      }
+      onCleanup(() => this.dismissCompletionNotice());
+    });
+    void this.loadBooking();
+  }
+
+  @HostListener('document:click')
+  @HostListener('document:keydown.escape')
+  protected dismissCompletionNotice(): void {
+    clearTimeout(this.completionNoticeTimer);
+    this.completionNoticeTimer = undefined;
+    this.completionNoticeVisible.set(false);
+  }
 
   protected async loadBooking(): Promise<void> {
+    this.dismissCompletionNotice();
+    this.completionNoticeShown = false;
     await this.bookingService.login();
     const restored = this.bookingService.progress();
     const code = (restored?.language ?? this.booking()?.lang)?.toLowerCase().split(/[-_]/)[0];
@@ -119,6 +144,7 @@ export class App {
   protected readonly progress = computed(() => this.completedSteps().length * 25);
 
   protected readonly privacyAccepted = signal(false);
+  protected readonly postActionPending = signal(false);
   protected readonly progressSaving = signal(false);
   protected readonly progressError = signal(false);
   private retryAction: (() => Promise<void>) | null = null;
@@ -194,6 +220,7 @@ export class App {
   }
   protected openStep(step: number): void { if (!this.privacyAccepted() || !this.isUnlocked(step)) return; this.activeStep.set(step); this.goTo(step === 1 ? 'registration' : step === 2 ? 'arrival' : 'step'); }
   protected async completeStep(step: number): Promise<void> {
+    if (this.postActionPending()) return;
     await this.persistProgress(async () => {
       const progress = await this.bookingService.saveProgress({ step });
       this.completedSteps.set(progress.completedSteps);
@@ -207,7 +234,7 @@ export class App {
   protected goBack(): void { const current = this.view(); if (current === 'privacy') this.goTo('language'); if (current === 'declined') this.goTo('privacy'); if (current === 'journey') this.goTo('privacy'); if (current === 'step' || current === 'registration' || current === 'arrival') this.goTo('journey'); }
   protected restart(): void { if (this.privacySaving() || this.progressSaving()) return; this.goTo('language'); }
   protected goTo(nextView: View): void {
-    if (this.privacySaving()) return;
+    if (this.privacySaving() || this.postActionPending()) return;
     this.privacyError.set(false);
     this.view.set(nextView);
     this.document.defaultView?.setTimeout(() => this.document.defaultView?.scrollTo({ top: 0, behavior: 'instant' }), 0);
