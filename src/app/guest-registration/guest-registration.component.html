@@ -61,6 +61,16 @@
 
       <div class="form-field"><span>{{ copy().nationality }} *</span><button class="picker-field" type="button" (click)="openPicker('nationality')"><span class="picker-icon">🌍</span><strong [class.placeholder]="!currentGuest().nationality">{{ currentGuest().nationality || copy().choose }}</strong><svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button><input type="hidden" name="nationalityCode" [value]="currentGuest().nationalityCode" /></div>
 
+      <div class="form-field residence-country-field">
+        <span id="residence-country-label">{{ copy().residenceCountry }} *</span>
+        <button class="picker-field" type="button" (click)="openPicker('residenceCountry')" aria-labelledby="residence-country-label residence-country-value" aria-describedby="residence-country-hint">
+          <span class="picker-icon" aria-hidden="true">🌍</span><strong id="residence-country-value" [class.placeholder]="!currentGuest().residenceCountry">{{ currentGuest().residenceCountry || copy().choose }}</strong>
+          <svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg>
+        </button>
+        <small id="residence-country-hint">{{ copy().residenceHint }}</small>
+        <input type="hidden" name="residenceCountryCode" [value]="currentGuest().residenceCountryCode" />
+      </div>
+
       @if (isItaly()) {
         <div class="form-field animate-in"><span>{{ copy().birthPlace }} *</span><button class="picker-field" type="button" (click)="openPicker('birthPlace')"><span class="picker-icon">📍</span><strong [class.placeholder]="!currentGuest().birthPlace">{{ currentGuest().birthPlace || copy().choose }}</strong><svg class="chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button><input type="hidden" name="birthPlaceCode" [value]="currentGuest().birthPlaceCode" /></div>
       }
@@ -93,9 +103,9 @@
         <button class="reg-primary modal-primary" type="button" (click)="dateNext()">{{ copy().next }}<svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8 5 5 5-5 5"/></svg></button>
       }
 
-      @if (modal() === 'nationality' || modal() === 'birthPlace') {
-        <header class="modal-header"><div><span class="reg-eyebrow">{{ copy().registrationEyebrow }}</span><h2>{{ modal() === 'nationality' ? copy().countryTitle : copy().birthPlaceTitle }}</h2></div><button type="button" (click)="modal.set(null)" [attr.aria-label]="copy().cancel">×</button></header>
-        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input [placeholder]="modal() === 'nationality' ? copy().countrySearch : copy().birthPlaceSearch" [ngModel]="searchQuery()" (ngModelChange)="searchQuery.set($event)" /></label>
+      @if (modal() === 'nationality' || modal() === 'residenceCountry' || modal() === 'birthPlace') {
+        <header class="modal-header"><div><span class="reg-eyebrow">{{ copy().registrationEyebrow }}</span><h2>{{ modal() === 'residenceCountry' ? copy().residenceCountry : modal() === 'nationality' ? copy().countryTitle : copy().birthPlaceTitle }}</h2></div><button type="button" (click)="modal.set(null)" [attr.aria-label]="copy().cancel">×</button></header>
+        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input [placeholder]="modal() === 'birthPlace' ? copy().birthPlaceSearch : copy().countrySearch" [ngModel]="searchQuery()" (ngModelChange)="searchQuery.set($event)" /></label>
         <div class="results-list">
           @if (listsLoading()) { <p class="empty-result">{{ copy().loading }}</p> }
           @for (item of filteredItems(); track item.code) { <button type="button" (click)="selectCodeItem(item)"><span>{{ item.description }}</span><small>{{ item.code }}</small></button> } @empty { @if (!listsLoading()) { <p class="empty-result">{{ copy().noResults }}</p> } }

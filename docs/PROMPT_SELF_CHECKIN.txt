@@ -410,3 +410,27 @@ Il documento si trova in:
 
 ti ricordo che il frontend angular del self check-in utilizza il backend hhapi
 
+=======================
+RICHIESTA 026
+
+Secondo te è opportuno inserire un link per visualizzare la privacy o altra documentazione per essere in regola con il GDPR ?
+
+La società che gestisce i dati si chiama:
+
+EnDimension s.r.l.
+Vicolo Del Curato 10
+00186 ROMA (RM)
+  
+P.IVA/CF 16855661001
+CODICE SDI: SUBM70N
+REA: RM-1679873
+
+email: info@endimension.eu
+
+e la nostra policy prevede il trattamento dei dati personali ai fini della gestione della prenotazione e della comunicazione dei documenti di identità per obbligo di legge alla Polizia Di Stato Italiana.
+I dati personali verranno automaticamente cancellati dopo 7 giorni dal check-out.
+
+Se ritieni sia indispensabile riesci ad aggiungermi un popup sulla pagina di accettazione della privacy con un testo di privacy che mi scriverai tu ?
+
+Se si, prima di procedere alla modifica del sorgente mi fai un file MD con la privacy che mi hai generato ?
+

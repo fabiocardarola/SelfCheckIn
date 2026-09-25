@@ -1,4 +1,4 @@
-<main [attr.inert]="progressSaving() || progressError() ? '' : null" class="app-shell" [class.map-view]="view() === 'journey'" [class.registration-view]="view() === 'registration'">
+<main [attr.inert]="progressSaving() || progressError() || privacyOpen() ? '' : null" class="app-shell" [class.map-view]="view() === 'journey'" [class.registration-view]="view() === 'registration'">
   <header class="app-header">
     <button class="brand" type="button" (click)="restart()" [disabled]="privacySaving() || postActionPending()" aria-label="HelloHost">
       <span class="brand-mark" aria-hidden="true">
@@ -6,7 +6,7 @@
       </span>
       <span>Hello<span>Host</span></span>
     </button>
-    <span class="demo-pill">SELF CHECK-IN</span>
+    <button class="privacy-link header-privacy" type="button" (click)="privacyOpen.set(true)" [disabled]="privacySaving() || postActionPending()">{{ privacyCopy().title }}</button>
   </header>
 
   @if (bookingService.status() === 'ready' && view() !== 'language' && view() !== 'registration') {
@@ -80,16 +80,12 @@
           <span class="spark spark-a">✦</span><span class="spark spark-b">✦</span>
         </div>
         <div class="center-heading">
-          <span class="eyebrow">{{ copy().privacyEyebrow }}</span>
-          <h1>{{ copy().privacyTitle }}</h1>
-          <p>{{ copy().privacyIntro }}</p>
+          <span class="eyebrow">{{ privacyCopy().title }}</span>
+          <h1>{{ privacyCopy().heading }}</h1>
+          <p>{{ privacyCopy().intro }}</p>
         </div>
-        <div class="info-card">
-          @for (item of copy().privacyItems; track item; let index = $index) {
-            <div class="privacy-point"><span>{{ index + 1 }}</span><p>{{ item }}</p></div>
-          }
-        </div>
-        <p class="fine-print">{{ copy().privacyFooter }}</p>
+        <button class="button button-ghost privacy-read" type="button" (click)="privacyOpen.set(true)">{{ privacyCopy().read }}</button>
+        <p class="privacy-explanation">{{ privacyCopy().explanation }}</p>
         @if (privacySaving()) {
           <p role="status">{{ privacyFeedback()[0] }}</p>
         }
@@ -98,9 +94,9 @@
         }
         <div class="action-stack" [attr.aria-busy]="privacySaving()">
           <button class="button button-primary" type="button" (click)="acceptPrivacy(true)" [disabled]="privacySaving() || postActionPending()">
-            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-9"/></svg>{{ copy().accept }}
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m4 10 4 4 8-9"/></svg>{{ privacyCopy().acknowledge }}
           </button>
-          <button class="button button-ghost danger" type="button" (click)="acceptPrivacy(false)" [disabled]="privacySaving() || postActionPending()">{{ copy().decline }}</button>
+          <button class="button button-ghost danger" type="button" (click)="acceptPrivacy(false)" [disabled]="privacySaving() || postActionPending()">{{ privacyCopy().exit }}</button>
         </div>
       </section>
     }
@@ -109,9 +105,9 @@
       <section class="screen message-screen animate-in">
         <div class="stop-art" aria-hidden="true"><span>!</span></div>
         <span class="eyebrow">PRIVACY</span>
-        <h1>{{ copy().declinedTitle }}</h1>
-        <p>{{ copy().declinedText }}</p>
-        <button class="button button-primary" type="button" (click)="goTo('privacy')">{{ copy().reconsider }}</button>
+        <h1>{{ privacyCopy().exitTitle }}</h1>
+        <p>{{ privacyCopy().exitText }}</p>
+        <button class="button button-primary" type="button" (click)="goTo('privacy')">{{ privacyCopy().return }}</button>
       </section>
     }
 
@@ -219,4 +215,8 @@
       }
     </div>
   </div>
+}
+
+@if (privacyOpen()) {
+  <app-privacy-notice [language]="selectedLanguage() ?? 'it'" (closed)="privacyOpen.set(false)" />
 }

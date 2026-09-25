@@ -49,9 +49,9 @@ describe('GuestRegistrationComponent', () => {
 
     await click('.picker-field', 1);
     await click('.results-list button', 0);
-    await click('.picker-field', 2);
-    await click('.results-list button', 0);
     await click('.picker-field', 3);
+    await click('.results-list button', 0);
+    await click('.picker-field', 4);
     await click('.document-grid button', 0);
     await click('.modal-actions .reg-primary');
 
@@ -61,6 +61,8 @@ describe('GuestRegistrationComponent', () => {
     expect(element.querySelector('.nav-next')?.classList.contains('is-ready')).toBe(true);
 
     await click('.nav-next');
+    expect(vi.mocked(TestBed.inject(BookingService).request)).toHaveBeenLastCalledWith('sci_guest_save', { index: 0, guest: expect.objectContaining({ residenceCountryCode: '100000100' }) });
+    expect(element.querySelector('.residence-country-field')?.textContent).toContain('ITALIA');
     expect(element.querySelector('.guest-progress')?.textContent).toContain('1/4');
     expect(element.querySelectorAll('.picker-field')[1].textContent).toContain('ITALIA');
   });
@@ -159,6 +161,50 @@ describe('GuestRegistrationComponent', () => {
     expect(next.disabled).toBe(false);
     expect(element.querySelector<HTMLInputElement>('.guest-form > label > input')!.value).toBe('ROSSI');
     expect(element.querySelector('.guest-badge')!.textContent).toBe('1');
+  });
+
+  it('defaults residence from nationality but preserves an explicit choice, including after reopening', async () => {
+    const fixture = TestBed.createComponent(GuestRegistrationComponent);
+    fixture.componentRef.setInput('booking', TEST_BOOKING);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+    const click = async (selector: string, index = 0) => {
+      element.querySelectorAll<HTMLButtonElement>(selector)[index].click();
+      await fixture.whenStable();
+    };
+    const residence = () => element.querySelector<HTMLInputElement>('[name="residenceCountryCode"]')!.value;
+    await click('.start-button');
+    await click('.picker-field', 1); await click('.results-list button', 0);
+    expect(residence()).toBe('100000100');
+    await click('.picker-field', 1); await click('.results-list button', 1);
+    expect(residence()).toBe('100000215');
+    // Explicitly choosing the same country must also stop automatic changes.
+    await click('.residence-country-field button'); await click('.results-list button', 1);
+    await click('.picker-field', 1); await click('.results-list button', 0);
+    expect(residence()).toBe('100000215');
+    fixture.destroy();
+    const reopened = TestBed.createComponent(GuestRegistrationComponent);
+    reopened.componentRef.setInput('booking', TEST_BOOKING);
+    await reopened.whenStable();
+    reopened.nativeElement.querySelector('.start-button').click();
+    await reopened.whenStable();
+    expect(reopened.nativeElement.querySelector('[name="residenceCountryCode"]').value).toBe('100000215');
+  });
+
+  it('loads and saves a residence different from nationality without replacing it', async () => {
+    const api = vi.mocked(TestBed.inject(BookingService).request);
+    api.mockResolvedValueOnce({ guests: [{ pk: 81, surname: 'ROSSI', name: 'MARIO', gender: 'M', birthDate: '1990-01-15', nationalityCode: '100000100', residenceCountryCode: '100000215', birthPlaceCode: '405058091', documentTypeCode: 'PASOR', documentNumber: 'AB123' }] });
+    const fixture = TestBed.createComponent(GuestRegistrationComponent);
+    fixture.componentRef.setInput('booking', TEST_BOOKING);
+    await fixture.whenStable();
+    const element = fixture.nativeElement as HTMLElement;
+    element.querySelector<HTMLButtonElement>('.start-button')!.click();
+    await fixture.whenStable();
+    expect(element.querySelector('.residence-country-field')?.textContent).toContain('FRANCIA');
+    element.querySelector<HTMLButtonElement>('.form-next')!.click();
+    await fixture.whenStable();
+    expect(api).toHaveBeenLastCalledWith('sci_guest_save', { index: 0, guest: expect.objectContaining({ pk: 81, nationalityCode: '100000100', residenceCountryCode: '100000215' }) });
+    expect(element.querySelector<HTMLInputElement>('[name="residenceCountryCode"]')!.value).toBe('100000100');
   });
 
 });

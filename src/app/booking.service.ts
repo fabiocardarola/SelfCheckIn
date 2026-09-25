@@ -11,7 +11,8 @@ export interface Booking {
 
 export interface CheckInProgress {
   language: string | null;
-  privacyAccepted: boolean;
+  privacyAccepted: boolean; // Legacy API name: explicit acknowledgement, not consent.
+  privacyNoticeVersion?: string | null;
   completedSteps: number[];
   completedAt: Record<string, string>;
 }

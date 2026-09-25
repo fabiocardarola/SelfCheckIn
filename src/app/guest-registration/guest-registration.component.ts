@@ -7,7 +7,7 @@ import { documentTypeLabel } from './document-type-copy';
 import { REGISTRATION_API_COPY } from './registration-api-copy';
 
 type GuestField = 'surname' | 'name' | 'gender' | 'documentNumber';
-type ModalType = 'date' | 'nationality' | 'birthPlace' | 'documentType' | 'alert' | null;
+type ModalType = 'date' | 'nationality' | 'residenceCountry' | 'birthPlace' | 'documentType' | 'alert' | null;
 
 interface CodeItem { code: string; description: string; }
 interface GuestRecord {
@@ -15,6 +15,7 @@ interface GuestRecord {
   surname: string; name: string; gender: string;
   birthDate: string; birthDateLabel: string;
   nationalityCode: string; nationality: string;
+  residenceCountryCode: string; residenceCountry: string; residenceCountryEdited: boolean;
   birthPlaceCode: string; birthPlace: string;
   documentTypeCode: string; documentType: string;
   documentNumber: string; saved: boolean;
@@ -22,6 +23,7 @@ interface GuestRecord {
 
 const EMPTY_GUEST = (): GuestRecord => ({
   pk: 0, issuingCountryCode: '', surname: '', name: '', gender: '', birthDate: '', birthDateLabel: '', nationalityCode: '', nationality: '',
+  residenceCountryCode: '', residenceCountry: '', residenceCountryEdited: false,
   birthPlaceCode: '', birthPlace: '', documentTypeCode: '', documentType: '', documentNumber: '', saved: false
 });
 
@@ -84,7 +86,7 @@ export class GuestRegistrationComponent implements OnInit {
     return `${format(this.booking().host_arrival)} – ${format(this.booking().host_departure)}`;
   });
   protected readonly filteredItems = computed(() => {
-    const source = this.modal() === 'nationality' ? this.countries() : this.birthPlaces();
+    const source = this.modal() === 'birthPlace' ? this.birthPlaces() : this.countries();
     const query = this.normalizeForSearch(this.searchQuery());
     return source.filter((item) => !query || this.normalizeForSearch(item.description).includes(query)).slice(0, 60);
   });
@@ -106,9 +108,9 @@ export class GuestRegistrationComponent implements OnInit {
 
     try {
       const [states, towns, documents] = await Promise.all([
-        this.loadCsv('/assets/data/stati.csv'),
-        this.loadCsv('/assets/data/comuni.csv'),
-        this.loadCsv('/assets/data/documenti.csv')
+        this.loadCsv('assets/data/stati.csv'),
+        this.loadCsv('assets/data/comuni.csv'),
+        this.loadCsv('assets/data/documenti.csv')
       ]);
       this.countries.set(states);
       this.birthPlaces.set([
@@ -140,6 +142,9 @@ export class GuestRegistrationComponent implements OnInit {
         guest.name = this.asciiLetters(guest.name);
         guest.documentNumber = this.asciiLettersAndNumbers(guest.documentNumber);
         guest.nationality = this.countries().find(item => item.code === guest.nationalityCode)?.description ?? guest.nationalityCode;
+        if (saved) guest.residenceCountryEdited = !!guest.residenceCountryCode;
+        if (!guest.residenceCountryCode) guest.residenceCountryCode = guest.nationalityCode;
+        guest.residenceCountry = this.countries().find(item => item.code === guest.residenceCountryCode)?.description ?? guest.residenceCountryCode;
         guest.birthPlace = this.birthPlaces().find(item => item.code === guest.birthPlaceCode)?.description ?? guest.birthPlaceCode;
         guest.documentType = this.documentTypes().find(item => item.code === guest.documentTypeCode)?.description ?? guest.documentTypeCode;
         guest.birthDateLabel = guest.birthDate ? new Intl.DateTimeFormat(this.locale(), { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(guest.birthDate + 'T12:00:00')) : '';
@@ -235,13 +240,17 @@ export class GuestRegistrationComponent implements OnInit {
     this.dateError.set('');
   }
 
-  protected openPicker(type: 'nationality' | 'birthPlace'): void { this.searchQuery.set(''); this.modal.set(type); }
+  protected openPicker(type: 'nationality' | 'residenceCountry' | 'birthPlace'): void { this.searchQuery.set(''); this.modal.set(type); }
   protected selectCodeItem(item: CodeItem): void {
     const guest = this.currentGuest();
     if (this.modal() === 'nationality') {
       const changed = guest.nationalityCode !== item.code;
       guest.nationalityCode = item.code; guest.nationality = item.description;
+      if (!guest.residenceCountryEdited) { guest.residenceCountryCode = item.code; guest.residenceCountry = item.description; }
       if (changed) { guest.issuingCountryCode = item.code; guest.birthPlaceCode = ''; guest.birthPlace = ''; }
+    } else if (this.modal() === 'residenceCountry') {
+      guest.residenceCountryCode = item.code; guest.residenceCountry = item.description;
+      guest.residenceCountryEdited = true;
     } else {
       guest.birthPlaceCode = item.code; guest.birthPlace = item.description;
     }
@@ -279,6 +288,9 @@ export class GuestRegistrationComponent implements OnInit {
     if (!nextGuest.nationalityCode && first.nationalityCode) {
       nextGuest.nationalityCode = first.nationalityCode; nextGuest.nationality = first.nationality;
     }
+    if (!nextGuest.residenceCountryCode && nextGuest.nationalityCode) {
+      nextGuest.residenceCountryCode = nextGuest.nationalityCode; nextGuest.residenceCountry = nextGuest.nationality;
+    }
     this.guestIndex.set(nextIndex); this.scrollTop();
   }
 
@@ -312,7 +324,8 @@ export class GuestRegistrationComponent implements OnInit {
   private missingFields(guest: GuestRecord, index: number): string[] {
     const fields: Array<[boolean, string]> = [
       [!!guest.surname, this.copy().surname], [!!guest.name, this.copy().name], [!!guest.gender, this.copy().gender],
-      [!!guest.birthDate, this.copy().birthDate], [!!guest.nationalityCode, this.copy().nationality]
+      [!!guest.birthDate, this.copy().birthDate], [!!guest.nationalityCode, this.copy().nationality],
+      [!!guest.residenceCountryCode, this.copy().residenceCountry]
     ];
     if (guest.nationalityCode === '100000100') fields.push([!!guest.birthPlaceCode, this.copy().birthPlace]);
     if (index === 0) fields.push([!!guest.documentTypeCode, this.copy().documentType], [!!guest.documentNumber, this.copy().documentNumber]);
