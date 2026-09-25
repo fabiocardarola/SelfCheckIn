@@ -1,0 +1,928 @@
+{
+  "via pindaro 106": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+pindaro+106&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80871560,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 165097784,
+        "lat": "41.7575422",
+        "lon": "12.3660968",
+        "category": "highway",
+        "type": "tertiary",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Via Pindaro",
+        "display_name": "Via Pindaro, Casal Palocco, Municipio Roma X, Axa, Roma, Roma Capitale, Lazio, 00124, Italia",
+        "address": {
+          "road": "Via Pindaro",
+          "village": "Casal Palocco",
+          "suburb": "Municipio Roma X",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00124",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.7569845",
+          "41.7580999",
+          "12.3653401",
+          "12.3668536"
+        ]
+      },
+      {
+        "place_id": 80846910,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 29920256,
+        "lat": "41.7564544",
+        "lon": "12.3675731",
+        "category": "highway",
+        "type": "tertiary",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Via Pindaro",
+        "display_name": "Via Pindaro, Acilia Sud, Municipio Roma X, Axa, Roma, Roma Capitale, Lazio, 00124, Italia",
+        "address": {
+          "road": "Via Pindaro",
+          "suburb": "Acilia Sud",
+          "village": "Axa",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00124",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.7559242",
+          "41.7569845",
+          "12.3668536",
+          "12.3682926"
+        ]
+      }
+    ]
+  },
+  "via dei banchi nuovi 11": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+dei+banchi+nuovi+11&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80923082,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 4245323,
+        "lat": "41.8995227",
+        "lon": "12.4675248",
+        "category": "highway",
+        "type": "residential",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Via dei Banchi Nuovi",
+        "display_name": "Via dei Banchi Nuovi, Ponte, Municipio Roma I, Roma, Roma Capitale, Lazio, 00120, Italia",
+        "address": {
+          "road": "Via dei Banchi Nuovi",
+          "quarter": "Ponte",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00120",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.8991995",
+          "41.8998791",
+          "12.4666269",
+          "12.4684567"
+        ]
+      }
+    ]
+  },
+  "vicolo de' cinque 57": {
+    "url": "https://nominatim.openstreetmap.org/search?street=vicolo+de%27+cinque+57&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": []
+  },
+  "via santamaura 49": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+santamaura+49&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 81377798,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 11097016005,
+        "lat": "41.9082409",
+        "lon": "12.4537149",
+        "category": "amenity",
+        "type": "restaurant",
+        "place_rank": 30,
+        "importance": 8.896238651097914e-05,
+        "addresstype": "amenity",
+        "name": "Claps",
+        "display_name": "Claps, 49, Via Santamaura, Municipio Roma I, Roma, Roma Capitale, Lazio, 00192, Italia",
+        "address": {
+          "amenity": "Claps",
+          "house_number": "49",
+          "road": "Via Santamaura",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00192",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9081909",
+          "41.9082909",
+          "12.4536649",
+          "12.4537649"
+        ]
+      }
+    ]
+  },
+  "viale gorgia di leontini 330": {
+    "url": "https://nominatim.openstreetmap.org/search?street=viale+gorgia+di+leontini+330&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80653432,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 30061261,
+        "lat": "41.7509420",
+        "lon": "12.3595961",
+        "category": "highway",
+        "type": "unclassified",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Viale Gorgia di Leontini",
+        "display_name": "Viale Gorgia di Leontini, Casal Palocco, Municipio Roma X, Axa, Roma, Roma Capitale, Lazio, 00124, Italia",
+        "address": {
+          "road": "Viale Gorgia di Leontini",
+          "village": "Casal Palocco",
+          "suburb": "Municipio Roma X",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00124",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.7470942",
+          "41.7540827",
+          "12.3560000",
+          "12.3626614"
+        ]
+      },
+      {
+        "place_id": 80742679,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 132367223,
+        "lat": "41.7571479",
+        "lon": "12.3557814",
+        "category": "highway",
+        "type": "unclassified",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Viale Gorgia di Leontini",
+        "display_name": "Viale Gorgia di Leontini, Casal Palocco, Municipio Roma X, Madonnetta, Roma, Roma Capitale, Lazio, 00124, Italia",
+        "address": {
+          "road": "Viale Gorgia di Leontini",
+          "village": "Casal Palocco",
+          "suburb": "Municipio Roma X",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00124",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.7549256",
+          "41.7583121",
+          "12.3508322",
+          "12.3604425"
+        ]
+      },
+      {
+        "place_id": 80659389,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 131334112,
+        "lat": "41.7557582",
+        "lon": "12.3530922",
+        "category": "highway",
+        "type": "residential",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Viale Gorgia di Leontini",
+        "display_name": "Viale Gorgia di Leontini, Casal Palocco, Municipio Roma X, Madonnetta, Roma, Roma Capitale, Lazio, 00124, Italia",
+        "address": {
+          "road": "Viale Gorgia di Leontini",
+          "village": "Casal Palocco",
+          "suburb": "Municipio Roma X",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00124",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.7557165",
+          "41.7558586",
+          "12.3530286",
+          "12.3532045"
+        ]
+      }
+    ]
+  },
+  "via della croce 77": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+della+croce+77&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 81339833,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 12049989038,
+        "lat": "41.9063100",
+        "lon": "12.4800272",
+        "category": "place",
+        "type": "house",
+        "place_rank": 30,
+        "importance": 8.896238651097914e-05,
+        "addresstype": "place",
+        "name": "",
+        "display_name": "77, Via della Croce, Campo Marzio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+        "address": {
+          "house_number": "77",
+          "road": "Via della Croce",
+          "quarter": "Campo Marzio",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00187",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9062600",
+          "41.9063600",
+          "12.4799772",
+          "12.4800772"
+        ]
+      }
+    ]
+  },
+  "via aurelia 36": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+aurelia+36&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80796162,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 311743482,
+        "lat": "41.9828136",
+        "lon": "12.0551744",
+        "category": "highway",
+        "type": "primary",
+        "place_rank": 26,
+        "importance": 0.48321429049130216,
+        "addresstype": "road",
+        "name": "Via Aurelia",
+        "display_name": "Via Aurelia, Piano del Candeliere, Cerenova Costantica, Cerveteri, Roma Capitale, Lazio, 00050, Italia",
+        "address": {
+          "road": "Via Aurelia",
+          "suburb": "Piano del Candeliere",
+          "village": "Cerenova Costantica",
+          "town": "Cerveteri",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00050",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9816438",
+          "41.9839457",
+          "12.0523295",
+          "12.0580037"
+        ]
+      },
+      {
+        "place_id": 81165738,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 94397513,
+        "lat": "41.9365641",
+        "lon": "12.1105815",
+        "category": "highway",
+        "type": "primary",
+        "place_rank": 26,
+        "importance": 0.48321429049130216,
+        "addresstype": "road",
+        "name": "Via Aurelia",
+        "display_name": "Via Aurelia, Palo Laziale, Ladispoli, Roma Capitale, Lazio, 00055, Italia",
+        "address": {
+          "road": "Via Aurelia",
+          "village": "Palo Laziale",
+          "town": "Ladispoli",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00055",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9361312",
+          "41.9370474",
+          "12.1090859",
+          "12.1120930"
+        ]
+      },
+      {
+        "place_id": 81208985,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 188524262,
+        "lat": "41.9711832",
+        "lon": "12.0799458",
+        "category": "highway",
+        "type": "primary",
+        "place_rank": 26,
+        "importance": 0.48321429049130216,
+        "addresstype": "road",
+        "name": "Via Aurelia",
+        "display_name": "Via Aurelia, Piane di Vaccina, Ladispoli, Roma Capitale, Lazio, 00052, Italia",
+        "address": {
+          "road": "Via Aurelia",
+          "suburb": "Piane di Vaccina",
+          "town": "Ladispoli",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00052",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9707900",
+          "41.9715765",
+          "12.0792712",
+          "12.0806204"
+        ]
+      },
+      {
+        "place_id": 81166508,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 47246085,
+        "lat": "41.9718666",
+        "lon": "12.0787392",
+        "category": "highway",
+        "type": "primary",
+        "place_rank": 26,
+        "importance": 0.48321429049130216,
+        "addresstype": "road",
+        "name": "Via Aurelia",
+        "display_name": "Via Aurelia, Piane di Vaccina, Ladispoli, Roma Capitale, Lazio, 00050, Italia",
+        "address": {
+          "road": "Via Aurelia",
+          "suburb": "Piane di Vaccina",
+          "town": "Ladispoli",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00050",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9717745",
+          "41.9719586",
+          "12.0785668",
+          "12.0789116"
+        ]
+      },
+      {
+        "place_id": 80834974,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 1387295419,
+        "lat": "41.9595945",
+        "lon": "12.0964128",
+        "category": "highway",
+        "type": "primary",
+        "place_rank": 26,
+        "importance": 0.48321429049130216,
+        "addresstype": "road",
+        "name": "Via Aurelia",
+        "display_name": "Via Aurelia, Piane di Vaccina, Ladispoli, Roma Capitale, Lazio, 00055, Italia",
+        "address": {
+          "road": "Via Aurelia",
+          "suburb": "Piane di Vaccina",
+          "town": "Ladispoli",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00055",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9595210",
+          "41.9596680",
+          "12.0962670",
+          "12.0965585"
+        ]
+      }
+    ]
+  },
+  "via della scala 15": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+della+scala+15&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80376746,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 22951592,
+        "lat": "41.8914929",
+        "lon": "12.4680141",
+        "category": "highway",
+        "type": "residential",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Via della Scala",
+        "display_name": "Via della Scala, Trastevere, Municipio Roma I, Roma, Roma Capitale, Lazio, 00120, Italia",
+        "address": {
+          "road": "Via della Scala",
+          "quarter": "Trastevere",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00120",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.8910027",
+          "41.8919983",
+          "12.4677471",
+          "12.4683065"
+        ]
+      },
+      {
+        "place_id": 80095121,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 570065645,
+        "lat": "42.0795280",
+        "lon": "12.4010497",
+        "category": "highway",
+        "type": "pedestrian",
+        "place_rank": 26,
+        "importance": 0.05339298008697639,
+        "addresstype": "road",
+        "name": "Via della Scala",
+        "display_name": "Via della Scala, Formello, Roma Capitale, Lazio, Italia",
+        "address": {
+          "road": "Via della Scala",
+          "town": "Formello",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "42.0795115",
+          "42.0795444",
+          "12.4009126",
+          "12.4011868"
+        ]
+      }
+    ]
+  },
+  "via germanico 170": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+germanico+170&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80692655,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 12872759126,
+        "lat": "41.9087738",
+        "lon": "12.4616723",
+        "category": "place",
+        "type": "house",
+        "place_rank": 30,
+        "importance": 8.896238651097914e-05,
+        "addresstype": "place",
+        "name": "",
+        "display_name": "170a, Via Germanico, Prati, Municipio Roma I, Roma, Roma Capitale, Lazio, 00192, Italia",
+        "address": {
+          "house_number": "170a",
+          "road": "Via Germanico",
+          "neighbourhood": "Prati",
+          "quarter": "Prati",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00192",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9087238",
+          "41.9088238",
+          "12.4616223",
+          "12.4617223"
+        ]
+      },
+      {
+        "place_id": 81287986,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 7820111393,
+        "lat": "41.9088057",
+        "lon": "12.4616579",
+        "category": "amenity",
+        "type": "restaurant",
+        "place_rank": 30,
+        "importance": 8.896238651097914e-05,
+        "addresstype": "amenity",
+        "name": "Neighborhood",
+        "display_name": "Neighborhood, 170a, Via Germanico, Prati, Municipio Roma I, Roma, Roma Capitale, Lazio, 00192, Italia",
+        "address": {
+          "amenity": "Neighborhood",
+          "house_number": "170a",
+          "road": "Via Germanico",
+          "neighbourhood": "Prati",
+          "quarter": "Prati",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00192",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9087557",
+          "41.9088557",
+          "12.4616079",
+          "12.4617079"
+        ]
+      },
+      {
+        "place_id": 81087252,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 1342284943,
+        "lat": "41.9085295",
+        "lon": "12.4610810",
+        "category": "highway",
+        "type": "residential",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Via Germanico",
+        "display_name": "Via Germanico, Prati, Municipio Roma I, Roma, Roma Capitale, Lazio, 00192, Italia",
+        "address": {
+          "road": "Via Germanico",
+          "neighbourhood": "Prati",
+          "quarter": "Prati",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00192",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9077784",
+          "41.9092925",
+          "12.4579976",
+          "12.4641617"
+        ]
+      }
+    ]
+  },
+  "vicolo del curato 12": {
+    "url": "https://nominatim.openstreetmap.org/search?street=vicolo+del+curato+12&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80909278,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "node",
+        "osm_id": 6124041257,
+        "lat": "41.9005800",
+        "lon": "12.4669046",
+        "category": "place",
+        "type": "house",
+        "place_rank": 30,
+        "importance": 8.896238651097914e-05,
+        "addresstype": "place",
+        "name": "",
+        "display_name": "12, Vicolo del Curato, Ponte, Municipio Roma I, Roma, Roma Capitale, Lazio, 00120, Italia",
+        "address": {
+          "house_number": "12",
+          "road": "Vicolo del Curato",
+          "quarter": "Ponte",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00120",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9005300",
+          "41.9006300",
+          "12.4668546",
+          "12.4669546"
+        ]
+      }
+    ]
+  },
+  "vicolo del governo vecchio 56": {
+    "url": "https://nominatim.openstreetmap.org/search?street=vicolo+del+governo+vecchio+56&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 81190853,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 4245335,
+        "lat": "41.8982285",
+        "lon": "12.4697688",
+        "category": "highway",
+        "type": "pedestrian",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Vicolo del Governo Vecchio",
+        "display_name": "Vicolo del Governo Vecchio, Parione, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
+        "address": {
+          "road": "Vicolo del Governo Vecchio",
+          "quarter": "Parione",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00186",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.8979227",
+          "41.8985383",
+          "12.4695662",
+          "12.4699653"
+        ]
+      }
+    ]
+  },
+  "via della panetteria 10": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+della+panetteria+10&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 81378567,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 108564721,
+        "lat": "41.9018885",
+        "lon": "12.4844253",
+        "category": "highway",
+        "type": "service",
+        "place_rank": 27,
+        "importance": 0.040088962386511016,
+        "addresstype": "road",
+        "name": "Via della Panetteria",
+        "display_name": "Via della Panetteria, Trevi, Municipio Roma I, Roma, Roma Capitale, Lazio, 00187, Italia",
+        "address": {
+          "road": "Via della Panetteria",
+          "quarter": "Trevi",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00187",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9013461",
+          "41.9024629",
+          "12.4841183",
+          "12.4848295"
+        ]
+      }
+    ]
+  },
+  "via dell'orso 34": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+dell%27orso+34&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80915725,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 28160147,
+        "lat": "41.9018233",
+        "lon": "12.4730996",
+        "category": "highway",
+        "type": "residential",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Via dell'Orso",
+        "display_name": "Via dell'Orso, Ponte, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
+        "address": {
+          "road": "Via dell'Orso",
+          "quarter": "Ponte",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00186",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9018077",
+          "41.9018726",
+          "12.4722845",
+          "12.4739162"
+        ]
+      },
+      {
+        "place_id": 80993696,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 187776466,
+        "lat": "41.9017779",
+        "lon": "12.4741403",
+        "category": "highway",
+        "type": "pedestrian",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Via dell'Orso",
+        "display_name": "Via dell'Orso, Campo Marzio, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
+        "address": {
+          "road": "Via dell'Orso",
+          "quarter": "Campo Marzio",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00186",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.9017102",
+          "41.9018085",
+          "12.4739162",
+          "12.4743442"
+        ]
+      }
+    ]
+  },
+  "vicolo del governo vecchio 54": {
+    "url": "https://nominatim.openstreetmap.org/search?street=vicolo+del+governo+vecchio+54&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 80674929,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 4245335,
+        "lat": "41.8982285",
+        "lon": "12.4697688",
+        "category": "highway",
+        "type": "pedestrian",
+        "place_rank": 26,
+        "importance": 0.053422295719844325,
+        "addresstype": "road",
+        "name": "Vicolo del Governo Vecchio",
+        "display_name": "Vicolo del Governo Vecchio, Parione, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
+        "address": {
+          "road": "Vicolo del Governo Vecchio",
+          "quarter": "Parione",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00186",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.8979227",
+          "41.8985383",
+          "12.4695662",
+          "12.4699653"
+        ]
+      }
+    ]
+  },
+  "via della vetrina 24": {
+    "url": "https://nominatim.openstreetmap.org/search?street=via+della+vetrina+24&city=Roma&countrycodes=it&format=jsonv2&addressdetails=1&limit=5",
+    "results": [
+      {
+        "place_id": 81173686,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "way",
+        "osm_id": 50773633,
+        "lat": "41.9001065",
+        "lon": "12.4698174",
+        "category": "highway",
+        "type": "service",
+        "place_rank": 27,
+        "importance": 0.040088962386511016,
+        "addresstype": "road",
+        "name": "Via della Vetrina",
+        "display_name": "Via della Vetrina, Ponte, Municipio Roma I, Roma, Roma Capitale, Lazio, 00186, Italia",
+        "address": {
+          "road": "Via della Vetrina",
+          "quarter": "Ponte",
+          "suburb": "Municipio Roma I",
+          "city": "Roma",
+          "county": "Roma Capitale",
+          "ISO3166-2-lvl6": "IT-RM",
+          "state": "Lazio",
+          "ISO3166-2-lvl4": "IT-62",
+          "postcode": "00186",
+          "country": "Italia",
+          "country_code": "it"
+        },
+        "boundingbox": [
+          "41.8998716",
+          "41.9004862",
+          "12.4698105",
+          "12.4700874"
+        ]
+      }
+    ]
+  }
+}

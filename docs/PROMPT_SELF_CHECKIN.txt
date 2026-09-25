@@ -388,3 +388,25 @@ Togli il numero di telefono ma metti un testo:
 Chiedi al tuo host...
 e sotto il bottone che apre whatsapp con la label "Chiedi con whatsapp..."
 
+=======================
+RICHIESTA 024
+
+La tabella rooms ha i campi dell'indirizzo: address; city; cap. Riesci a geolocalizzare questi indirizzi e mettermi le coordinate nei campi lat e lng ?
+
+Non farlo per tutti i records ma solo per quelli della seguente query:
+
+select * from rooms where hostPk = 3;
+
+Fammi anche uno script sql per gli update così lo riporto anche nel database di produzione
+
+=======================
+RICHIESTA 025
+
+Con il portale di backoffice HHAdmin ho impostato il funzionamento che devono avere gli ultimi due bottoni. Quando il turista preme uno dei due ultimi bottoni nella mappa devi visualizzare una schermata con una serie di card che devono essere visualizzate in base a come sono state configurate nel sistema di backoffice HHAdmin.
+Ho fatto fare un documento con tutte le specifiche di come implementare la visualizzazione delle card quindi alla pressione del bottone "Apri il portone" dovrai aprire una schermata con la categoria AB001 mentre alla pressione del bottone "Recupera le chiavi" la categoria AB002.
+Il documento si trova in:
+
+/Users/fabiocardarola/Documents/ProgettiJakarta/hhadmin/docs/SELF_CHECK-IN_SPECS.MD
+
+ti ricordo che il frontend angular del self check-in utilizza il backend hhapi
+

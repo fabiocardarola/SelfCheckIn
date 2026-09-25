@@ -1,0 +1,40 @@
+1
+2
+3
+4
+5
+71
+76
+77
+80
+81
+82
+85
+86
+87
+95
+96
+97
+98
+99
+19	19
+19	OK: 19 indirizzi verificati (script rieseguibile)
+1	PINDARO	Via Pindaro 106	Roma	00125	41.7575289	12.3666156
+2	NAVONA & PANTHEON	Via Dei Banchi Nuovi 11	Roma	00186	41.8996927	12.4672596
+3	MARIEL APARTMENT	Vicolo De' Cinque 57	Roma	00158	41.8905773	12.4692241
+4	SYLVIA STYLISH	Via Santamaura 49	Roma	00192	41.9087093	12.4535636
+5	Casa di Agata	Viale Gorgia di Leontini,  330	Roma	00124	41.7561122	12.3533226
+71	Marylin Apartment Via Della Croce	Via Della Croce 77	Roma	00187	41.9063684	12.4800134
+76	Agata Vatican Stylish self check-in apartment	Via Aurelia 36	Roma	00165	41.8998679	12.4527672
+77	Sylvia Apartment in Trastevere	Via Della Scala 15	Roma	00153	41.8908194	12.4683926
+80	VATICAN DOLCE VITA APARTMENT	Via Germanico 170	Roma	00192	41.9087689	12.461621
+81	Curato Collection Art Déco	Vicolo del Curato, 12	Roma	00186	41.9005767	12.4669916
+82	Navona Chic 56 Apartment	Vicolo Del Governo Vecchio 56	Roma	00186	41.8983939	12.4698358
+85	Trevi Charming Apartment	Via Della Panetteria 10	Roma	00187	41.9017099	12.4845107
+86	Navona Boutique Apartment 34	Via Dell'Orso 34	Roma	00186	41.901845	12.4736099
+87	Curato Penthouse	Vicolo Del Curato 12	Roma	00186	41.9005767	12.4669916
+95	Curato Collection Suite	Vicolo Del Curato 12	Roma	00186	41.9005767	12.4669916
+96	Navona Style Cozy Apartment	Vicolo Del Governo Vecchio 54	Roma	00186	41.8983372	12.4697989
+97	Agata Coronari Charming	Via Della Vetrina 24	Roma	00186	41.900144	12.469697
+98	Coronari Collection Deluxe	Vicolo Del Curato 12	Roma	00187	41.9005767	12.4669916
+99	Coronari Collection Terrace Suite	Vicolo Del Curato 12	Roma	00186	41.9005767	12.4669916

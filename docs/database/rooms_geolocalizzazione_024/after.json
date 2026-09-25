@@ -1,0 +1,992 @@
+[
+  {
+    "pk": 1,
+    "cap": "00125",
+    "lat": 41.7575289,
+    "lng": 12.3666156,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Pindaro 106",
+    "description": "PINDARO"
+  },
+  {
+    "pk": 2,
+    "cap": "00186",
+    "lat": 41.8996927,
+    "lng": 12.4672596,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Dei Banchi Nuovi 11",
+    "description": "NAVONA & PANTHEON"
+  },
+  {
+    "pk": 3,
+    "cap": "00158",
+    "lat": 41.8905773,
+    "lng": 12.4692241,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Vicolo De' Cinque 57",
+    "description": "MARIEL APARTMENT"
+  },
+  {
+    "pk": 4,
+    "cap": "00192",
+    "lat": 41.9087093,
+    "lng": 12.4535636,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Santamaura 49",
+    "description": "SYLVIA STYLISH"
+  },
+  {
+    "pk": 5,
+    "cap": "00124",
+    "lat": 41.7561122,
+    "lng": 12.3533226,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Viale Gorgia di Leontini,  330",
+    "description": "Casa di Agata"
+  },
+  {
+    "pk": 6,
+    "cap": "00100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "ROMA",
+    "hostPk": 11,
+    "address": "Via Mario Rossi 5",
+    "description": "Appartamento"
+  },
+  {
+    "pk": 7,
+    "cap": "00000",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Warszawa",
+    "hostPk": 12,
+    "address": "Ulica ...",
+    "description": "Mariola & Sissi's Home"
+  },
+  {
+    "pk": 8,
+    "cap": "95014",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Cupertino",
+    "hostPk": 13,
+    "address": "10600 N Tantau Ave",
+    "description": "Apple Park Visitor Center"
+  },
+  {
+    "pk": 9,
+    "cap": "00100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "ROMA",
+    "hostPk": 14,
+    "address": "Via Della Collina 16",
+    "description": "Casa Dolce Casa"
+  },
+  {
+    "pk": 10,
+    "cap": "00158",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 15,
+    "address": "Via Dei Riari 46",
+    "description": "New Ground floor IN TRASTEVERE"
+  },
+  {
+    "pk": 11,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 15,
+    "address": "Navona",
+    "description": "Sweet Navona!"
+  },
+  {
+    "pk": 12,
+    "cap": "00100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 17,
+    "address": "Fontana Di Trevi 35",
+    "description": "Cozy Trevi"
+  },
+  {
+    "pk": 13,
+    "cap": "00100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 20,
+    "address": "Via Delle Colline 36",
+    "description": "SweetHome"
+  },
+  {
+    "pk": 14,
+    "cap": "00100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 20,
+    "address": "Via Fontana di Trevi 1",
+    "description": "Trevi"
+  },
+  {
+    "pk": 15,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 15,
+    "address": "Via di pietra 70",
+    "description": "Vista Penthouse Rome "
+  },
+  {
+    "pk": 16,
+    "cap": "00100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 38,
+    "address": "Via Della Review , 1",
+    "description": "Apple House"
+  },
+  {
+    "pk": 17,
+    "cap": "00100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 19,
+    "address": "Via Apple 1",
+    "description": "Apple Home "
+  },
+  {
+    "pk": 18,
+    "cap": "00100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 18,
+    "address": "Via le piazze",
+    "description": "Casa 1 "
+  },
+  {
+    "pk": 19,
+    "cap": "90100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Palermo",
+    "hostPk": 41,
+    "address": "Via erice",
+    "description": "Salavoi"
+  },
+  {
+    "pk": 20,
+    "cap": "90135",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Palermo",
+    "hostPk": 42,
+    "address": "Via santissimo salvatore 14",
+    "description": "Casa Ina"
+  },
+  {
+    "pk": 21,
+    "cap": "90135",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Palermo",
+    "hostPk": 42,
+    "address": "Via santissimo salvatore 14",
+    "description": "Casa Gigi"
+  },
+  {
+    "pk": 22,
+    "cap": "90135",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Palermo",
+    "hostPk": 42,
+    "address": "Via santissimo Salvatore ",
+    "description": "Casa Nanni"
+  },
+  {
+    "pk": 23,
+    "cap": "90135",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Palermo",
+    "hostPk": 42,
+    "address": "Via Santissimo Salvatore",
+    "description": "Casa Principe"
+  },
+  {
+    "pk": 24,
+    "cap": "00165",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Vicolo di San Francesco di Sales 49",
+    "description": "Confortevole pied-a-terre a Trastevere"
+  },
+  {
+    "pk": 25,
+    "cap": "00165",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via di S.Francesco di Sales 80",
+    "description": "Bright Trastevere"
+  },
+  {
+    "pk": 26,
+    "cap": "00187",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via di Gesù e Maria 13",
+    "description": "Spanish Steps Terrace"
+  },
+  {
+    "pk": 27,
+    "cap": "00187",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via di Gesù e Maria 13",
+    "description": "Corso 2"
+  },
+  {
+    "pk": 28,
+    "cap": "00187",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via di Gesù e Maria 13",
+    "description": "Corso 4"
+  },
+  {
+    "pk": 29,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via di S.Eligio 13",
+    "description": "Eligio"
+  },
+  {
+    "pk": 30,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via dei Fienaroli 29",
+    "description": "Fienaroli"
+  },
+  {
+    "pk": 31,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Bartolomeo Galletti 13",
+    "description": "Galletti"
+  },
+  {
+    "pk": 32,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via di S.Girolamo alla Carità 76",
+    "description": "Girolamo"
+  },
+  {
+    "pk": 33,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via del Governo Vecchio 34",
+    "description": "Governo Vecchio"
+  },
+  {
+    "pk": 34,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Vicolo delle Grotte 14",
+    "description": "Grotte"
+  },
+  {
+    "pk": 35,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Goffredo Mameli 30",
+    "description": "Mameli 30"
+  },
+  {
+    "pk": 36,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Luigi Masi 7",
+    "description": "Masi Black"
+  },
+  {
+    "pk": 37,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Luigi Masi 7",
+    "description": "Masi White"
+  },
+  {
+    "pk": 38,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via degli Orti di Trastevere 59",
+    "description": "Orti"
+  },
+  {
+    "pk": 39,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via della Scrofa 39",
+    "description": "Pantheon"
+  },
+  {
+    "pk": 40,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via della Scrofa 39",
+    "description": "Pantheon Suite"
+  },
+  {
+    "pk": 41,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via della Rosetta 11",
+    "description": "Pantheon View"
+  },
+  {
+    "pk": 42,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Vicolo de Renzi 2",
+    "description": "Renzi 2"
+  },
+  {
+    "pk": 43,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma ",
+    "hostPk": 51,
+    "address": "Vicolo de Renzi 3",
+    "description": "Renzi 3"
+  },
+  {
+    "pk": 44,
+    "cap": "00165",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via di S.Francesco di Sales 80",
+    "description": "Sales.Down"
+  },
+  {
+    "pk": 45,
+    "cap": "00136",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Mario Savini 7",
+    "description": "Savini"
+  },
+  {
+    "pk": 46,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Vicolo del Cinque 43",
+    "description": "Suite Trastevere"
+  },
+  {
+    "pk": 47,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Largo Giuseppe Toniolo 13",
+    "description": "Toniolo"
+  },
+  {
+    "pk": 48,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via dei Cappellari 98",
+    "description": "Cappellari D"
+  },
+  {
+    "pk": 49,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via dei Cappellari 98",
+    "description": "Cappellari E"
+  },
+  {
+    "pk": 50,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via G.B. Bodoni 6",
+    "description": "Bodoni"
+  },
+  {
+    "pk": 51,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Luigi Masi 7",
+    "description": "Masi Silver"
+  },
+  {
+    "pk": 52,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Luigi Masi 7",
+    "description": "Masi Pink"
+  },
+  {
+    "pk": 53,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Luigi Masi 7",
+    "description": "Masi gold"
+  },
+  {
+    "pk": 54,
+    "cap": "00136",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 18,
+    "address": "Via San Martino ai monti ",
+    "description": "Easy host apt Boutique Monti "
+  },
+  {
+    "pk": 55,
+    "cap": "04019",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Terracina ",
+    "hostPk": 114,
+    "address": "Via stella polare,6",
+    "description": "Rossella "
+  },
+  {
+    "pk": 56,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Luigi Masi 7",
+    "description": "Masi 7 DX"
+  },
+  {
+    "pk": 57,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Luigi Masi 7",
+    "description": "Masi 7B Sx"
+  },
+  {
+    "pk": 58,
+    "cap": "20049",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "GALLIPOLI",
+    "hostPk": 159,
+    "address": "VIA LECCE 50  - GALLIPOLI",
+    "description": "Casa Vacanze in via Lecce 70 / Gallipoli"
+  },
+  {
+    "pk": 59,
+    "cap": "84047",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Capaccio",
+    "hostPk": 160,
+    "address": "Via pagliaio della madonna",
+    "description": "Tavernetta "
+  },
+  {
+    "pk": 60,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Dell’Orso 80 int.8",
+    "description": "Orso 8"
+  },
+  {
+    "pk": 61,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Dell’Orso 80 int.8",
+    "description": "Gigli"
+  },
+  {
+    "pk": 62,
+    "cap": "00186",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Dei Cappellari 98",
+    "description": "Cappellari D"
+  },
+  {
+    "pk": 63,
+    "cap": "96100",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Siracusa",
+    "hostPk": 162,
+    "address": "Strada carancino 41 int 47",
+    "description": "Zeus"
+  },
+  {
+    "pk": 64,
+    "cap": "96014",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Siracusa",
+    "hostPk": 162,
+    "address": "Strada carancino 41 int 47",
+    "description": "Giove"
+  },
+  {
+    "pk": 65,
+    "cap": "96014",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Siracusa ",
+    "hostPk": 162,
+    "address": "Strada carancino 41 int 47",
+    "description": "Athena"
+  },
+  {
+    "pk": 66,
+    "cap": "TARANTO",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Manduria",
+    "hostPk": 164,
+    "address": "Boomerang",
+    "description": "Casa vicino Giuseppe"
+  },
+  {
+    "pk": 67,
+    "cap": "90015",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Cefalù",
+    "hostPk": 169,
+    "address": "via porto salvo 23",
+    "description": "Delux"
+  },
+  {
+    "pk": 68,
+    "cap": "90015",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Cefalù ",
+    "hostPk": 169,
+    "address": "via porto salvo 23",
+    "description": "Pablo"
+  },
+  {
+    "pk": 69,
+    "cap": "71019",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Vieste",
+    "hostPk": 172,
+    "address": "Contrada Focareta",
+    "description": "Limone"
+  },
+  {
+    "pk": 70,
+    "cap": "71019",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Vieste",
+    "hostPk": 172,
+    "address": "Contrada focareta",
+    "description": "Ulivo"
+  },
+  {
+    "pk": 71,
+    "cap": "00187",
+    "lat": 41.9063684,
+    "lng": 12.4800134,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Della Croce 77",
+    "description": "Marylin Apartment Via Della Croce"
+  },
+  {
+    "pk": 72,
+    "cap": "00071",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Pomezia",
+    "hostPk": 174,
+    "address": "Via Svizzera 5",
+    "description": "Attico Torvajanica"
+  },
+  {
+    "pk": 73,
+    "cap": "00196",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 174,
+    "address": "Via Cesare Beccaria 88",
+    "description": "Artisti House"
+  },
+  {
+    "pk": 74,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Dell’Olmetto 23",
+    "description": "Il Monastero Collection Hostel Ostello"
+  },
+  {
+    "pk": 75,
+    "cap": "00153",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Roma",
+    "hostPk": 51,
+    "address": "Via Di Montefiore 3",
+    "description": "Montefiore"
+  },
+  {
+    "pk": 76,
+    "cap": "00165",
+    "lat": 41.8998679,
+    "lng": 12.4527672,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Aurelia 36",
+    "description": "Agata Vatican Stylish self check-in apartment"
+  },
+  {
+    "pk": 77,
+    "cap": "00153",
+    "lat": 41.8908194,
+    "lng": 12.4683926,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Della Scala 15",
+    "description": "Sylvia Apartment in Trastevere"
+  },
+  {
+    "pk": 78,
+    "cap": "73014",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "cazitoi ",
+    "hostPk": 201,
+    "address": "via cazi tua ",
+    "description": "Baia verde "
+  },
+  {
+    "pk": 79,
+    "cap": "07028",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Santa Teresa Gallura",
+    "hostPk": 203,
+    "address": "Via Sandro Pertini",
+    "description": "Casa Vacanze Pas"
+  },
+  {
+    "pk": 80,
+    "cap": "00192",
+    "lat": 41.9087689,
+    "lng": 12.461621,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Germanico 170",
+    "description": "VATICAN DOLCE VITA APARTMENT"
+  },
+  {
+    "pk": 81,
+    "cap": "00186",
+    "lat": 41.9005767,
+    "lng": 12.4669916,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Vicolo del Curato, 12",
+    "description": "Curato Collection Art Déco"
+  },
+  {
+    "pk": 82,
+    "cap": "00186",
+    "lat": 41.8983939,
+    "lng": 12.4698358,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Vicolo Del Governo Vecchio 56",
+    "description": "Navona Chic 56 Apartment"
+  },
+  {
+    "pk": 83,
+    "cap": "73040",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Morciano di Leuca",
+    "hostPk": 244,
+    "address": "Contrada Cupa",
+    "description": "Antico Quataru"
+  },
+  {
+    "pk": 84,
+    "cap": "73040",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Torre Vado",
+    "hostPk": 244,
+    "address": "Via Giotto, 45",
+    "description": "Montirossi"
+  },
+  {
+    "pk": 85,
+    "cap": "00187",
+    "lat": 41.9017099,
+    "lng": 12.4845107,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Della Panetteria 10",
+    "description": "Trevi Charming Apartment"
+  },
+  {
+    "pk": 86,
+    "cap": "00186",
+    "lat": 41.901845,
+    "lng": 12.4736099,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Dell'Orso 34",
+    "description": "Navona Boutique Apartment 34"
+  },
+  {
+    "pk": 87,
+    "cap": "00186",
+    "lat": 41.9005767,
+    "lng": 12.4669916,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Vicolo Del Curato 12",
+    "description": "Curato Penthouse"
+  },
+  {
+    "pk": 88,
+    "cap": "23818",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Pasturo ",
+    "hostPk": 253,
+    "address": "Già Provata Castagneti 6",
+    "description": "Appartamento I Castagneti"
+  },
+  {
+    "pk": 89,
+    "cap": "32041",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Auronzo di Cadore ",
+    "hostPk": 256,
+    "address": "Via Ligonto 72",
+    "description": "Appartamento al bosco "
+  },
+  {
+    "pk": 90,
+    "cap": "91025",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Favignana ",
+    "hostPk": 259,
+    "address": "Favignana",
+    "description": "Panda"
+  },
+  {
+    "pk": 91,
+    "cap": "91025",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Favignana ",
+    "hostPk": 259,
+    "address": "Favignana ",
+    "description": "Idea"
+  },
+  {
+    "pk": 92,
+    "cap": "91025",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Favignana ",
+    "hostPk": 259,
+    "address": "Favignana ",
+    "description": "Gommone"
+  },
+  {
+    "pk": 93,
+    "cap": "91025",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Marsala ",
+    "hostPk": 259,
+    "address": "Marsala ",
+    "description": "Furgone"
+  },
+  {
+    "pk": 94,
+    "cap": "96012",
+    "lat": 0.0,
+    "lng": 0.0,
+    "city": "Avola",
+    "hostPk": 263,
+    "address": "Via Emanuela Loi 48",
+    "description": "Martina"
+  },
+  {
+    "pk": 95,
+    "cap": "00186",
+    "lat": 41.9005767,
+    "lng": 12.4669916,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Vicolo Del Curato 12",
+    "description": "Curato Collection Suite"
+  },
+  {
+    "pk": 96,
+    "cap": "00186",
+    "lat": 41.8983372,
+    "lng": 12.4697989,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Vicolo Del Governo Vecchio 54",
+    "description": "Navona Style Cozy Apartment"
+  },
+  {
+    "pk": 97,
+    "cap": "00186",
+    "lat": 41.900144,
+    "lng": 12.469697,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Via Della Vetrina 24",
+    "description": "Agata Coronari Charming"
+  },
+  {
+    "pk": 98,
+    "cap": "00187",
+    "lat": 41.9005767,
+    "lng": 12.4669916,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Vicolo Del Curato 12",
+    "description": "Coronari Collection Deluxe"
+  },
+  {
+    "pk": 99,
+    "cap": "00186",
+    "lat": 41.9005767,
+    "lng": 12.4669916,
+    "city": "Roma",
+    "hostPk": 3,
+    "address": "Vicolo Del Curato 12",
+    "description": "Coronari Collection Terrace Suite"
+  }
+]

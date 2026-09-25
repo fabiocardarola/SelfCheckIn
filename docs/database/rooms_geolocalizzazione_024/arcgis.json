@@ -1,0 +1,587 @@
+{
+  "via pindaro 106": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+pindaro+106%2C+00125+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via Pindaro 106, 00125, Roma",
+          "location": {
+            "x": 12.36661560478,
+            "y": 41.757528880498
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via Pindaro 106, 00125, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via Pindaro 106",
+            "City": "Roma",
+            "Postal": "00125"
+          },
+          "extent": {
+            "xmin": 12.36561560478,
+            "ymin": 41.756528880498,
+            "xmax": 12.36761560478,
+            "ymax": 41.758528880498
+          }
+        }
+      ]
+    }
+  },
+  "via dei banchi nuovi 11": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+dei+banchi+nuovi+11%2C+00186+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via dei Banchi Nuovi 11, 00186, Roma",
+          "location": {
+            "x": 12.467259630778,
+            "y": 41.899692705786
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via dei Banchi Nuovi 11, 00186, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via dei Banchi Nuovi 11",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.466259630778,
+            "ymin": 41.898692705786,
+            "xmax": 12.468259630778,
+            "ymax": 41.900692705786
+          }
+        }
+      ]
+    }
+  },
+  "vicolo de' cinque 57": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=vicolo+de%27+cinque+57%2C+00158+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Vicolo de' Cinque 57, 00153, Roma",
+          "location": {
+            "x": 12.469224097426,
+            "y": 41.890577302263
+          },
+          "score": 93.55,
+          "attributes": {
+            "Match_addr": "Vicolo de' Cinque 57, 00153, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Vicolo de' Cinque 57",
+            "City": "Roma",
+            "Postal": "00153"
+          },
+          "extent": {
+            "xmin": 12.468224097426,
+            "ymin": 41.889577302263,
+            "xmax": 12.470224097426,
+            "ymax": 41.891577302263
+          }
+        },
+        {
+          "address": "Piazza delle Cinque Lune 57, 00186, Roma",
+          "location": {
+            "x": 12.473677002359,
+            "y": 41.900193689606
+          },
+          "score": 82.7,
+          "attributes": {
+            "Match_addr": "Piazza delle Cinque Lune 57, 00186, Roma",
+            "Addr_type": "StreetAddress",
+            "StAddr": "Piazza delle Cinque Lune 57",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.472677002359,
+            "ymin": 41.899193689606,
+            "xmax": 12.474677002359,
+            "ymax": 41.901193689606
+          }
+        },
+        {
+          "address": "Via dei Cinque Archi 57, 00049, Velletri, Roma",
+          "location": {
+            "x": 12.769503515572,
+            "y": 41.657345817265
+          },
+          "score": 81.5,
+          "attributes": {
+            "Match_addr": "Via dei Cinque Archi 57, 00049, Velletri, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via dei Cinque Archi 57",
+            "City": "Velletri",
+            "Postal": "00049"
+          },
+          "extent": {
+            "xmin": 12.768503515572,
+            "ymin": 41.656345817265,
+            "xmax": 12.770503515572,
+            "ymax": 41.658345817265
+          }
+        }
+      ]
+    }
+  },
+  "via santamaura 49": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+santamaura+49%2C+00192+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via Santamaura 49, 00192, Roma",
+          "location": {
+            "x": 12.45356360099,
+            "y": 41.90870928667
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via Santamaura 49, 00192, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via Santamaura 49",
+            "City": "Roma",
+            "Postal": "00192"
+          },
+          "extent": {
+            "xmin": 12.45256360099,
+            "ymin": 41.90770928667,
+            "xmax": 12.45456360099,
+            "ymax": 41.90970928667
+          }
+        }
+      ]
+    }
+  },
+  "viale gorgia di leontini 330": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=viale+gorgia+di+leontini+330%2C+00124+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Viale Gorgia di Leontini 330, 00124, Roma",
+          "location": {
+            "x": 12.353322576896,
+            "y": 41.756112213133
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Viale Gorgia di Leontini 330, 00124, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Viale Gorgia di Leontini 330",
+            "City": "Roma",
+            "Postal": "00124"
+          },
+          "extent": {
+            "xmin": 12.352322576896,
+            "ymin": 41.755112213133,
+            "xmax": 12.354322576896,
+            "ymax": 41.757112213133
+          }
+        }
+      ]
+    }
+  },
+  "via della croce 77": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+della+croce+77%2C+00187+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via della Croce 77, 00187, Roma",
+          "location": {
+            "x": 12.480013367012,
+            "y": 41.906368388751
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via della Croce 77, 00187, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via della Croce 77",
+            "City": "Roma",
+            "Postal": "00187"
+          },
+          "extent": {
+            "xmin": 12.479013367012,
+            "ymin": 41.905368388751,
+            "xmax": 12.481013367012,
+            "ymax": 41.907368388751
+          }
+        }
+      ]
+    }
+  },
+  "via aurelia 36": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+aurelia+36%2C+00165+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via Aurelia 36, 00165, Roma",
+          "location": {
+            "x": 12.452767236369,
+            "y": 41.899867887562
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via Aurelia 36, 00165, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via Aurelia 36",
+            "City": "Roma",
+            "Postal": "00165"
+          },
+          "extent": {
+            "xmin": 12.451767236369,
+            "ymin": 41.898867887562,
+            "xmax": 12.453767236369,
+            "ymax": 41.900867887562
+          }
+        }
+      ]
+    }
+  },
+  "via della scala 15": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+della+scala+15%2C+00153+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via della Scala 15, 00153, Roma",
+          "location": {
+            "x": 12.468392612631,
+            "y": 41.890819413537
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via della Scala 15, 00153, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via della Scala 15",
+            "City": "Roma",
+            "Postal": "00153"
+          },
+          "extent": {
+            "xmin": 12.467392612631,
+            "ymin": 41.889819413537,
+            "xmax": 12.469392612631,
+            "ymax": 41.891819413537
+          }
+        },
+        {
+          "address": "Vicolo della Scala 15, 00153, Roma",
+          "location": {
+            "x": 12.467828510547,
+            "y": 41.890789406323
+          },
+          "score": 98.04,
+          "attributes": {
+            "Match_addr": "Vicolo della Scala 15, 00153, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Vicolo della Scala 15",
+            "City": "Roma",
+            "Postal": "00153"
+          },
+          "extent": {
+            "xmin": 12.466828510547,
+            "ymin": 41.889789406323,
+            "xmax": 12.468828510547,
+            "ymax": 41.891789406323
+          }
+        }
+      ]
+    }
+  },
+  "via germanico 170": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+germanico+170%2C+00192+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via Germanico 170, 00192, Roma",
+          "location": {
+            "x": 12.461621040693,
+            "y": 41.908768882001
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via Germanico 170, 00192, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via Germanico 170",
+            "City": "Roma",
+            "Postal": "00192"
+          },
+          "extent": {
+            "xmin": 12.460621040693,
+            "ymin": 41.907768882001,
+            "xmax": 12.462621040693,
+            "ymax": 41.909768882001
+          }
+        }
+      ]
+    }
+  },
+  "vicolo del curato 12": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=vicolo+del+curato+12%2C+00186+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Vicolo del Curato 12, 00186, Roma",
+          "location": {
+            "x": 12.466991577515,
+            "y": 41.900576703204
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Vicolo del Curato 12, 00186, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Vicolo del Curato 12",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.465991577515,
+            "ymin": 41.899576703204,
+            "xmax": 12.467991577515,
+            "ymax": 41.901576703204
+          }
+        }
+      ]
+    }
+  },
+  "vicolo del governo vecchio 56": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=vicolo+del+governo+vecchio+56%2C+00186+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Vicolo del Governo Vecchio 56, 00186, Roma",
+          "location": {
+            "x": 12.469835808719,
+            "y": 41.898393887979
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Vicolo del Governo Vecchio 56, 00186, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Vicolo del Governo Vecchio 56",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.468835808719,
+            "ymin": 41.897393887979,
+            "xmax": 12.470835808719,
+            "ymax": 41.899393887979
+          }
+        },
+        {
+          "address": "Via del Governo Vecchio 56, 00186, Roma",
+          "location": {
+            "x": 12.470802325975,
+            "y": 41.89821459907
+          },
+          "score": 98.04,
+          "attributes": {
+            "Match_addr": "Via del Governo Vecchio 56, 00186, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via del Governo Vecchio 56",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.469802325975,
+            "ymin": 41.89721459907,
+            "xmax": 12.471802325975,
+            "ymax": 41.89921459907
+          }
+        }
+      ]
+    }
+  },
+  "via della panetteria 10": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+della+panetteria+10%2C+00187+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via della Panetteria 10, 00187, Roma",
+          "location": {
+            "x": 12.484510677161,
+            "y": 41.901709894604
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via della Panetteria 10, 00187, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via della Panetteria 10",
+            "City": "Roma",
+            "Postal": "00187"
+          },
+          "extent": {
+            "xmin": 12.483510677161,
+            "ymin": 41.900709894604,
+            "xmax": 12.485510677161,
+            "ymax": 41.902709894604
+          }
+        }
+      ]
+    }
+  },
+  "via dell'orso 34": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+dell%27orso+34%2C+00186+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via dell'Orso 34, 00186, Roma",
+          "location": {
+            "x": 12.473609928262,
+            "y": 41.901845010883
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via dell'Orso 34, 00186, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via dell'Orso 34",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.472609928262,
+            "ymin": 41.900845010883,
+            "xmax": 12.474609928262,
+            "ymax": 41.902845010883
+          }
+        }
+      ]
+    }
+  },
+  "vicolo del governo vecchio 54": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=vicolo+del+governo+vecchio+54%2C+00186+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Vicolo del Governo Vecchio 54, 00186, Roma",
+          "location": {
+            "x": 12.469798928345,
+            "y": 41.898337184404
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Vicolo del Governo Vecchio 54, 00186, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Vicolo del Governo Vecchio 54",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.468798928345,
+            "ymin": 41.897337184404,
+            "xmax": 12.470798928345,
+            "ymax": 41.899337184404
+          }
+        },
+        {
+          "address": "Via del Governo Vecchio 54, 00186, Roma",
+          "location": {
+            "x": 12.470733678188,
+            "y": 41.898224699264
+          },
+          "score": 98.04,
+          "attributes": {
+            "Match_addr": "Via del Governo Vecchio 54, 00186, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via del Governo Vecchio 54",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.469733678188,
+            "ymin": 41.897224699264,
+            "xmax": 12.471733678188,
+            "ymax": 41.899224699264
+          }
+        }
+      ]
+    }
+  },
+  "via della vetrina 24": {
+    "url": "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=via+della+vetrina+24%2C+00186+Roma%2C+Italia&f=json&outFields=Match_addr%2CAddr_type%2CStAddr%2CCity%2CPostal&maxLocations=3",
+    "results": {
+      "spatialReference": {
+        "wkid": 4326,
+        "latestWkid": 4326
+      },
+      "candidates": [
+        {
+          "address": "Via della Vetrina 24, 00186, Roma",
+          "location": {
+            "x": 12.469697004403,
+            "y": 41.900143987453
+          },
+          "score": 100,
+          "attributes": {
+            "Match_addr": "Via della Vetrina 24, 00186, Roma",
+            "Addr_type": "PointAddress",
+            "StAddr": "Via della Vetrina 24",
+            "City": "Roma",
+            "Postal": "00186"
+          },
+          "extent": {
+            "xmin": 12.468697004403,
+            "ymin": 41.899143987453,
+            "xmax": 12.470697004403,
+            "ymax": 41.901143987453
+          }
+        }
+      ]
+    }
+  }
+}

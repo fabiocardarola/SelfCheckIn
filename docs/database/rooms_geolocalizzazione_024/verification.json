@@ -1,0 +1,9 @@
+{
+  "target_records": 19,
+  "distinct_addresses": 15,
+  "updated_records": 19,
+  "non_target_records_unchanged": true,
+  "address_fields_unchanged": true,
+  "temporary_mismatch_test": "passed",
+  "temporary_success_and_idempotence_test": "passed"
+}

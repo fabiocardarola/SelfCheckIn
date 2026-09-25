@@ -1,0 +1,20 @@
+pk,description,address,city,cap,lat,lng,new_lat,new_lng,matched_cap,match_type,score
+1,PINDARO,Via Pindaro 106,Roma,00125,0.0,0.0,41.7575289,12.3666156,00125,PointAddress,100
+2,NAVONA & PANTHEON,Via Dei Banchi Nuovi 11,Roma,00186,41.8997221,12.467162,41.8996927,12.4672596,00186,PointAddress,100
+3,MARIEL APARTMENT,Vicolo De' Cinque 57,Roma,00158,41.8905557,12.4691382,41.8905773,12.4692241,00153,PointAddress,93.55
+4,SYLVIA STYLISH,Via Santamaura 49,Roma,00192,41.9087178,12.4513243,41.9087093,12.4535636,00192,PointAddress,100
+5,Casa di Agata,"Viale Gorgia di Leontini,  330",Roma,00124,0.0,0.0,41.7561122,12.3533226,00124,PointAddress,100
+71,Marylin Apartment Via Della Croce,Via Della Croce 77,Roma,00187,0.0,0.0,41.9063684,12.4800134,00187,PointAddress,100
+76,Agata Vatican Stylish self check-in apartment,Via Aurelia 36,Roma,00165,0.0,0.0,41.8998679,12.4527672,00165,PointAddress,100
+77,Sylvia Apartment in Trastevere,Via Della Scala 15,Roma,00153,0.0,0.0,41.8908194,12.4683926,00153,PointAddress,100
+80,VATICAN DOLCE VITA APARTMENT,Via Germanico 170,Roma,00192,0.0,0.0,41.9087689,12.461621,00192,PointAddress,100
+81,Curato Collection Art Déco,"Vicolo del Curato, 12",Roma,00186,0.0,0.0,41.9005767,12.4669916,00186,PointAddress,100
+82,Navona Chic 56 Apartment,Vicolo Del Governo Vecchio 56,Roma,00186,0.0,0.0,41.8983939,12.4698358,00186,PointAddress,100
+85,Trevi Charming Apartment,Via Della Panetteria 10,Roma,00187,0.0,0.0,41.9017099,12.4845107,00187,PointAddress,100
+86,Navona Boutique Apartment 34,Via Dell'Orso 34,Roma,00186,0.0,0.0,41.901845,12.4736099,00186,PointAddress,100
+87,Curato Penthouse,Vicolo Del Curato 12,Roma,00186,0.0,0.0,41.9005767,12.4669916,00186,PointAddress,100
+95,Curato Collection Suite,Vicolo Del Curato 12,Roma,00186,0.0,0.0,41.9005767,12.4669916,00186,PointAddress,100
+96,Navona Style Cozy Apartment,Vicolo Del Governo Vecchio 54,Roma,00186,0.0,0.0,41.8983372,12.4697989,00186,PointAddress,100
+97,Agata Coronari Charming,Via Della Vetrina 24,Roma,00186,0.0,0.0,41.900144,12.469697,00186,PointAddress,100
+98,Coronari Collection Deluxe,Vicolo Del Curato 12,Roma,00187,0.0,0.0,41.9005767,12.4669916,00186,PointAddress,100
+99,Coronari Collection Terrace Suite,Vicolo Del Curato 12,Roma,00186,0.0,0.0,41.9005767,12.4669916,00186,PointAddress,100
